@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.point.DetectorSURF</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.point-module.html">Package&nbsp;point</a> ::
+        Module&nbsp;DetectorSURF
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.point.DetectorSURF-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.point.DetectorSURF-module.html">Module pyvision.point.DetectorSURF</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Apr 16, 2009</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">@author: bolme</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package pyvision=pyvision-module.html"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-0', 'pyvision', 'link-0');">pyvision</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method pyvision.analysis.plot.Plot.point()=pyvision.analysis.plot.Plot-class.html#point,Package pyvision.point=pyvision.point-module.html"><a title="pyvision.analysis.plot.Plot.point
+pyvision.point" class="py-name" href="#" onclick="return doclink('link-1', 'point', 'link-1');">point</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module pyvision.point.DetectorROI=pyvision.point.DetectorROI-module.html,Class pyvision.point.DetectorROI.DetectorROI=pyvision.point.DetectorROI.DetectorROI-class.html"><a title="pyvision.point.DetectorROI
+pyvision.point.DetectorROI.DetectorROI" class="py-name" href="#" onclick="return doclink('link-2', 'DetectorROI', 'link-2');">DetectorROI</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name"><a title="pyvision.point.DetectorROI
+pyvision.point.DetectorROI.DetectorROI" class="py-name" href="#" onclick="return doclink('link-3', 'DetectorROI', 'link-2');">DetectorROI</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment">#import pyvision as pv</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment">#from scipy import weave</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">cv</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="ExtractSURF"></a><div id="ExtractSURF-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="ExtractSURF-toggle" onclick="return toggle('ExtractSURF');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.point.DetectorSURF-module.html#ExtractSURF">ExtractSURF</a><tt class="py-op">(</tt><tt class="py-param">im</tt><tt class="py-op">,</tt><tt class="py-param">min_hessian</tt><tt class="py-op">=</tt><tt class="py-number">300</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtractSURF-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ExtractSURF-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    Uses OpenCV to extract SURF keypoints.  Currently does not compute SURF features.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    TODO: An option should be added to also compute and return the SURF descriptors.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    TODO: This should be extended with options for octaves and levels.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    TODO: I believe there are no memory leaks but this should be checked. cvSURFParams?</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt class="py-name">cvim</tt><tt class="py-op">=</tt> <tt class="py-name">im</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method pyvision.types.img.Image.asOpenCVBW()=pyvision.types.img.Image-class.html#asOpenCVBW"><a title="pyvision.types.img.Image.asOpenCVBW" class="py-name" href="#" onclick="return doclink('link-4', 'asOpenCVBW', 'link-4');">asOpenCVBW</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-comment">#mat = int(cvim.this)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-name">min_hessian</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">min_hessian</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-comment">#TODO: OpenCV python interface now includes cv.ExtractSURF(cvim, mask, storage, params)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-comment">#This is my (Steve's) attempt at this, but I am concerned we're not returning the</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-comment"># some of the information once this gets back to the caller...perhaps the parent</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-comment"># class is filtering out the addtnl data that SURF points provide?</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">     </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-comment">#TODO: Now that we have the descriptors, we need to return them to user if desired.</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-op">(</tt><tt class="py-name">keypts</tt><tt class="py-op">,</tt> <tt class="py-name">_</tt><tt class="py-op">)</tt> <tt class="py-op">=</tt> <tt class="py-name">cv</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Function pyvision.point.DetectorSURF.ExtractSURF()=pyvision.point.DetectorSURF-module.html#ExtractSURF"><a title="pyvision.point.DetectorSURF.ExtractSURF" class="py-name" href="#" onclick="return doclink('link-5', 'ExtractSURF', 'link-5');">ExtractSURF</a></tt><tt class="py-op">(</tt><tt class="py-name">cvim</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">cv</tt><tt class="py-op">.</tt><tt class="py-name">CreateMemStorage</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">min_hessian</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">     </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">keypoints</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name" targets="Method pyvision.analysis.plot.Plot.x()=pyvision.analysis.plot.Plot-class.html#x"><a title="pyvision.analysis.plot.Plot.x" class="py-name" href="#" onclick="return doclink('link-6', 'x', 'link-6');">x</a></tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name" targets="Method pyvision.analysis.plot.Plot.y()=pyvision.analysis.plot.Plot-class.html#y"><a title="pyvision.analysis.plot.Plot.y" class="py-name" href="#" onclick="return doclink('link-7', 'y', 'link-7');">y</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">laplacian</tt><tt class="py-op">,</tt> <tt class="py-name">size</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt><tt class="py-op">,</tt> <tt class="py-name">hessian</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">keypts</tt><tt class="py-op">:</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">keypoints</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">hessian</tt><tt class="py-op">,</tt><tt id="link-8" class="py-name"><a title="pyvision.analysis.plot.Plot.x" class="py-name" href="#" onclick="return doclink('link-8', 'x', 'link-6');">x</a></tt><tt class="py-op">,</tt><tt id="link-9" class="py-name"><a title="pyvision.analysis.plot.Plot.y" class="py-name" href="#" onclick="return doclink('link-9', 'y', 'link-7');">y</a></tt><tt class="py-op">,</tt><tt class="py-name">size</tt><tt class="py-op">,</tt><tt class="py-name">direction</tt><tt class="py-op">,</tt><tt class="py-name">laplacian</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">     </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">keypoints</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-comment">#   keypoints = weave.inline(</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-comment">#        '''   </tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-comment">#        CvMat* im = (CvMat*)mat;</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-comment">#        CvMemStorage* storage = cvCreateMemStorage();</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-comment">#        CvSeq* keypoints = cvCreateSeq(0,sizeof(CvSeq),sizeof(CvSURFPoint),storage);</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-comment">#        cvExtractSURF(im,NULL,&amp;keypoints,NULL,storage,cvSURFParams(min_hessian));</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-comment">#        int n = keypoints-&gt;total;</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-comment">#        PyObject* list = PyList_New(n);</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-comment">#        CvSURFPoint pt;</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-comment">#        for(int i = 0 ; i &lt; n; i++){</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-comment">#            cvSeqPop(keypoints,&amp;pt);</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-comment">#            </tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-comment">#            PyObject* tuple = PyTuple_New(5);</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-comment">#            PyTuple_SetItem(tuple, 1, PyFloat_FromDouble(pt.pt.x));</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-comment">#            PyTuple_SetItem(tuple, 2, PyFloat_FromDouble(pt.pt.y));</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-comment">#            PyTuple_SetItem(tuple, 3, PyInt_FromLong(pt.size));</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-comment">#            PyTuple_SetItem(tuple, 4, PyFloat_FromDouble(pt.dir));</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-comment">#            PyTuple_SetItem(tuple, 0, PyFloat_FromDouble(pt.hessian));</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-comment">#            </tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-comment">#            PyList_SetItem(list,i,tuple);</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-comment">#            //printf("%5d %10.5f %10.5f %5d %10.5f %10.5f\\n", i, pt.pt.x, pt.pt.y, pt.size, pt.dir, pt.hessian);</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-comment">#        cvClearMemStorage(storage);</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-comment">#        cvReleaseMemStorage(&amp;storage);</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-comment">#        </tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-comment">#        return_val = list;</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-comment">#        ''',</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-comment">#        arg_names=['mat','min_hessian'],</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-comment">#        include_dirs=['/usr/local/include'],</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-comment">#        headers=['&lt;opencv/cv.h&gt;'],</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-comment">#        library_dirs=['/usr/local/lib'],</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-comment">#        libraries=['cv']</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-comment">#    )</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">     </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">    <tt class="py-comment">#return keypoints</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt>
+<a name="DetectorSURF"></a><div id="DetectorSURF-def"><a name="L76"></a><tt class="py-lineno">76</tt> <a class="py-toggle" href="#" id="DetectorSURF-toggle" onclick="return toggle('DetectorSURF');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.point.DetectorSURF.DetectorSURF-class.html">DetectorSURF</a><tt class="py-op">(</tt><tt class="py-base-class">DetectorROI</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DetectorSURF-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="DetectorSURF-expanded"><a name="DetectorSURF.__init__"></a><div id="DetectorSURF.__init__-def"><a name="L77"></a><tt class="py-lineno">77</tt> <a class="py-toggle" href="#" id="DetectorSURF.__init__-toggle" onclick="return toggle('DetectorSURF.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.point.DetectorSURF.DetectorSURF-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">min_hessian</tt><tt class="py-op">=</tt><tt class="py-number">400.0</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DetectorSURF.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DetectorSURF.__init__-expanded"><a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">min_hessian</tt> <tt class="py-op">=</tt> <tt class="py-name">min_hessian</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">        <tt id="link-10" class="py-name"><a title="pyvision.point.DetectorROI
+pyvision.point.DetectorROI.DetectorROI" class="py-name" href="#" onclick="return doclink('link-10', 'DetectorROI', 'link-2');">DetectorROI</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest.__init__()=pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest-class.html#__init__,Method pyvision.analysis.FaceAnalysis.EyesFile.EyesFile.__init__()=pyvision.analysis.FaceAnalysis.EyesFile.EyesFile-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGCMetadata.__init__()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGCMetadata-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp1.__init__()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp1-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.__init__()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.__init__()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_V1.__init__()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_V1-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.FERETDatabase.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.FERETDatabase-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database_c27.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database_c27-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.ScrapShotsDatabase.__init__()=pyvision.analysis.FaceAnalysis.FaceDatabase.ScrapShotsDatabase-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest.__init__()=pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest-class.html#__init__,Method pyvision.analysis.FaceAnalysis.FaceRecognitionTest.FaceRecognitionTest.__init__()=pyvision.analysis.FaceAnalysis.FaceRecognitionTest.FaceRecognitionTest-class.html#__init__,Method pyvision.analysis.ImageLog.ImageLog.__init__()=pyvision.analysis.ImageLog.ImageLog-class.html#__init__,Method pyvision.analysis.Montage.ImageMontage.__init__()=pyvision.analysis.Montage.ImageMontage-class.html#__init__,Method pyvision.analysis.Montage.VideoMontage.__init__()=pyvision.analysis.Montage.VideoMontage-class.html#__init__,Method pyvision.analysis.Montage.clickHandler.__init__()=pyvision.analysis.Montage.clickHandler-class.html#__init__,Method pyvision.analysis.Table.Table.__init__()=pyvision.analysis.Table.Table-class.html#__init__,Method pyvision.analysis.Timer.Timer.__init__()=pyvision.analysis.Timer.Timer-class.html#__init__,Method pyvision.analysis.bee.BEEDistanceMatrix.__init__()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#__init__,Method pyvision.analysis.classifier.ConfusionMatrix.ConfusionMatrix.__init__()=pyvision.analysis.classifier.ConfusionMatrix.ConfusionMatrix-class.html#__init__,Method pyvision.analysis.face.CSU_Dist.__init__()=pyvision.analysis.face.CSU_Dist-class.html#__init__,Method pyvision.analysis.face.CSU_SRT.ImageRecord.__init__()=pyvision.analysis.face.CSU_SRT.ImageRecord-class.html#__init__,Method pyvision.analysis.face.CSU_SRT.__init__()=pyvision.analysis.face.CSU_SRT-class.html#__init__,Method pyvision.analysis.face.EyesFile.__init__()=pyvision.analysis.face.EyesFile-class.html#__init__,Method pyvision.analysis.gui_tools.CaptureClicks.__init__()=pyvision.analysis.gui_tools.CaptureClicks-class.html#__init__,Method pyvision.analysis.gui_tools.CaptureClicksVideo.__init__()=pyvision.analysis.gui_tools.CaptureClicksVideo-class.html#__init__,Method pyvision.analysis.html_report.HtmlReport.__init__()=pyvision.analysis.html_report.HtmlReport-class.html#__init__,Method pyvision.analysis.plot.Label.__init__()=pyvision.analysis.plot.Label-class.html#__init__,Method pyvision.analysis.plot.Plot.__init__()=pyvision.analysis.plot.Plot-class.html#__init__,Method pyvision.analysis.plot.Points.__init__()=pyvision.analysis.plot.Points-class.html#__init__,Method pyvision.analysis.progress_bar.ProgressBar.__init__()=pyvision.analysis.progress_bar.ProgressBar-class.html#__init__,Method pyvision.analysis.roc.ROC.__init__()=pyvision.analysis.roc.ROC-class.html#__init__,Method pyvision.analysis.roc.ROCPoint.__init__()=pyvision.analysis.roc.ROCPoint-class.html#__init__,Method pyvision.analysis.stats.SummaryStats.__init__()=pyvision.analysis.stats.SummaryStats-class.html#__init__,Method pyvision.beta.videotasks.ChangeDetectionAnnotationVT.__init__()=pyvision.beta.videotasks.ChangeDetectionAnnotationVT-class.html#__init__,Method pyvision.beta.videotasks.ChangeDetectionVT.__init__()=pyvision.beta.videotasks.ChangeDetectionVT-class.html#__init__,Method pyvision.beta.videotasks.FaceDetectorVT.__init__()=pyvision.beta.videotasks.FaceDetectorVT-class.html#__init__,Method pyvision.beta.vtm.DefaultData.__init__()=pyvision.beta.vtm.DefaultData-class.html#__init__,Method pyvision.beta.vtm.VideoTask.__init__()=pyvision.beta.vtm.VideoTask-class.html#__init__,Method pyvision.beta.vtm.VideoTaskManager.__init__()=pyvision.beta.vtm.VideoTaskManager-class.html#__init__,Method pyvision.beta.vtm._VideoDataItem.__init__()=pyvision.beta.vtm._VideoDataItem-class.html#__init__,Method pyvision.face.CascadeDetector.CascadeDetector.__init__()=pyvision.face.CascadeDetector.CascadeDetector-class.html#__init__,Method pyvision.face.FaceRecognizer.FaceRecognizer.__init__()=pyvision.face.FaceRecognizer.FaceRecognizer-class.html#__init__,Method pyvision.face.FilterEyeLocator.FilterEyeLocator.__init__()=pyvision.face.FilterEyeLocator.FilterEyeLocator-class.html#__init__,Method pyvision.face.FilterEyeLocator.OpenCVFilterEyeLocator.__init__()=pyvision.face.FilterEyeLocator.OpenCVFilterEyeLocator-class.html#__init__,Method pyvision.face.PCA.PCA.__init__()=pyvision.face.PCA.PCA-class.html#__init__,Method pyvision.face.SVMEyeDetector.RegressionEyeLocator2.__init__()=pyvision.face.SVMEyeDetector.RegressionEyeLocator2-class.html#__init__,Method pyvision.face.SVMEyeDetector.SVMEyeDetector.__init__()=pyvision.face.SVMEyeDetector.SVMEyeDetector-class.html#__init__,Method pyvision.face.SVMFaceRec.SVMFaceRec.__init__()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#__init__,Method pyvision.face.headdetector.HeadDetector.__init__()=pyvision.face.headdetector.HeadDetector-class.html#__init__,Method pyvision.features.v1like.V1Processing.__init__()=pyvision.features.v1like.V1Processing-class.html#__init__,Method pyvision.gui.EyePicker.EyePickerFrame.__init__()=pyvision.gui.EyePicker.EyePickerFrame-class.html#__init__,Method pyvision.ml.crossvalidate.CrossValidation.__init__()=pyvision.ml.crossvalidate.CrossValidation-class.html#__init__,Method pyvision.ml.crossvalidate.Validation.__init__()=pyvision.ml.crossvalidate.Validation-class.html#__init__,Method pyvision.ml.knn.FLANNTree.__init__()=pyvision.ml.knn.FLANNTree-class.html#__init__,Method pyvision.ml.knn.KNearestNeighbors.__init__()=pyvision.ml.knn.KNearestNeighbors-class.html#__init__,Method pyvision.ml.knn.PNorm.__init__()=pyvision.ml.knn.PNorm-class.html#__init__,Method pyvision.ml.knn.RobustPNorm.__init__()=pyvision.ml.knn.RobustPNorm-class.html#__init__,Method pyvision.ml.libsvm.FeaturePreprocessor.__init__()=pyvision.ml.libsvm.FeaturePreprocessor-class.html#__init__,Method pyvision.ml.libsvm.NoNorm.__init__()=pyvision.ml.libsvm.NoNorm-class.html#__init__,Method pyvision.ml.libsvm.SVC.__init__()=pyvision.ml.libsvm.SVC-class.html#__init__,Method pyvision.ml.libsvm.SVR.__init__()=pyvision.ml.libsvm.SVR-class.html#__init__,Method pyvision.ml.libsvm.ZNormValues.__init__()=pyvision.ml.libsvm.ZNormValues-class.html#__init__,Method pyvision.ml.libsvm._LabelMap.__init__()=pyvision.ml.libsvm._LabelMap-class.html#__init__,Method pyvision.ml.libsvm._LabelScale.__init__()=pyvision.ml.libsvm._LabelScale-class.html#__init__,Method pyvision.ml.opencv_ml.StatsModelWrapper.__init__()=pyvision.ml.opencv_ml.StatsModelWrapper-class.html#__init__,Method pyvision.ml.regression.LogisticRegression.__init__()=pyvision.ml.regression.LogisticRegression-class.html#__init__,Method pyvision.ml.regression.pdf2nll.__init__()=pyvision.ml.regression.pdf2nll-class.html#__init__,Method pyvision.optimize.genetic.GAAngle.__init__()=pyvision.optimize.genetic.GAAngle-class.html#__init__,Method pyvision.optimize.genetic.GABoolean.__init__()=pyvision.optimize.genetic.GABoolean-class.html#__init__,Method pyvision.optimize.genetic.GAChoice.__init__()=pyvision.optimize.genetic.GAChoice-class.html#__init__,Method pyvision.optimize.genetic.GAFloat.__init__()=pyvision.optimize.genetic.GAFloat-class.html#__init__,Method pyvision.optimize.genetic.GAInteger.__init__()=pyvision.optimize.genetic.GAInteger-class.html#__init__,Method pyvision.optimize.genetic.GALogFloat.__init__()=pyvision.optimize.genetic.GALogFloat-class.html#__init__,Method pyvision.optimize.genetic.GARanking.__init__()=pyvision.optimize.genetic.GARanking-class.html#__init__,Method pyvision.optimize.genetic.GAUnitRect.__init__()=pyvision.optimize.genetic.GAUnitRect-class.html#__init__,Method pyvision.optimize.genetic.GAUnitRect2.__init__()=pyvision.optimize.genetic.GAUnitRect2-class.html#__init__,Method pyvision.optimize.genetic.GAUnitVector.__init__()=pyvision.optimize.genetic.GAUnitVector-class.html#__init__,Method pyvision.optimize.genetic.GAVariable.__init__()=pyvision.optimize.genetic.GAVariable-class.html#__init__,Method pyvision.optimize.genetic.GAWeighting.__init__()=pyvision.optimize.genetic.GAWeighting-class.html#__init__,Method pyvision.optimize.genetic.GeneticAlgorithm.__init__()=pyvision.optimize.genetic.GeneticAlgorithm-class.html#__init__,Method pyvision.optimize.testsuite.FitnessNapsack.__init__()=pyvision.optimize.testsuite.FitnessNapsack-class.html#__init__,Method pyvision.other.color.Histogram.__init__()=pyvision.other.color.Histogram-class.html#__init__,Method pyvision.point.DetectorCorner.DetectorCorner.__init__()=pyvision.point.DetectorCorner.DetectorCorner-class.html#__init__,Method pyvision.point.DetectorDOG.DetectorDOG.__init__()=pyvision.point.DetectorDOG.DetectorDOG-class.html#__init__,Method pyvision.point.DetectorHarris.DetectorHarris.__init__()=pyvision.point.DetectorHarris.DetectorHarris-class.html#__init__,Method pyvision.point.DetectorROI.DetectorROI.__init__()=pyvision.point.DetectorROI.DetectorROI-class.html#__init__,Method pyvision.point.DetectorSURF.DetectorSURF.__init__()=pyvision.point.DetectorSURF.DetectorSURF-class.html#__init__,Method pyvision.point.GaborJets.FilterBank.__init__()=pyvision.point.GaborJets.FilterBank-class.html#__init__,Method pyvision.point.GaborJets.GaborFilters.__init__()=pyvision.point.GaborJets.GaborFilters-class.html#__init__,Method pyvision.point.GaborJets.GaborImage.__init__()=pyvision.point.GaborJets.GaborImage-class.html#__init__,Method pyvision.point.GaborJets.GaborJet.__init__()=pyvision.point.GaborJets.GaborJet-class.html#__init__,Method pyvision.point.GaborJets.GaborWavelet.__init__()=pyvision.point.GaborJets.GaborWavelet-class.html#__init__,Method pyvision.point.PointLocator.KRRLocator.__init__()=pyvision.point.PointLocator.KRRLocator-class.html#__init__,Method pyvision.point.PointLocator.SVMLocator.__init__()=pyvision.point.PointLocator.SVMLocator-class.html#__init__,Method pyvision.surveillance.BackgroundSubtraction.AbstractBGModel.__init__()=pyvision.surveillance.BackgroundSubtraction.AbstractBGModel-class.html#__init__,Method pyvision.surveillance.BackgroundSubtraction.ApproximateMedianFilter.__init__()=pyvision.surveillance.BackgroundSubtraction.ApproximateMedianFilter-class.html#__init__,Method pyvision.surveillance.BackgroundSubtraction.FrameDifferencer.__init__()=pyvision.surveillance.BackgroundSubtraction.FrameDifferencer-class.html#__init__,Method pyvision.surveillance.BackgroundSubtraction.MedianFilter.__init__()=pyvision.surveillance.BackgroundSubtraction.MedianFilter-class.html#__init__,Method pyvision.surveillance.BackgroundSubtraction.MotionCompensatedFrameDifferencer.__init__()=pyvision.surveillance.BackgroundSubtraction.MotionCompensatedFrameDifferencer-class.html#__init__,Method pyvision.surveillance.MotionDetector.MotionDetector.__init__()=pyvision.surveillance.MotionDetector.MotionDetector-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.AbstractVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.AbstractVSP-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.FrameNumberVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.FrameNumberVSP-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.FrameSkipperVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.FrameSkipperVSP-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.MotionDetectionVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.MotionDetectionVSP-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.ResizerVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.ResizerVSP-class.html#__init__,Method pyvision.surveillance.VideoStreamProcessor.VideoWriterVSP.__init__()=pyvision.surveillance.VideoStreamProcessor.VideoWriterVSP-class.html#__init__,Method pyvision.surveillance.kalman.KalmanFilter.__init__()=pyvision.surveillance.kalman.KalmanFilter-class.html#__init__,Method pyvision.surveillance.optical_flow.OpticalFlow.__init__()=pyvision.surveillance.optical_flow.OpticalFlow-class.html#__init__,Method pyvision.types.Affine.AffineTransform.__init__()=pyvision.types.Affine.AffineTransform-class.html#__init__,Method pyvision.types.ImageBuffer.ImageBuffer.__init__()=pyvision.types.ImageBuffer.ImageBuffer-class.html#__init__,Method pyvision.types.Perspective.PerspectiveTransform.__init__()=pyvision.types.Perspective.PerspectiveTransform-class.html#__init__,Method pyvision.types.Point.Point.__init__()=pyvision.types.Point.Point-class.html#__init__,Method pyvision.types.RangeImage.RangeImage.__init__()=pyvision.types.RangeImage.RangeImage-class.html#__init__,Method pyvision.types.Rect.Rect.__init__()=pyvision.types.Rect.Rect-class.html#__init__,Method pyvision.types.Video.FFMPEGVideo.__init__()=pyvision.types.Video.FFMPEGVideo-class.html#__init__,Method pyvision.types.Video.Video.__init__()=pyvision.types.Video.Video-class.html#__init__,Method pyvision.types.Video.VideoFromDirectory.__init__()=pyvision.types.Video.VideoFromDirectory-class.html#__init__,Method pyvision.types.Video.VideoFromFileList.__init__()=pyvision.types.Video.VideoFromFileList-class.html#__init__,Method pyvision.types.Video.VideoFromImageStack.__init__()=pyvision.types.Video.VideoFromImageStack-class.html#__init__,Method pyvision.types.Video.VideoFromImages.__init__()=pyvision.types.Video.VideoFromImages-class.html#__init__,Method pyvision.types.Video.Webcam.__init__()=pyvision.types.Video.Webcam-class.html#__init__,Method pyvision.types.img.Image.__init__()=pyvision.types.img.Image-class.html#__init__,Method pyvision.types.kinect.Kinect.__init__()=pyvision.types.kinect.Kinect-class.html#__init__,Method pyvision.util.fast_util.LocalMaximumDetector.__init__()=pyvision.util.fast_util.LocalMaximumDetector-class.html#__init__,Method pyvision.vector.PCA.PCA.__init__()=pyvision.vector.PCA.PCA-class.html#__init__,Method pyvision.vector.Polynomial.Polynomial2D.__init__()=pyvision.vector.Polynomial.Polynomial2D-class.html#__init__,Method pyvision.vector.RidgeRegression.KernelRidgeRegression.__init__()=pyvision.vector.RidgeRegression.KernelRidgeRegression-class.html#__init__,Method pyvision.vector.RidgeRegression.LINEAR.__init__()=pyvision.vector.RidgeRegression.LINEAR-class.html#__init__,Method pyvision.vector.RidgeRegression.RBF.__init__()=pyvision.vector.RidgeRegression.RBF-class.html#__init__,Method pyvision.vector.RidgeRegression.RidgeRegression.__init__()=pyvision.vector.RidgeRegression.RidgeRegression-class.html#__init__,Method pyvision.vector.SVM.SVM.__init__()=pyvision.vector.SVM.SVM-class.html#__init__,Method pyvision.vector.VectorClassifier.VectorClassifier.__init__()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#__init__,Method pyvision.vector.id3.ID3.__init__()=pyvision.vector.id3.ID3-class.html#__init__,Method pyvision.vector.id3.Node.__init__()=pyvision.vector.id3.Node-class.html#__init__,Method pyvision.vector.linearreg.LinearReg.__init__()=pyvision.vector.linearreg.LinearReg-class.html#__init__"><a title="pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest.__init__
+pyvision.analysis.FaceAnalysis.EyesFile.EyesFile.__init__
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGCMetadata.__init__
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp1.__init__
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.__init__
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.__init__
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_V1.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.FERETDatabase.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database_c27.__init__
+pyvision.analysis.FaceAnalysis.FaceDatabase.ScrapShotsDatabase.__init__
+pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest.__init__
+pyvision.analysis.FaceAnalysis.FaceRecognitionTest.FaceRecognitionTest.__init__
+pyvision.analysis.ImageLog.ImageLog.__init__
+pyvision.analysis.Montage.ImageMontage.__init__
+pyvision.analysis.Montage.VideoMontage.__init__
+pyvision.analysis.Montage.clickHandler.__init__
+pyvision.analysis.Table.Table.__init__
+pyvision.analysis.Timer.Timer.__init__
+pyvision.analysis.bee.BEEDistanceMatrix.__init__
+pyvision.analysis.classifier.ConfusionMatrix.ConfusionMatrix.__init__
+pyvision.analysis.face.CSU_Dist.__init__
+pyvision.analysis.face.CSU_SRT.ImageRecord.__init__
+pyvision.analysis.face.CSU_SRT.__init__
+pyvision.analysis.face.EyesFile.__init__
+pyvision.analysis.gui_tools.CaptureClicks.__init__
+pyvision.analysis.gui_tools.CaptureClicksVideo.__init__
+pyvision.analysis.html_report.HtmlReport.__init__
+pyvision.analysis.plot.Label.__init__
+pyvision.analysis.plot.Plot.__init__
+pyvision.analysis.plot.Points.__init__
+pyvision.analysis.progress_bar.ProgressBar.__init__
+pyvision.analysis.roc.ROC.__init__
+pyvision.analysis.roc.ROCPoint.__init__
+pyvision.analysis.stats.SummaryStats.__init__
+pyvision.beta.videotasks.ChangeDetectionAnnotationVT.__init__
+pyvision.beta.videotasks.ChangeDetectionVT.__init__
+pyvision.beta.videotasks.FaceDetectorVT.__init__
+pyvision.beta.vtm.DefaultData.__init__
+pyvision.beta.vtm.VideoTask.__init__
+pyvision.beta.vtm.VideoTaskManager.__init__
+pyvision.beta.vtm._VideoDataItem.__init__
+pyvision.face.CascadeDetector.CascadeDetector.__init__
+pyvision.face.FaceRecognizer.FaceRecognizer.__init__
+pyvision.face.FilterEyeLocator.FilterEyeLocator.__init__
+pyvision.face.FilterEyeLocator.OpenCVFilterEyeLocator.__init__
+pyvision.face.PCA.PCA.__init__
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.__init__
+pyvision.face.SVMEyeDetector.SVMEyeDetector.__init__
+pyvision.face.SVMFaceRec.SVMFaceRec.__init__
+pyvision.face.headdetector.HeadDetector.__init__
+pyvision.features.v1like.V1Processing.__init__
+pyvision.gui.EyePicker.EyePickerFrame.__init__
+pyvision.ml.crossvalidate.CrossValidation.__init__
+pyvision.ml.crossvalidate.Validation.__init__
+pyvision.ml.knn.FLANNTree.__init__
+pyvision.ml.knn.KNearestNeighbors.__init__
+pyvision.ml.knn.PNorm.__init__
+pyvision.ml.knn.RobustPNorm.__init__
+pyvision.ml.libsvm.FeaturePreprocessor.__init__
+pyvision.ml.libsvm.NoNorm.__init__
+pyvision.ml.libsvm.SVC.__init__
+pyvision.ml.libsvm.SVR.__init__
+pyvision.ml.libsvm.ZNormValues.__init__
+pyvision.ml.libsvm._LabelMap.__init__
+pyvision.ml.libsvm._LabelScale.__init__
+pyvision.ml.opencv_ml.StatsModelWrapper.__init__
+pyvision.ml.regression.LogisticRegression.__init__
+pyvision.ml.regression.pdf2nll.__init__
+pyvision.optimize.genetic.GAAngle.__init__
+pyvision.optimize.genetic.GABoolean.__init__
+pyvision.optimize.genetic.GAChoice.__init__
+pyvision.optimize.genetic.GAFloat.__init__
+pyvision.optimize.genetic.GAInteger.__init__
+pyvision.optimize.genetic.GALogFloat.__init__
+pyvision.optimize.genetic.GARanking.__init__
+pyvision.optimize.genetic.GAUnitRect.__init__
+pyvision.optimize.genetic.GAUnitRect2.__init__
+pyvision.optimize.genetic.GAUnitVector.__init__
+pyvision.optimize.genetic.GAVariable.__init__
+pyvision.optimize.genetic.GAWeighting.__init__
+pyvision.optimize.genetic.GeneticAlgorithm.__init__
+pyvision.optimize.testsuite.FitnessNapsack.__init__
+pyvision.other.color.Histogram.__init__
+pyvision.point.DetectorCorner.DetectorCorner.__init__
+pyvision.point.DetectorDOG.DetectorDOG.__init__
+pyvision.point.DetectorHarris.DetectorHarris.__init__
+pyvision.point.DetectorROI.DetectorROI.__init__
+pyvision.point.DetectorSURF.DetectorSURF.__init__
+pyvision.point.GaborJets.FilterBank.__init__
+pyvision.point.GaborJets.GaborFilters.__init__
+pyvision.point.GaborJets.GaborImage.__init__
+pyvision.point.GaborJets.GaborJet.__init__
+pyvision.point.GaborJets.GaborWavelet.__init__
+pyvision.point.PointLocator.KRRLocator.__init__
+pyvision.point.PointLocator.SVMLocator.__init__
+pyvision.surveillance.BackgroundSubtraction.AbstractBGModel.__init__
+pyvision.surveillance.BackgroundSubtraction.ApproximateMedianFilter.__init__
+pyvision.surveillance.BackgroundSubtraction.FrameDifferencer.__init__
+pyvision.surveillance.BackgroundSubtraction.MedianFilter.__init__
+pyvision.surveillance.BackgroundSubtraction.MotionCompensatedFrameDifferencer.__init__
+pyvision.surveillance.MotionDetector.MotionDetector.__init__
+pyvision.surveillance.VideoStreamProcessor.AbstractVSP.__init__
+pyvision.surveillance.VideoStreamProcessor.FrameNumberVSP.__init__
+pyvision.surveillance.VideoStreamProcessor.FrameSkipperVSP.__init__
+pyvision.surveillance.VideoStreamProcessor.MotionDetectionVSP.__init__
+pyvision.surveillance.VideoStreamProcessor.ResizerVSP.__init__
+pyvision.surveillance.VideoStreamProcessor.VideoWriterVSP.__init__
+pyvision.surveillance.kalman.KalmanFilter.__init__
+pyvision.surveillance.optical_flow.OpticalFlow.__init__
+pyvision.types.Affine.AffineTransform.__init__
+pyvision.types.ImageBuffer.ImageBuffer.__init__
+pyvision.types.Perspective.PerspectiveTransform.__init__
+pyvision.types.Point.Point.__init__
+pyvision.types.RangeImage.RangeImage.__init__
+pyvision.types.Rect.Rect.__init__
+pyvision.types.Video.FFMPEGVideo.__init__
+pyvision.types.Video.Video.__init__
+pyvision.types.Video.VideoFromDirectory.__init__
+pyvision.types.Video.VideoFromFileList.__init__
+pyvision.types.Video.VideoFromImageStack.__init__
+pyvision.types.Video.VideoFromImages.__init__
+pyvision.types.Video.Webcam.__init__
+pyvision.types.img.Image.__init__
+pyvision.types.kinect.Kinect.__init__
+pyvision.util.fast_util.LocalMaximumDetector.__init__
+pyvision.vector.PCA.PCA.__init__
+pyvision.vector.Polynomial.Polynomial2D.__init__
+pyvision.vector.RidgeRegression.KernelRidgeRegression.__init__
+pyvision.vector.RidgeRegression.LINEAR.__init__
+pyvision.vector.RidgeRegression.RBF.__init__
+pyvision.vector.RidgeRegression.RidgeRegression.__init__
+pyvision.vector.SVM.SVM.__init__
+pyvision.vector.VectorClassifier.VectorClassifier.__init__
+pyvision.vector.id3.ID3.__init__
+pyvision.vector.id3.Node.__init__
+pyvision.vector.linearreg.LinearReg.__init__" class="py-name" href="#" onclick="return doclink('link-11', '__init__', 'link-11');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">         </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">     </tt>
+<a name="DetectorSURF._detect"></a><div id="DetectorSURF._detect-def"><a name="L84"></a><tt class="py-lineno">84</tt> <a class="py-toggle" href="#" id="DetectorSURF._detect-toggle" onclick="return toggle('DetectorSURF._detect');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.point.DetectorSURF.DetectorSURF-class.html#_detect">_detect</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">im</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DetectorSURF._detect-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="DetectorSURF._detect-expanded"><a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-name">keypoints</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="pyvision.point.DetectorSURF.ExtractSURF" class="py-name" href="#" onclick="return doclink('link-12', 'ExtractSURF', 'link-5');">ExtractSURF</a></tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">,</tt><tt class="py-name">min_hessian</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">min_hessian</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">        <tt class="py-name">keypoints</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt id="link-13" class="py-name"><a title="pyvision.analysis.plot.Plot.x" class="py-name" href="#" onclick="return doclink('link-13', 'x', 'link-6');">x</a></tt><tt class="py-op">,</tt><tt id="link-14" class="py-name"><a title="pyvision.analysis.plot.Plot.y" class="py-name" href="#" onclick="return doclink('link-14', 'y', 'link-7');">y</a></tt><tt class="py-op">:</tt> <tt class="py-op">-</tt><tt class="py-name">cmp</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="pyvision.analysis.plot.Plot.x" class="py-name" href="#" onclick="return doclink('link-15', 'x', 'link-6');">x</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-16" class="py-name"><a title="pyvision.analysis.plot.Plot.y" class="py-name" href="#" onclick="return doclink('link-16', 'y', 'link-7');">y</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>          </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">keypoints</tt> </tt>
+</div></div><a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:01 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

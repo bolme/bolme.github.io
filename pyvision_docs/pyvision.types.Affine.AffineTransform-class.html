@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.types.Affine.AffineTransform</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.types-module.html">Package&nbsp;types</a> ::
+        <a href="pyvision.types.Affine-module.html">Module&nbsp;Affine</a> ::
+        Class&nbsp;AffineTransform
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.types.Affine.AffineTransform-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class AffineTransform</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform">source&nbsp;code</a></span></p>
+<p>The AffineTransform class is used to transform images and points_b 
+  back and and forth between different coordinate systems.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix</span>,
+        <span class="summary-sig-arg">new_size</span>,
+        <span class="summary-sig-arg">interpolate</span>=<span class="summary-sig-default">2</span>)</span><br />
+      Constructor for the AffineTransform.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#__call__" class="summary-sig-name">__call__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      This is a simple interface to transform images or points_b.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__call__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#invert" class="summary-sig-name">invert</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      This is a simple interface to transform images or points_b.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invert">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="invertImage"></a><span class="summary-sig-name">invertImage</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">im_a</span>,
+        <span class="summary-sig-arg">use_orig</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Perform the inverse affine transformation on the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invertImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#transformImage" class="summary-sig-name">transformImage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">im_a</span>,
+        <span class="summary-sig-arg">use_orig</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">inverse</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Transforms an image into the new coordinate system.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#transformPoint" class="summary-sig-name">transformPoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pt</span>)</span><br />
+      Transform a point from the old image to the new image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformPoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#transformPoints" class="summary-sig-name">transformPoints</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pts</span>)</span><br />
+      Transform a set of points_b from the old image to the new image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformPoints">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#invertPoint" class="summary-sig-name">invertPoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pt</span>)</span><br />
+      Transforms a Point from the new coordinate system to the old 
+      coordinate system.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invertPoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#invertPoints" class="summary-sig-name">invertPoints</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pts</span>)</span><br />
+      Transforms a list of oints from the new coordinate system to the old 
+      coordinate system.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invertPoints">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#asMatrix" class="summary-sig-name">asMatrix</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the transform as a 3 by 3 matrix</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.asMatrix">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Affine.AffineTransform-class.html#__mul__" class="summary-sig-name">__mul__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">affine</span>)</span><br />
+      Used to concatenate transforms.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__mul__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">matrix</span>,
+        <span class="sig-arg">new_size</span>,
+        <span class="sig-arg">interpolate</span>=<span class="sig-default">2</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor for the AffineTransform.  See also the affine transform 
+  factories.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>matrix</code></strong> - a 3-by-3 matrix that defines the transformation.</li>
+        <li><strong class="pname"><code>new_size</code></strong> - the size of any new images created by this affine transform.</li>
+        <li><strong class="pname"><code>interpolate</code></strong> - the image filtering function used for interpolating between 
+          pixels.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>an AffineTransform object</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__call__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__call__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+    <br /><em class="fname">(Call operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__call__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This is a simple interface to transform images or points_b.  Simply 
+  call the affine transform like a function and it will try to 
+  automatically transform the argument.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> - an image, point, or list of points_b.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="invert"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">invert</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invert">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This is a simple interface to transform images or points_b.  Simply 
+  call invert with the points_b or list of points_b and it will 
+  automatically call the correct function.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> - an image, point, or list of points_b.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transformImage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transformImage</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">im_a</span>,
+        <span class="sig-arg">use_orig</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">inverse</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformImage">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transforms an image into the new coordinate system.</p>
+  <p>If this image was produced via an affine transform of another image, 
+  this method will attempt to trace weak references to the original image 
+  and directly compute the new image from that image to improve accuracy. 
+  To accomplish this a weak reference to the original source image and the 
+  affine matrix used for the transform are added to any image produced by 
+  this method.  This can be disabled using the use_orig parameter.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>im_a</code></strong> - an Image object</li>
+        <li><strong class="pname"><code>use_orig</code></strong> - (True or False) attempts to find and use the original image as 
+          the source to avoid an accumulation of errors.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the transformed image</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transformPoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transformPoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformPoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transform a point from the old image to the new image.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pt</code></strong> - the point</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the new point</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transformPoints"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transformPoints</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.transformPoints">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transform a set of points_b from the old image to the new image.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pts</code></strong> - a list of points_b.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a list of transformed points_b.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="invertPoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">invertPoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invertPoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transforms a Point from the new coordinate system to the old 
+  coordinate system.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pt</code></strong> - a single point</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the transformed point</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="invertPoints"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">invertPoints</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.invertPoints">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transforms a list of oints from the new coordinate system to the old 
+  coordinate system.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pts</code></strong> - a list of Points</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the transformed Points</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asMatrix"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asMatrix</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.asMatrix">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the transform as a 3 by 3 matrix</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__mul__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__mul__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">affine</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Affine-pysrc.html#AffineTransform.__mul__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Used to concatenate transforms.  For example:</p>
+<pre class="literalblock">
+   # This code first scales and then translates
+   S = AffineScale(2.0)
+   T = AffineTranslate(4,5)
+   A = T*S
+   new_im = A.transformImage(old_im)
+</pre>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a single AffineTransform which is the the same as both affine 
+          transforms.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.surveillance.MotionDetector.MotionDetector</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.surveillance-module.html" onclick="show_private();">Package&nbsp;surveillance</a> ::
+        <a href="pyvision.surveillance.MotionDetector-module.html">Module&nbsp;MotionDetector</a> ::
+        Class&nbsp;MotionDetector
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class MotionDetector</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">MotionDetector</strong>
+</pre>
+
+<hr />
+<p>Uses background subtraction from an image buffer to detect areas of 
+  motion in a video.</p>
+  <p>The general process is to update the image buffer and then call the 
+  MotionDetector's detect() method.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">imageBuff</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">thresh</span>=<span class="summary-sig-default">20</span>,
+        <span class="summary-sig-arg">method</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">BG_SUBTRACT_AMF</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">minArea</span>=<span class="summary-sig-default">400</span>,
+        <span class="summary-sig-arg">rectFilter</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">buffSize</span>=<span class="summary-sig-default">5</span>,
+        <span class="summary-sig-arg">soft_thresh</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">rect_type</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">BOUNDING_RECTS</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">rect_sigma</span>=<span class="summary-sig-default">2.0</span>,
+        <span class="summary-sig-arg">smooth</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Constructor</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_initBGSubtract"></a><span class="summary-sig-name">_initBGSubtract</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector._initBGSubtract">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_computeContours"></a><span class="summary-sig-name">_computeContours</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector._computeContours">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_computeConvexHulls"></a><span class="summary-sig-name">_computeConvexHulls</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector._computeConvexHulls">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__call__"></a><span class="summary-sig-name">__call__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">img</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.__call__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#detect" class="summary-sig-name">detect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">img</span>,
+        <span class="summary-sig-arg">ConvexHulls</span>=<span class="summary-sig-default">False</span>)</span><br />
+      You call this method to update detection results, given the new image
+      in the stream.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.detect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getKeyFrame" class="summary-sig-name">getKeyFrame</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      The &quot;key frame&quot; of the motion detector's buffer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getKeyFrame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getForegroundMask" class="summary-sig-name">getForegroundMask</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      a binary pv.Image representing the foreground pixels as determined by
+      the selected background subtraction method.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundMask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getWatershedMask" class="summary-sig-name">getWatershedMask</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Uses the watershed algorithm to refine the foreground mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getWatershedMask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getForegroundPixels" class="summary-sig-name">getForegroundPixels</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bgcolor</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns:
+      The full color foreground pixels on either a blank (black) 
+      background, or on a background color specified by the user.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundPixels">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getRects" class="summary-sig-name">getRects</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the bounding boxes of the external contours of the foreground mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getRects">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getBoundingRects" class="summary-sig-name">getBoundingRects</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the bounding boxes of the external contours of the foreground mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getBoundingRects">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getStandardizedRects" class="summary-sig-name">getStandardizedRects</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the boxes centered on the target center of mass +- n_sigma*std</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getStandardizedRects">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getPolygons" class="summary-sig-name">getPolygons</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">return_all</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Returns:
+      the polygon contours of the foreground mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getPolygons">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getConvexHulls" class="summary-sig-name">getConvexHulls</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the convex hulls of the contours of the foreground mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getConvexHulls">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getAnnotatedImage" class="summary-sig-name">getAnnotatedImage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">showRects</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">showContours</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">showConvexHulls</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">showFlow</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Returns:
+      the annotation image with selected objects drawn upon it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getAnnotatedImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#annotateFrame" class="summary-sig-name">annotateFrame</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key_frame</span>,
+        <span class="summary-sig-arg">rect_color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">yellow</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">contour_color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">#00FF00</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">flow_color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">white</code><code class="variable-quote">'</code></span>)</span><br />
+      Draws detection results on an image (key_frame) specified by the 
+      user.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.annotateFrame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html#getForegroundTiles" class="summary-sig-name">getForegroundTiles</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bgcolor</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns:
+      a list of &quot;tiles&quot;, where each tile is a small pv.Image 
+      representing the clipped area of the annotationImg based on the 
+      motion detection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundTiles">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">imageBuff</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">thresh</span>=<span class="sig-default">20</span>,
+        <span class="sig-arg">method</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">BG_SUBTRACT_AMF</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">minArea</span>=<span class="sig-default">400</span>,
+        <span class="sig-arg">rectFilter</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">buffSize</span>=<span class="sig-default">5</span>,
+        <span class="sig-arg">soft_thresh</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">rect_type</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">BOUNDING_RECTS</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">rect_sigma</span>=<span class="sig-default">2.0</span>,
+        <span class="sig-arg">smooth</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>imageBuff</code></strong> - a pv.ImageBuffer object to be used in the background subtraction 
+          step of the motion detection. If None, then this object will 
+          create an empty 5-frame buffer, and until the buffer is full, the
+          results of the motion detection will be nothing.</li>
+        <li><strong class="pname"><code>thresh</code></strong> - Used by the background subtraction to eliminate noise.</li>
+        <li><strong class="pname"><code>method</code></strong> - Select background subtraction method. See constants defined in 
+          BackgroundSubtraction module</li>
+        <li><strong class="pname"><code>minArea</code></strong> - minimum foreground contour area required for detection</li>
+        <li><strong class="pname"><code>rectFilter</code></strong> - a function reference that takes a list of rectangles and returns 
+          a list filtered in some way. This allows the user to arbitrarily 
+          define rules to further limit motion detection results based on 
+          the geometry of the bounding boxes.</li>
+        <li><strong class="pname"><code>buffSize</code></strong> - Only used if imageBuff==None. This controls the size of the 
+          internal image buffer.</li>
+        <li><strong class="pname"><code>soft_thresh</code></strong> - Specify if the background subtraction method should use a soft 
+          threshold, in which case the returned mask is no longer a binary 
+          image, but represents weighted values. NOTE: NOT CURRENTLY 
+          IMPLEMENTED. SOFT THRESHOLD WILL BE IGNORED, HARD THRESHOLD ONLY 
+          IN THIS VERSION.</li>
+        <li><strong class="pname"><code>smooth</code></strong> - applies smothing to the image before detection which can reduce 
+          false detections.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Until the image buffer is full, the result of the motion detection 
+        will be nothing. See documentation on the detect(img) method of 
+        this class.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="detect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">detect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">img</span>,
+        <span class="sig-arg">ConvexHulls</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.detect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>You call this method to update detection results, given the new image 
+  in the stream. After updating detection results, use one of the get*() 
+  methods, such as getRects() to see the results in the appropriate 
+  format.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>img</code></strong> - A pv.Image() to be added to the buffer as the most recent image, 
+          and that triggers the new motion detection. Note that, depending 
+          on the background subtraction method, this may not be the 
+          &quot;key frame&quot; for the detection. The Frame Differencer 
+          returns a background model based on the middle image, but Median 
+          and Approx. Median Filters return a background model based on the
+          most recent (last) image in the buffer.</li>
+        <li><strong class="pname"><code>ConvexHulls</code></strong> - If true, then the detected foreground pixels are grouped into 
+          convex hulls, which can have the effect of removing internal 
+          &quot;holes&quot; in the detection.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The number of detected components in the current image. To get 
+          more details, use the various getX() methods, like 
+          getForegroundMask(), after calling detect().</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Until the image buffer is full, this method will make no 
+        detections. In which case, the return value will be -1, indicating 
+        this status. Also, the getKeyFrame() method should be used to 
+        retrieve the key frame from the buffer, which is not always the 
+        most recent image, depending on background subtraction method.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getKeyFrame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getKeyFrame</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getKeyFrame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>The &quot;key frame&quot; of the motion detector's buffer. This 
+          is the image upon which detected motion rectangles, for example, 
+          should be overlaid. This is not always the last image in the 
+          buffer because some background subtraction methods (notably 
+          N-Frame Differencer) use the middle frame of the buffer.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getForegroundMask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getForegroundMask</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundMask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a binary pv.Image representing the foreground pixels as 
+          determined by the selected background subtraction method.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call the detect() method before getForegroundMask() to get
+        the updated mask.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getWatershedMask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWatershedMask</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getWatershedMask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Uses the watershed algorithm to refine the foreground mask. Currently,
+  this doesn't work well on real video...maybe grabcut would be better.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getForegroundPixels"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getForegroundPixels</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bgcolor</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundPixels">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bgcolor</code></strong> - The background color to use. Specify as an (R,G,B) tuple. Specify
+          None for a blank/black background.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The full color foreground pixels on either a blank (black) 
+          background, or on a background color specified by the user.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getForegroundPixels() to get updated 
+        information.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getRects"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRects</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getRects">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the bounding boxes of the external contours of the foreground 
+          mask. The boxes will either be the bounding rectangles of the 
+          contours, or a box fitted to the contours based on the center of 
+          mass and n-sigma deviations in x and y. This preference is 
+          selected when initializing the MotionDetector object.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getRects() to see updated results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getBoundingRects"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBoundingRects</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getBoundingRects">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the bounding boxes of the external contours of the foreground 
+          mask.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getBoundingRects() to see updated 
+        results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getStandardizedRects"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getStandardizedRects</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getStandardizedRects">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the boxes centered on the target center of mass +- n_sigma*std</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getStandardizedRects() to see updated
+        results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getPolygons"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPolygons</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">return_all</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getPolygons">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>return_all</code></strong> - return all contours regardless of min area.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the polygon contours of the foreground mask. The polygons are 
+          compatible with pv.Image annotatePolygon() method.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getPolygons() to see updated results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getConvexHulls"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getConvexHulls</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getConvexHulls">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the convex hulls of the contours of the foreground mask.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() before getConvexHulls() to see updated 
+        results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="getAnnotatedImage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getAnnotatedImage</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">showRects</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">showContours</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">showConvexHulls</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">showFlow</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getAnnotatedImage">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the annotation image with selected objects drawn upon it. 
+          showFlow will only work if the BG subtraction method was MCFD.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() prior to getAnnotatedImage() to see updated 
+        results.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="annotateFrame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateFrame</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">key_frame</span>,
+        <span class="sig-arg">rect_color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">yellow</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">contour_color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">#00FF00</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">flow_color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">white</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.annotateFrame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws detection results on an image (key_frame) specified by the user.
+  Specify None as the color for any aspect you wish not drawn.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>Renders annotations onto key frame that shows detection 
+          information.</dd>
+  </dl>
+<div class="fields">      <strong>Notes:</strong>
+      <ul class="nomargin-top">
+        <li>
+        You must call detect() prior to annotateFrame() to see updated 
+        results.
+        </li>
+        <li>
+        Optical flow is only shown if method was MCFD
+        </li>
+      </ul>
+</div></td></tr></table>
+</div>
+<a name="getForegroundTiles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getForegroundTiles</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">bgcolor</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.surveillance.MotionDetector-pysrc.html#MotionDetector.getForegroundTiles">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bgcolor</code></strong> - The background color to use. Specify as an (R,G,B) tuple. Specify
+          None for a blank/black background.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a list of &quot;tiles&quot;, where each tile is a small pv.Image 
+          representing the clipped area of the annotationImg based on the 
+          motion detection. Only the foreground pixels are copied, so the 
+          result are tiles with full-color foreground pixels on the 
+          specified background color (black by default).</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        You must call detect() prior to getForegroundTiles() to get updated
+        information.
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

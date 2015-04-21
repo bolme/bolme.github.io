@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.analysis.Timer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.analysis-module.html">Package&nbsp;analysis</a> ::
+        Module&nbsp;Timer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.analysis.Timer-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.analysis.Timer-module.html">Module pyvision.analysis.Timer</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package pyvision=pyvision-module.html"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-0', 'pyvision', 'link-0');">pyvision</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">pv</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="Timer"></a><div id="Timer-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="Timer-toggle" onclick="return toggle('Timer');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.analysis.Timer.Timer-class.html">Timer</a><tt class="py-op">:</tt> </tt>
+</div><div id="Timer-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Timer-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    A simple timer class used to measure and record run times.  Each timer has a</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    member variable named table which keeps a log of timing data.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    Usage:</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    timer = pv.Timer()</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    ... Do Some Stuff ...</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">    timer.mark("Event 1")</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    ... Do Some Stuff ...</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    timer.mark("Event 2")</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">    print timer</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">    -- or --</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    ilog(timer,"TimingData")</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">     </tt>
+<a name="Timer.__init__"></a><div id="Timer.__init__-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="Timer.__init__-toggle" onclick="return toggle('Timer.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.analysis.Timer.Timer-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Timer.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Timer.__init__-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">        Create and setup the timer.  Also creates a mark titled "Timer Created".</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method pyvision.analysis.ImageLog.ImageLog.table()=pyvision.analysis.ImageLog.ImageLog-class.html#table,Method pyvision.analysis.html_report.HtmlReport.table()=pyvision.analysis.html_report.HtmlReport-class.html#table"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-1', 'table', 'link-1');">table</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module pyvision.analysis.Table=pyvision.analysis.Table-module.html,Class pyvision.analysis.Table.Table=pyvision.analysis.Table.Table-class.html"><a title="pyvision.analysis.Table
+pyvision.analysis.Table.Table" class="py-name" href="#" onclick="return doclink('link-2', 'Table', 'link-2');">Table</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">started</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable pyvision.other.distance.i=pyvision.other.distance-module.html#i,Variable pyvision.vector.RidgeRegression.KernelRidgeRegression.i=pyvision.vector.RidgeRegression.KernelRidgeRegression-class.html#i"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-3', 'i', 'link-3');">i</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method pyvision.analysis.Timer.Timer.mark()=pyvision.analysis.Timer.Timer-class.html#mark"><a title="pyvision.analysis.Timer.Timer.mark" class="py-name" href="#" onclick="return doclink('link-4', 'mark', 'link-4');">mark</a></tt><tt class="py-op">(</tt><tt class="py-string">"Timer Created"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">                 </tt>
+<a name="Timer.mark"></a><div id="Timer.mark-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="Timer.mark-toggle" onclick="return toggle('Timer.mark');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.analysis.Timer.Timer-class.html#mark">mark</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">event</tt><tt class="py-op">,</tt><tt class="py-param">notes</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Timer.mark-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Timer.mark-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        @param event: a short text description of the event being marked.</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">        @param notes: additional notes for this event.</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-docstring">        @returns: 6-tuple of times in seconds: Wall Clock Time, Time since last mark, Time since creation, CPU time, CPU time since last mark, CPU time since creation</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-name">current</tt> <tt class="py-op">=</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-name">cpu</tt> <tt class="py-op">=</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">clock</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">started</tt> <tt class="py-op">==</tt> <tt class="py-name">False</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">started</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method pyvision.analysis.gui_tools.CaptureClicksVideo.prev()=pyvision.analysis.gui_tools.CaptureClicksVideo-class.html#prev"><a title="pyvision.analysis.gui_tools.CaptureClicksVideo.prev" class="py-name" href="#" onclick="return doclink('link-5', 'prev', 'link-5');">prev</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">start</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_prev</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_start</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-6', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-7', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"event"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-8', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-9', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"time"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-10', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-11', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"current"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="pyvision.analysis.gui_tools.CaptureClicksVideo.prev" class="py-name" href="#" onclick="return doclink('link-12', 'prev', 'link-5');">prev</a></tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-13', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-14', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"total"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">start</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-15', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-16', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"cpu_time"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-17', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-18', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"cpu_current"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_prev</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-19', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-20', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"cpu_total"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_start</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-21', 'table', 'link-1');">table</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-22', 'i', 'link-3');">i</a></tt><tt class="py-op">,</tt><tt class="py-string">"notes"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">notes</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">         </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-name">rt</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">        <tt class="py-name">ct</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="pyvision.analysis.gui_tools.CaptureClicksVideo.prev" class="py-name" href="#" onclick="return doclink('link-23', 'prev', 'link-5');">prev</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-name">tot</tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">start</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">crt</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">cct</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_prev</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-name">ctot</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_start</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">         </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="pyvision.analysis.gui_tools.CaptureClicksVideo.prev" class="py-name" href="#" onclick="return doclink('link-24', 'prev', 'link-5');">prev</a></tt> <tt class="py-op">=</tt> <tt class="py-name">current</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cpu_prev</tt> <tt class="py-op">=</tt> <tt class="py-name">cpu</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="pyvision.other.distance.i
+pyvision.vector.RidgeRegression.KernelRidgeRegression.i" class="py-name" href="#" onclick="return doclink('link-25', 'i', 'link-3');">i</a></tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">         </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">rt</tt><tt class="py-op">,</tt><tt class="py-name">ct</tt><tt class="py-op">,</tt><tt class="py-name">tot</tt><tt class="py-op">,</tt><tt class="py-name">crt</tt><tt class="py-op">,</tt><tt class="py-name">cct</tt><tt class="py-op">,</tt><tt class="py-name">ctot</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">         </tt>
+<a name="Timer.__str__"></a><div id="Timer.__str__-def"><a name="L70"></a><tt class="py-lineno">70</tt> <a class="py-toggle" href="#" id="Timer.__str__-toggle" onclick="return toggle('Timer.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.analysis.Timer.Timer-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Timer.__str__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Timer.__str__-expanded"><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">        <tt class="py-docstring">'''Render the timing log to a string.'''</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">         </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-26', 'table', 'link-1');">table</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest.__str__()=pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest-class.html#__str__,Method pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject.__str__()=pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject-class.html#__str__,Method pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest.__str__()=pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest-class.html#__str__,Method pyvision.analysis.Table.Table.__str__()=pyvision.analysis.Table.Table-class.html#__str__,Method pyvision.analysis.Timer.Timer.__str__()=pyvision.analysis.Timer.Timer-class.html#__str__,Method pyvision.analysis.bee.BEEDistanceMatrix.__str__()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#__str__,Method pyvision.analysis.progress_bar.ProgressBar.__str__()=pyvision.analysis.progress_bar.ProgressBar-class.html#__str__,Method pyvision.analysis.roc.ROCPoint.__str__()=pyvision.analysis.roc.ROCPoint-class.html#__str__,Method pyvision.analysis.stats.SummaryStats.__str__()=pyvision.analysis.stats.SummaryStats-class.html#__str__,Method pyvision.beta.vtm.DefaultData.__str__()=pyvision.beta.vtm.DefaultData-class.html#__str__,Method pyvision.beta.vtm.EmptyData.__str__()=pyvision.beta.vtm.EmptyData-class.html#__str__,Method pyvision.surveillance.kalman.KalmanFilter.__str__()=pyvision.surveillance.kalman.KalmanFilter-class.html#__str__,Method pyvision.types.Point.Point.__str__()=pyvision.types.Point.Point-class.html#__str__,Method pyvision.types.Rect.Rect.__str__()=pyvision.types.Rect.Rect-class.html#__str__,Method pyvision.vector.RidgeRegression.LINEAR.__str__()=pyvision.vector.RidgeRegression.LINEAR-class.html#__str__,Method pyvision.vector.RidgeRegression.RBF.__str__()=pyvision.vector.RidgeRegression.RBF-class.html#__str__"><a title="pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest.__str__
+pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject.__str__
+pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest.__str__
+pyvision.analysis.Table.Table.__str__
+pyvision.analysis.Timer.Timer.__str__
+pyvision.analysis.bee.BEEDistanceMatrix.__str__
+pyvision.analysis.progress_bar.ProgressBar.__str__
+pyvision.analysis.roc.ROCPoint.__str__
+pyvision.analysis.stats.SummaryStats.__str__
+pyvision.beta.vtm.DefaultData.__str__
+pyvision.beta.vtm.EmptyData.__str__
+pyvision.surveillance.kalman.KalmanFilter.__str__
+pyvision.types.Point.Point.__str__
+pyvision.types.Rect.Rect.__str__
+pyvision.vector.RidgeRegression.LINEAR.__str__
+pyvision.vector.RidgeRegression.RBF.__str__" class="py-name" href="#" onclick="return doclink('link-27', '__str__', 'link-27');">__str__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">     </tt>
+<a name="Timer.save"></a><div id="Timer.save-def"><a name="L75"></a><tt class="py-lineno">75</tt> <a class="py-toggle" href="#" id="Timer.save-toggle" onclick="return toggle('Timer.save');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.analysis.Timer.Timer-class.html#save">save</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">filename</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Timer.save-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Timer.save-expanded"><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-docstring">'''Save the timing log to a csv file.'''</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-28', 'table', 'link-1');">table</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method pyvision.analysis.Table.Table.save()=pyvision.analysis.Table.Table-class.html#save,Method pyvision.analysis.Timer.Timer.save()=pyvision.analysis.Timer.Timer-class.html#save,Method pyvision.analysis.bee.BEEDistanceMatrix.save()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#save,Method pyvision.analysis.html_report.HtmlReport.save()=pyvision.analysis.html_report.HtmlReport-class.html#save,Method pyvision.gui.EyePicker.EyePickerFrame.save()=pyvision.gui.EyePicker.EyePickerFrame-class.html#save,Method pyvision.ml.opencv_ml.StatsModelWrapper.save()=pyvision.ml.opencv_ml.StatsModelWrapper-class.html#save,Method pyvision.types.img.Image.save()=pyvision.types.img.Image-class.html#save"><a title="pyvision.analysis.Table.Table.save
+pyvision.analysis.Timer.Timer.save
+pyvision.analysis.bee.BEEDistanceMatrix.save
+pyvision.analysis.html_report.HtmlReport.save
+pyvision.gui.EyePicker.EyePickerFrame.save
+pyvision.ml.opencv_ml.StatsModelWrapper.save
+pyvision.types.img.Image.save" class="py-name" href="#" onclick="return doclink('link-29', 'save', 'link-29');">save</a></tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:00 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

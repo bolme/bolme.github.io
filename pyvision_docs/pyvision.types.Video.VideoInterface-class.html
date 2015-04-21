@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.types.Video.VideoInterface</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.types-module.html">Package&nbsp;types</a> ::
+        <a href="pyvision.types.Video-module.html">Module&nbsp;Video</a> ::
+        Class&nbsp;VideoInterface
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.types.Video.VideoInterface-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class VideoInterface</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">VideoInterface</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="pyvision.types.Video.Video-class.html">Video</a></li><li>, <a href="pyvision.types.Video.VideoFromDirectory-class.html">VideoFromDirectory</a></li><li>, <a href="pyvision.types.Video.VideoFromFileList-class.html">VideoFromFileList</a></li><li>, <a href="pyvision.types.Video.VideoFromImageStack-class.html">VideoFromImageStack</a></li><li>, <a href="pyvision.types.Video.VideoFromImages-class.html">VideoFromImages</a></li><li>, <a href="pyvision.types.Video.Webcam-class.html">Webcam</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>VideoInterface is an abstract class meant only to define a common 
+  interface for all Video subtypes. The VideoInterface defines the methods 
+  that every video data source should provide.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="query"></a><span class="summary-sig-name">query</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Must be overridden to implement the specific frame-grabbing required 
+      by different video sources.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.query">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="grab"></a><span class="summary-sig-name">grab</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      This is a placeholder for the open cv webcam interface that sometimes
+      requires this call.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.grab">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Video.VideoInterface-class.html#next" class="summary-sig-name">next</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The next method calls self.query(), so it is common to most video 
+      sources and may not need to be overridden.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.next">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Video.VideoInterface-class.html#resize" class="summary-sig-name">resize</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">frame</span>)</span><br />
+      Used to resize the source frame to the desired output size.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.resize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__iter__"></a><span class="summary-sig-name">__iter__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Override to provide an appropriate iterator for your video source so 
+      that it can be used in a for loop as &quot;for im in videoX: 
+      ...&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.__iter__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Video.VideoInterface-class.html#play" class="summary-sig-name">play</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">window</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Input</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">pos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">delay</span>=<span class="summary-sig-default">20</span>,
+        <span class="summary-sig-arg">annotate</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">imageBuffer</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">startframe</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">endframe</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">onNewFrame</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Plays the video, calling the onNewFrame function after loading each
+ frame from the video.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.play">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.Video.VideoInterface-class.html#_pauseAndPlay" class="summary-sig-name" onclick="show_private();">_pauseAndPlay</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">delayObj</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">current_state</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">PLAYING</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">wait_time</code><code class="variable-quote">'</code><code class="variable-op">: </code>20<code class="variable-group">}</code></span>)</span><br />
+      This function is intended to be used in the playback loop of a video.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface._pauseAndPlay">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="next"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">next</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.next">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The next method calls self.query(), so it is common to most video 
+  sources and may not need to be overridden.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>The next frame in the sequence, or raise StopIteration if done.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="resize"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resize</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">frame</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.resize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Used to resize the source frame to the desired output size. This 
+  method is common to most sources and may not need to be overridden. The 
+  query() method will typically call this resize() method prior to 
+  returning the captured image.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>frame</code></strong> - An openCV image (note: not a pyvision image)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An openCV image with the new dimensions</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="play"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">play</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">window</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Input</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">pos</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">delay</span>=<span class="sig-default">20</span>,
+        <span class="sig-arg">annotate</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">imageBuffer</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">startframe</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">endframe</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">onNewFrame</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface.play">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Plays the video, calling the onNewFrame function after loading each
+ frame from the video. The user may interrupt video playback by
+ hitting (sometimes repeatedly) the spacebar, upon which they are
+ given a text menu in the console to abort program, quit playback,
+ continue playback, or step to the next frame.
+@param window: The window name used to display the video. If None,
+then the video won't be shown, but onNewFrame will be called at
+each frame.
+@param pos: A tuple (x,y) where the output window should be located
+on the users screen. None indicates default openCV positioning algorithm
+will be used.
+@param delay: The delay in ms between window updates. This allows the user
+to control the playback frame rate. A value of 0 indicates that the video
+will wait for keyboard input prior to advancing to the next frame. This
+delay is used by the pauseAndPlay interface, so it will affect the rate
+at which onNewFrame is called as well.
+@param annotate: If True, the image will be annotated with the frame number
+in the upper left corner. Set false for no frame number annotation.
+@param imageBuffer: An optional pyvision ImageBuffer object to contain the
+most recent frames. This is useful if a buffer is required for background
+subtraction, for example. The buffer contents is directly modified each
+time a new image is captured from the video, and a reference to the buffer
+is passed to the onNewFrame function (defined below).
+@param startframe: If &gt; 0, then the video will cue itself by quickly fast-forwarding
+to the desired start frame before any images are shown. During the cueing process,
+any _onNewFrame function callbacks (or VideoStreamProcessor objects) will NOT be
+activated.
+@param endframe: If not None, then the playback will end after this frame has
+been processed.
+@param onNewFrame: A python callable object (function) with a
+signature of 'foo( pvImage, frameNum, key=None, buffer=None )', where key is
+the key pressed by the user (if any) during the pauseAndPlay interface, and
+buffer is a reference to the optional image buffer provided to the play method.
+@param kwargs: Optional keyword arguments that should be passed
+onto the onNewFrame function.
+@return: The final frame number of the video, or the frame number at which
+the user terminated playback using the 'q'uit option.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_pauseAndPlay"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_pauseAndPlay</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">delayObj</span>=<span class="sig-default"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">current_state</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">PLAYING</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">wait_time</code><code class="variable-quote">'</code><code class="variable-op">: </code>20<code class="variable-group">}</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.Video-pysrc.html#VideoInterface._pauseAndPlay">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function is intended to be used in the playback loop of a video. 
+  It allows the user to interrupt the playback to pause the video, to step 
+  through it one frame at a time, and to register other keys/commands that 
+  the user may select.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>delayObj</code></strong> - The &quot;delay object&quot;, which is just a dictionary that 
+          specifies the wait_time (the delay in ms between frames), and the
+          current_state of either 'PLAYING' or 'PAUSED'</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

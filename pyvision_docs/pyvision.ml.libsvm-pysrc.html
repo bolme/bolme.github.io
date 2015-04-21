@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.ml.libsvm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.ml-module.html">Package&nbsp;ml</a> ::
+        Module&nbsp;libsvm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.ml.libsvm-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.ml.libsvm-module.html">Module pyvision.ml.libsvm</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Nov 23, 2010</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">@author: bolme</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">svm</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">tempfile</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="UntrainedClassifierError"></a><div id="UntrainedClassifierError-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="UntrainedClassifierError-toggle" onclick="return toggle('UntrainedClassifierError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.UntrainedClassifierError-class.html">UntrainedClassifierError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UntrainedClassifierError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="UntrainedClassifierError-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="_LabelMap"></a><div id="_LabelMap-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="_LabelMap-toggle" onclick="return toggle('_LabelMap');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelMap-class.html">_LabelMap</a><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelMap-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_LabelMap-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-docstring">'''Converts class labels back and forth to integer codes.'''</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">     </tt>
+<a name="_LabelMap.__init__"></a><div id="_LabelMap.__init__-def"><a name="L19"></a><tt class="py-lineno"> 19</tt> <a class="py-toggle" href="#" id="_LabelMap.__init__-toggle" onclick="return toggle('_LabelMap.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelMap-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelMap.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelMap.__init__-expanded"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-docstring">'''Create and initialze the mapping.'''</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_forward_map</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_backward_map</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_code</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">         </tt>
+<a name="_LabelMap.toCode"></a><div id="_LabelMap.toCode-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="_LabelMap.toCode-toggle" onclick="return toggle('_LabelMap.toCode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelMap-class.html#toCode">toCode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">label</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelMap.toCode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelMap.toCode-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-docstring">'''Converts a label to an integer code. Codes are defined as needed.'''</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_forward_map</tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt><tt id="link-0" class="py-name" targets="Method pyvision.analysis.plot.Plot.label()=pyvision.analysis.plot.Plot-class.html#label"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-0', 'label', 'link-0');">label</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_forward_map</tt><tt class="py-op">[</tt><tt id="link-1" class="py-name"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-1', 'label', 'link-0');">label</a></tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_code</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_backward_map</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_code</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-2', 'label', 'link-0');">label</a></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_current_code</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">             </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_forward_map</tt><tt class="py-op">[</tt><tt id="link-3" class="py-name"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-3', 'label', 'link-0');">label</a></tt><tt class="py-op">]</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="_LabelMap.toLabel"></a><div id="_LabelMap.toLabel-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="_LabelMap.toLabel-toggle" onclick="return toggle('_LabelMap.toLabel');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelMap-class.html#toLabel">toLabel</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">code</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelMap.toLabel-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelMap.toLabel-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-docstring">'''Converts a code back into a label'''</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_backward_map</tt><tt class="py-op">[</tt><tt class="py-name">code</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">     </tt>
+<a name="_LabelScale"></a><div id="_LabelScale-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="_LabelScale-toggle" onclick="return toggle('_LabelScale');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelScale-class.html">_LabelScale</a><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelScale-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_LabelScale-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-docstring">'''Converts class labels back and forth to integer codes.'''</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">     </tt>
+<a name="_LabelScale.__init__"></a><div id="_LabelScale.__init__-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="_LabelScale.__init__-toggle" onclick="return toggle('_LabelScale.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelScale-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelScale.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelScale.__init__-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-docstring">'''Create and initialze the mapping.'''</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt> <tt class="py-op">=</tt> <tt class="py-number">0.0</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">std</tt> <tt class="py-op">=</tt> <tt class="py-number">0.0</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">         </tt>
+<a name="_LabelScale.train"></a><div id="_LabelScale.train-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="_LabelScale.train-toggle" onclick="return toggle('_LabelScale.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelScale-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelScale.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelScale.train-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-name">labels</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">         </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt> <tt class="py-op">=</tt> <tt class="py-name">labels</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">std</tt> <tt class="py-op">=</tt> <tt class="py-name">labels</tt><tt class="py-op">.</tt><tt class="py-name">std</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">         </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">labels</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">labels</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">std</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">         </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-4" class="py-name" targets="Package pyvision.analysis.FaceAnalysis.data=pyvision.analysis.FaceAnalysis.data-module.html,Package pyvision.data=pyvision.data-module.html,Variable pyvision.types.exif.data=pyvision.types.exif-module.html#data"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-4', 'data', 'link-4');">data</a></tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">         </tt>
+<a name="_LabelScale.toScaled"></a><div id="_LabelScale.toScaled-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="_LabelScale.toScaled-toggle" onclick="return toggle('_LabelScale.toScaled');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelScale-class.html#toScaled">toScaled</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">label</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelScale.toScaled-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelScale.toScaled-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-docstring">''''''</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt>  <tt class="py-op">(</tt><tt id="link-5" class="py-name"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-5', 'label', 'link-0');">label</a></tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">std</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="_LabelScale.toOrig"></a><div id="_LabelScale.toOrig-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="_LabelScale.toOrig-toggle" onclick="return toggle('_LabelScale.toOrig');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm._LabelScale-class.html#toOrig">toOrig</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">code</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_LabelScale.toOrig-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_LabelScale.toOrig-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-docstring">''''''</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">code</tt> <tt class="py-op">*</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">std</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt> </tt>
+</div></div><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">     </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="FeaturePreprocessor"></a><div id="FeaturePreprocessor-def"><a name="L65"></a><tt class="py-lineno"> 65</tt> <a class="py-toggle" href="#" id="FeaturePreprocessor-toggle" onclick="return toggle('FeaturePreprocessor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.FeaturePreprocessor-class.html">FeaturePreprocessor</a><tt class="py-op">:</tt> </tt>
+</div><div id="FeaturePreprocessor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="FeaturePreprocessor-expanded"><a name="FeaturePreprocessor.__init__"></a><div id="FeaturePreprocessor.__init__-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="FeaturePreprocessor.__init__-toggle" onclick="return toggle('FeaturePreprocessor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.FeaturePreprocessor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FeaturePreprocessor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="FeaturePreprocessor.__init__-expanded"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">     </tt>
+<a name="FeaturePreprocessor.train"></a><div id="FeaturePreprocessor.train-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="FeaturePreprocessor.train-toggle" onclick="return toggle('FeaturePreprocessor.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.FeaturePreprocessor-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FeaturePreprocessor.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="FeaturePreprocessor.train-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">     </tt>
+<a name="FeaturePreprocessor.__call__"></a><div id="FeaturePreprocessor.__call__-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="FeaturePreprocessor.__call__-toggle" onclick="return toggle('FeaturePreprocessor.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.FeaturePreprocessor-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">vector</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FeaturePreprocessor.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="FeaturePreprocessor.__call__-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="NoNorm"></a><div id="NoNorm-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="NoNorm-toggle" onclick="return toggle('NoNorm');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.NoNorm-class.html">NoNorm</a><tt class="py-op">(</tt><tt class="py-base-class">FeaturePreprocessor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NoNorm-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="NoNorm-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">     </tt>
+<a name="NoNorm.__init__"></a><div id="NoNorm.__init__-def"><a name="L77"></a><tt class="py-lineno"> 77</tt> <a class="py-toggle" href="#" id="NoNorm.__init__-toggle" onclick="return toggle('NoNorm.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.NoNorm-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NoNorm.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NoNorm.__init__-expanded"><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">     </tt>
+<a name="NoNorm.train"></a><div id="NoNorm.train-def"><a name="L80"></a><tt class="py-lineno"> 80</tt> <a class="py-toggle" href="#" id="NoNorm.train-toggle" onclick="return toggle('NoNorm.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.NoNorm-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NoNorm.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NoNorm.train-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-6" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-6', 'data', 'link-4');">data</a></tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">     </tt>
+<a name="NoNorm.__call__"></a><div id="NoNorm.__call__-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="NoNorm.__call__-toggle" onclick="return toggle('NoNorm.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.NoNorm-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">vector</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NoNorm.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NoNorm.__call__-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-7" class="py-name" targets="Package pyvision.vector=pyvision.vector-module.html"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-7', 'vector', 'link-7');">vector</a></tt> </tt>
+</div></div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="ZNormValues"></a><div id="ZNormValues-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="ZNormValues-toggle" onclick="return toggle('ZNormValues');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.ZNormValues-class.html">ZNormValues</a><tt class="py-op">(</tt><tt class="py-base-class">FeaturePreprocessor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ZNormValues-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ZNormValues-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">     </tt>
+<a name="ZNormValues.__init__"></a><div id="ZNormValues.__init__-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="ZNormValues.__init__-toggle" onclick="return toggle('ZNormValues.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.ZNormValues-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ZNormValues.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ZNormValues.__init__-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">     </tt>
+<a name="ZNormValues.train"></a><div id="ZNormValues.train-def"><a name="L92"></a><tt class="py-lineno"> 92</tt> <a class="py-toggle" href="#" id="ZNormValues.train-toggle" onclick="return toggle('ZNormValues.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.ZNormValues-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ZNormValues.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ZNormValues.train-expanded"><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-8', 'data', 'link-4');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-9', 'data', 'link-4');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">std</tt><tt class="py-op">(</tt><tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt id="link-10" class="py-name" targets="Variable pyvision.features.v1like.n=pyvision.features.v1like-module.html#n"><a title="pyvision.features.v1like.n" class="py-name" href="#" onclick="return doclink('link-10', 'n', 'link-10');">n</a></tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method pyvision.analysis.bee.BEEDistanceMatrix.shape()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#shape"><a title="pyvision.analysis.bee.BEEDistanceMatrix.shape" class="py-name" href="#" onclick="return doclink('link-11', 'shape', 'link-11');">shape</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt id="link-12" class="py-name"><a title="pyvision.features.v1like.n" class="py-name" href="#" onclick="return doclink('link-12', 'n', 'link-10');">n</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="pyvision.analysis.bee.BEEDistanceMatrix.shape" class="py-name" href="#" onclick="return doclink('link-13', 'shape', 'link-11');">shape</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt id="link-14" class="py-name"><a title="pyvision.features.v1like.n" class="py-name" href="#" onclick="return doclink('link-14', 'n', 'link-10');">n</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">         </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-comment"># TODO: Need to correct for zero values in stds</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-comment"># self.stds[np.abs(self.stds) &lt; 1e-6] = 1.0        </tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">         </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt id="link-15" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-15', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-16', 'data', 'link-4');">data</a></tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">         </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt><tt class="py-op">.</tt><tt class="py-name">flatten</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt><tt class="py-op">.</tt><tt class="py-name">flatten</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">         </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-17" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-17', 'data', 'link-4');">data</a></tt> </tt>
+</div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">     </tt>
+<a name="ZNormValues.__call__"></a><div id="ZNormValues.__call__-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="ZNormValues.__call__-toggle" onclick="return toggle('ZNormValues.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.ZNormValues-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">vector</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ZNormValues.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ZNormValues.__call__-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-comment">#if not isinstance(vector,np.ndarray):</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-18', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-19', 'vector', 'link-7');">vector</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt id="link-20" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-20', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt>  <tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-21', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">means</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stds</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-22" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-22', 'vector', 'link-7');">vector</a></tt> </tt>
+</div></div><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="Classifier"></a><div id="Classifier-def"><a name="L116"></a><tt class="py-lineno">116</tt> <a class="py-toggle" href="#" id="Classifier-toggle" onclick="return toggle('Classifier');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.Classifier-class.html">Classifier</a><tt class="py-op">:</tt> </tt>
+</div><div id="Classifier-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Classifier-expanded"><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="Regression"></a><div id="Regression-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="Regression-toggle" onclick="return toggle('Regression');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.Regression-class.html">Regression</a><tt class="py-op">:</tt> </tt>
+</div><div id="Regression-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Regression-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="SVC"></a><div id="SVC-def"><a name="L122"></a><tt class="py-lineno">122</tt> <a class="py-toggle" href="#" id="SVC-toggle" onclick="return toggle('SVC');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html">SVC</a><tt class="py-op">(</tt><tt class="py-base-class">Classifier</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SVC-expanded"><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">     </tt>
+<a name="SVC.__init__"></a><div id="SVC.__init__-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="SVC.__init__-toggle" onclick="return toggle('SVC.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">C</tt><tt class="py-op">=</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt><tt class="py-param">gamma</tt><tt class="py-op">=</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt><tt class="py-param">preprocessor</tt><tt class="py-op">=</tt><tt id="link-23" class="py-name" targets="Class pyvision.ml.libsvm.ZNormValues=pyvision.ml.libsvm.ZNormValues-class.html"><a title="pyvision.ml.libsvm.ZNormValues" class="py-name" href="#" onclick="return doclink('link-23', 'ZNormValues', 'link-23');">ZNormValues</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVC.__init__-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-docstring">'''Create a support vector machine classifier.'''</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">         </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">         </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">preprocessor</tt><tt class="py-op">,</tt><tt id="link-24" class="py-name" targets="Class pyvision.ml.libsvm.FeaturePreprocessor=pyvision.ml.libsvm.FeaturePreprocessor-class.html"><a title="pyvision.ml.libsvm.FeaturePreprocessor" class="py-name" href="#" onclick="return doclink('link-24', 'FeaturePreprocessor', 'link-24');">FeaturePreprocessor</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt> <tt class="py-op">=</tt> <tt class="py-name">preprocessor</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">         </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_C</tt> <tt class="py-op">=</tt> <tt class="py-name">C</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_gamma</tt> <tt class="py-op">=</tt> <tt class="py-name">gamma</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_map</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name" targets="Class pyvision.ml.libsvm._LabelMap=pyvision.ml.libsvm._LabelMap-class.html"><a title="pyvision.ml.libsvm._LabelMap" class="py-name" href="#" onclick="return doclink('link-25', '_LabelMap', 'link-25');">_LabelMap</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">         </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">         </tt>
+<a name="SVC.__getstate__"></a><div id="SVC.__getstate__-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="SVC.__getstate__-toggle" onclick="return toggle('SVC.__getstate__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html#__getstate__">__getstate__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC.__getstate__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVC.__getstate__-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-docstring">'''This function is neccessary for pickling'''</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-comment"># Translate everything but the svm because that cannot be simply pickled.</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt id="link-26" class="py-name" targets="Method pyvision.surveillance.kalman.KalmanFilter.state()=pyvision.surveillance.kalman.KalmanFilter-class.html#state"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-26', 'state', 'link-26');">state</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt class="py-string">'_model'</tt><tt class="py-op">:</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method pyvision.analysis.Table.Table.save()=pyvision.analysis.Table.Table-class.html#save,Method pyvision.analysis.Timer.Timer.save()=pyvision.analysis.Timer.Timer-class.html#save,Method pyvision.analysis.bee.BEEDistanceMatrix.save()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#save,Method pyvision.analysis.html_report.HtmlReport.save()=pyvision.analysis.html_report.HtmlReport-class.html#save,Method pyvision.gui.EyePicker.EyePickerFrame.save()=pyvision.gui.EyePicker.EyePickerFrame-class.html#save,Method pyvision.ml.opencv_ml.StatsModelWrapper.save()=pyvision.ml.opencv_ml.StatsModelWrapper-class.html#save,Method pyvision.types.img.Image.save()=pyvision.types.img.Image-class.html#save"><a title="pyvision.analysis.Table.Table.save
+pyvision.analysis.Timer.Timer.save
+pyvision.analysis.bee.BEEDistanceMatrix.save
+pyvision.analysis.html_report.HtmlReport.save
+pyvision.gui.EyePicker.EyePickerFrame.save
+pyvision.ml.opencv_ml.StatsModelWrapper.save
+pyvision.types.img.Image.save" class="py-name" href="#" onclick="return doclink('link-27', 'save', 'link-27');">save</a></tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-name">data_buffer</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                <tt id="link-28" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-28', 'state', 'link-26');">state</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data_buffer</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">             </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt id="link-29" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-29', 'state', 'link-26');">state</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">             </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-30" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-30', 'state', 'link-26');">state</a></tt> </tt>
+</div><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">             </tt>
+<a name="SVC.__setstate__"></a><div id="SVC.__setstate__-def"><a name="L154"></a><tt class="py-lineno">154</tt> <a class="py-toggle" href="#" id="SVC.__setstate__-toggle" onclick="return toggle('SVC.__setstate__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html#__setstate__">__setstate__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">state</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC.__setstate__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVC.__setstate__-expanded"><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-docstring">'''This function is neccessary for pickling'''</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-comment"># Translate everything but the svm because that cannot be simply pickled.</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt id="link-31" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-31', 'state', 'link-26');">state</a></tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt class="py-string">'_model'</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">,</tt><tt class="py-string">'w'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method pyvision.analysis.bee.BEEDistanceMatrix.write()=pyvision.analysis.bee.BEEDistanceMatrix-class.html#write"><a title="pyvision.analysis.bee.BEEDistanceMatrix.write" class="py-name" href="#" onclick="return doclink('link-32', 'write', 'link-32');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_model</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+</div><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">     </tt>
+<a name="SVC.train"></a><div id="SVC.train-def"><a name="L168"></a><tt class="py-lineno">168</tt> <a class="py-toggle" href="#" id="SVC.train-toggle" onclick="return toggle('SVC.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVC.train-expanded"><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        Train the classifier.</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">        @param labels: A list of class labels.</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">        @param data: A 2D array or list of feature vectors.  One feature vector per row.</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">         </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt class="py-comment"># Check the types and convert to np arrays</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-33', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">list</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-34', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">            <tt id="link-35" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-35', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-36', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">double</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">             </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-name">labels</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_map</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method pyvision.ml.libsvm._LabelMap.toCode()=pyvision.ml.libsvm._LabelMap-class.html#toCode"><a title="pyvision.ml.libsvm._LabelMap.toCode" class="py-name" href="#" onclick="return doclink('link-37', 'toCode', 'link-37');">toCode</a></tt><tt class="py-op">(</tt><tt id="link-38" class="py-name" targets="Variable pyvision.types.exif.each=pyvision.types.exif-module.html#each"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-38', 'each', 'link-38');">each</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt id="link-39" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-39', 'each', 'link-38');">each</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">labels</tt><tt class="py-op">]</tt>         </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-name">labels</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">             </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-comment"># Preprocess the data    </tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-40" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-40', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method pyvision.face.PCA.PCA.train()=pyvision.face.PCA.PCA-class.html#train,Method pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train()=pyvision.face.SVMEyeDetector.RegressionEyeLocator2-class.html#train,Method pyvision.face.SVMEyeDetector.SVMEyeDetector.train()=pyvision.face.SVMEyeDetector.SVMEyeDetector-class.html#train,Method pyvision.face.SVMFaceRec.SVMFaceRec.train()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#train,Method pyvision.face.headdetector.HeadDetector.train()=pyvision.face.headdetector.HeadDetector-class.html#train,Method pyvision.ml.libsvm.FeaturePreprocessor.train()=pyvision.ml.libsvm.FeaturePreprocessor-class.html#train,Method pyvision.ml.libsvm.NoNorm.train()=pyvision.ml.libsvm.NoNorm-class.html#train,Method pyvision.ml.libsvm.SVC.train()=pyvision.ml.libsvm.SVC-class.html#train,Method pyvision.ml.libsvm.SVR.train()=pyvision.ml.libsvm.SVR-class.html#train,Method pyvision.ml.libsvm.ZNormValues.train()=pyvision.ml.libsvm.ZNormValues-class.html#train,Method pyvision.ml.libsvm._LabelScale.train()=pyvision.ml.libsvm._LabelScale-class.html#train,Method pyvision.ml.regression.LogisticRegression.train()=pyvision.ml.regression.LogisticRegression-class.html#train,Method pyvision.point.PointLocator.KRRLocator.train()=pyvision.point.PointLocator.KRRLocator-class.html#train,Method pyvision.point.PointLocator.SVMLocator.train()=pyvision.point.PointLocator.SVMLocator-class.html#train,Method pyvision.vector.PCA.PCA.train()=pyvision.vector.PCA.PCA-class.html#train,Method pyvision.vector.VectorClassifier.VectorClassifier.train()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#train,Method pyvision.vector.id3.ID3.train()=pyvision.vector.id3.ID3-class.html#train,Method pyvision.vector.id3.Node.train()=pyvision.vector.id3.Node-class.html#train"><a title="pyvision.face.PCA.PCA.train
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train
+pyvision.face.SVMEyeDetector.SVMEyeDetector.train
+pyvision.face.SVMFaceRec.SVMFaceRec.train
+pyvision.face.headdetector.HeadDetector.train
+pyvision.ml.libsvm.FeaturePreprocessor.train
+pyvision.ml.libsvm.NoNorm.train
+pyvision.ml.libsvm.SVC.train
+pyvision.ml.libsvm.SVR.train
+pyvision.ml.libsvm.ZNormValues.train
+pyvision.ml.libsvm._LabelScale.train
+pyvision.ml.regression.LogisticRegression.train
+pyvision.point.PointLocator.KRRLocator.train
+pyvision.point.PointLocator.SVMLocator.train
+pyvision.vector.PCA.PCA.train
+pyvision.vector.VectorClassifier.VectorClassifier.train
+pyvision.vector.id3.ID3.train
+pyvision.vector.id3.Node.train" class="py-name" href="#" onclick="return doclink('link-41', 'train', 'link-41');">train</a></tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-42" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-42', 'data', 'link-4');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">         </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-comment"># Create the svm parameter data and problem description</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_parameter</tt><tt class="py-op">(</tt><tt class="py-name">svm_type</tt><tt class="py-op">=</tt><tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">C_SVC</tt><tt class="py-op">,</tt><tt class="py-name">kernel_type</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Class pyvision.vector.RidgeRegression.RBF=pyvision.vector.RidgeRegression.RBF-class.html"><a title="pyvision.vector.RidgeRegression.RBF" class="py-name" href="#" onclick="return doclink('link-43', 'RBF', 'link-43');">RBF</a></tt><tt class="py-op">,</tt> <tt class="py-name">C</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_C</tt><tt class="py-op">,</tt> <tt class="py-name">gamma</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_gamma</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-name">prob</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_problem</tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-44" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-44', 'data', 'link-4');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">         </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-comment"># train the svm</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_model</tt><tt class="py-op">(</tt><tt class="py-name">prob</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">         </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">     </tt>
+<a name="SVC.__call__"></a><div id="SVC.__call__-def"><a name="L195"></a><tt class="py-lineno">195</tt> <a class="py-toggle" href="#" id="SVC.__call__-toggle" onclick="return toggle('SVC.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVC-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">vector</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVC.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVC.__call__-expanded"><a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">        <tt class="py-docstring">'''Classify a feature vector.'''</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">         </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-45" class="py-name" targets="Class pyvision.ml.libsvm.UntrainedClassifierError=pyvision.ml.libsvm.UntrainedClassifierError-class.html"><a title="pyvision.ml.libsvm.UntrainedClassifierError" class="py-name" href="#" onclick="return doclink('link-45', 'UntrainedClassifierError', 'link-45');">UntrainedClassifierError</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">         </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">        <tt class="py-comment"># convert to an array</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-46', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">list</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-47" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-47', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">            <tt id="link-48" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-48', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-49" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-49', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">double</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">         </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt class="py-comment"># preprocess the data</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt id="link-50" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-50', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt><tt class="py-op">(</tt><tt id="link-51" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-51', 'vector', 'link-7');">vector</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-comment"># return the prediction</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">code</tt> <tt class="py-op">=</tt>  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Method pyvision.face.SVMFaceRec.SVMFaceRec.predict()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#predict,Method pyvision.ml.opencv_ml.StatsModelWrapper.predict()=pyvision.ml.opencv_ml.StatsModelWrapper-class.html#predict,Method pyvision.ml.regression.LogisticRegression.predict()=pyvision.ml.regression.LogisticRegression-class.html#predict,Method pyvision.point.PointLocator.KRRLocator.predict()=pyvision.point.PointLocator.KRRLocator-class.html#predict,Method pyvision.point.PointLocator.SVMLocator.predict()=pyvision.point.PointLocator.SVMLocator-class.html#predict,Method pyvision.surveillance.kalman.KalmanFilter.predict()=pyvision.surveillance.kalman.KalmanFilter-class.html#predict,Method pyvision.vector.VectorClassifier.VectorClassifier.predict()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#predict"><a title="pyvision.face.SVMFaceRec.SVMFaceRec.predict
+pyvision.ml.opencv_ml.StatsModelWrapper.predict
+pyvision.ml.regression.LogisticRegression.predict
+pyvision.point.PointLocator.KRRLocator.predict
+pyvision.point.PointLocator.SVMLocator.predict
+pyvision.surveillance.kalman.KalmanFilter.predict
+pyvision.vector.VectorClassifier.VectorClassifier.predict" class="py-name" href="#" onclick="return doclink('link-52', 'predict', 'link-52');">predict</a></tt><tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-53', 'vector', 'link-7');">vector</a></tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_map</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method pyvision.ml.libsvm._LabelMap.toLabel()=pyvision.ml.libsvm._LabelMap-class.html#toLabel"><a title="pyvision.ml.libsvm._LabelMap.toLabel" class="py-name" href="#" onclick="return doclink('link-54', 'toLabel', 'link-54');">toLabel</a></tt><tt class="py-op">(</tt><tt class="py-name">code</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="SVR"></a><div id="SVR-def"><a name="L212"></a><tt class="py-lineno">212</tt> <a class="py-toggle" href="#" id="SVR-toggle" onclick="return toggle('SVR');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html">SVR</a><tt class="py-op">(</tt><tt class="py-base-class">Regression</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SVR-expanded"><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">     </tt>
+<a name="SVR.__init__"></a><div id="SVR.__init__-def"><a name="L214"></a><tt class="py-lineno">214</tt> <a class="py-toggle" href="#" id="SVR.__init__-toggle" onclick="return toggle('SVR.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">epsilon</tt><tt class="py-op">=</tt><tt class="py-number">0.01</tt><tt class="py-op">,</tt><tt class="py-param">gamma</tt><tt class="py-op">=</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt><tt class="py-param">preprocessor</tt><tt class="py-op">=</tt><tt id="link-55" class="py-name"><a title="pyvision.ml.libsvm.ZNormValues" class="py-name" href="#" onclick="return doclink('link-55', 'ZNormValues', 'link-23');">ZNormValues</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVR.__init__-expanded"><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-docstring">'''Create a support vector machine classifier.'''</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">         </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">         </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">preprocessor</tt><tt class="py-op">,</tt><tt id="link-56" class="py-name"><a title="pyvision.ml.libsvm.FeaturePreprocessor" class="py-name" href="#" onclick="return doclink('link-56', 'FeaturePreprocessor', 'link-24');">FeaturePreprocessor</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt> <tt class="py-op">=</tt> <tt class="py-name">preprocessor</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_scale</tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name" targets="Class pyvision.ml.libsvm._LabelScale=pyvision.ml.libsvm._LabelScale-class.html"><a title="pyvision.ml.libsvm._LabelScale" class="py-name" href="#" onclick="return doclink('link-57', '_LabelScale', 'link-57');">_LabelScale</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">         </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_epsilon</tt> <tt class="py-op">=</tt> <tt class="py-name">epsilon</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_gamma</tt> <tt class="py-op">=</tt> <tt class="py-name">gamma</tt> </tt>
+</div><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">         </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">         </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">     </tt>
+<a name="SVR.__getstate__"></a><div id="SVR.__getstate__-def"><a name="L228"></a><tt class="py-lineno">228</tt> <a class="py-toggle" href="#" id="SVR.__getstate__-toggle" onclick="return toggle('SVR.__getstate__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html#__getstate__">__getstate__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR.__getstate__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVR.__getstate__-expanded"><a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-docstring">'''This function is neccessary for pickling'''</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-comment"># Translate everything but the svm because that cannot be simply pickled.</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt id="link-58" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-58', 'state', 'link-26');">state</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt class="py-string">'_model'</tt><tt class="py-op">:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">                <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="pyvision.analysis.Table.Table.save
+pyvision.analysis.Timer.Timer.save
+pyvision.analysis.bee.BEEDistanceMatrix.save
+pyvision.analysis.html_report.HtmlReport.save
+pyvision.gui.EyePicker.EyePickerFrame.save
+pyvision.ml.opencv_ml.StatsModelWrapper.save
+pyvision.types.img.Image.save" class="py-name" href="#" onclick="return doclink('link-59', 'save', 'link-27');">save</a></tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">                <tt class="py-name">data_buffer</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">                <tt id="link-60" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-60', 'state', 'link-26');">state</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data_buffer</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">             </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">            <tt id="link-61" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-61', 'state', 'link-26');">state</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">             </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-62" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-62', 'state', 'link-26');">state</a></tt> </tt>
+</div><a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">             </tt>
+<a name="SVR.__setstate__"></a><div id="SVR.__setstate__-def"><a name="L245"></a><tt class="py-lineno">245</tt> <a class="py-toggle" href="#" id="SVR.__setstate__-toggle" onclick="return toggle('SVR.__setstate__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html#__setstate__">__setstate__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">state</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR.__setstate__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVR.__setstate__-expanded"><a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-docstring">'''This function is neccessary for pickling'''</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-comment"># Translate everything but the svm because that cannot be simply pickled.</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt id="link-63" class="py-name"><a title="pyvision.surveillance.kalman.KalmanFilter.state" class="py-name" href="#" onclick="return doclink('link-63', 'state', 'link-26');">state</a></tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt class="py-string">'_model'</tt><tt class="py-op">:</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">                <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">                <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">,</tt><tt class="py-string">'w'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="pyvision.analysis.bee.BEEDistanceMatrix.write" class="py-name" href="#" onclick="return doclink('link-64', 'write', 'link-32');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_model</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+</div><a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">     </tt>
+<a name="SVR.train"></a><div id="SVR.train-def"><a name="L259"></a><tt class="py-lineno">259</tt> <a class="py-toggle" href="#" id="SVR.train-toggle" onclick="return toggle('SVR.train');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html#train">train</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">labels</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR.train-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVR.train-expanded"><a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"><tt class="py-docstring">        Train the classifier.</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"><tt class="py-docstring">        @param labels: A list of class labels.</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"><tt class="py-docstring">        @param data: A 2D array or list of feature vectors.  One feature vector per row.</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">         </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt class="py-comment"># Check the types and convert to np arrays</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-65" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-65', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">list</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-66" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-66', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">            <tt id="link-67" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-67', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-68" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-68', 'data', 'link-4');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">double</tt><tt class="py-op">)</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">             </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-name">labels</tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">double</tt><tt class="py-op">)</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">             </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">        <tt class="py-comment"># Preprocess the data    </tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">        <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-69" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-69', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="pyvision.face.PCA.PCA.train
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train
+pyvision.face.SVMEyeDetector.SVMEyeDetector.train
+pyvision.face.SVMFaceRec.SVMFaceRec.train
+pyvision.face.headdetector.HeadDetector.train
+pyvision.ml.libsvm.FeaturePreprocessor.train
+pyvision.ml.libsvm.NoNorm.train
+pyvision.ml.libsvm.SVC.train
+pyvision.ml.libsvm.SVR.train
+pyvision.ml.libsvm.ZNormValues.train
+pyvision.ml.libsvm._LabelScale.train
+pyvision.ml.regression.LogisticRegression.train
+pyvision.point.PointLocator.KRRLocator.train
+pyvision.point.PointLocator.SVMLocator.train
+pyvision.vector.PCA.PCA.train
+pyvision.vector.VectorClassifier.VectorClassifier.train
+pyvision.vector.id3.ID3.train
+pyvision.vector.id3.Node.train" class="py-name" href="#" onclick="return doclink('link-70', 'train', 'link-41');">train</a></tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-71" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-71', 'data', 'link-4');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">        <tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-72" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-72', 'data', 'link-4');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_scale</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="pyvision.face.PCA.PCA.train
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train
+pyvision.face.SVMEyeDetector.SVMEyeDetector.train
+pyvision.face.SVMFaceRec.SVMFaceRec.train
+pyvision.face.headdetector.HeadDetector.train
+pyvision.ml.libsvm.FeaturePreprocessor.train
+pyvision.ml.libsvm.NoNorm.train
+pyvision.ml.libsvm.SVC.train
+pyvision.ml.libsvm.SVR.train
+pyvision.ml.libsvm.ZNormValues.train
+pyvision.ml.libsvm._LabelScale.train
+pyvision.ml.regression.LogisticRegression.train
+pyvision.point.PointLocator.KRRLocator.train
+pyvision.point.PointLocator.SVMLocator.train
+pyvision.vector.PCA.PCA.train
+pyvision.vector.VectorClassifier.VectorClassifier.train
+pyvision.vector.id3.ID3.train
+pyvision.vector.id3.Node.train" class="py-name" href="#" onclick="return doclink('link-73', 'train', 'link-41');">train</a></tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">,</tt><tt id="link-74" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-74', 'data', 'link-4');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">         </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">         </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">        <tt class="py-comment"># Create the svm parameter data and problem description</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_parameter</tt><tt class="py-op">(</tt><tt class="py-name">svm_type</tt><tt class="py-op">=</tt><tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">EPSILON_SVR</tt><tt class="py-op">,</tt><tt class="py-name">kernel_type</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="pyvision.vector.RidgeRegression.RBF" class="py-name" href="#" onclick="return doclink('link-75', 'RBF', 'link-43');">RBF</a></tt><tt class="py-op">,</tt> <tt class="py-name">eps</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_epsilon</tt><tt class="py-op">,</tt> <tt class="py-name">gamma</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_gamma</tt><tt class="py-op">)</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-name">prob</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_problem</tt><tt class="py-op">(</tt><tt class="py-name">labels</tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt id="link-76" class="py-name"><a title="pyvision.analysis.FaceAnalysis.data
+pyvision.data
+pyvision.types.exif.data" class="py-name" href="#" onclick="return doclink('link-76', 'data', 'link-4');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">         </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-comment"># train the svm</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">=</tt> <tt class="py-name">svm</tt><tt class="py-op">.</tt><tt class="py-name">svm_model</tt><tt class="py-op">(</tt><tt class="py-name">prob</tt><tt class="py-op">,</tt> <tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">         </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">     </tt>
+<a name="SVR.__call__"></a><div id="SVR.__call__-def"><a name="L287"></a><tt class="py-lineno">287</tt> <a class="py-toggle" href="#" id="SVR.__call__-toggle" onclick="return toggle('SVR.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.ml.libsvm.SVR-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">vector</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SVR.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SVR.__call__-expanded"><a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-docstring">'''Classify a feature vector.'''</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">         </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt> <tt class="py-op">==</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-77" class="py-name"><a title="pyvision.ml.libsvm.UntrainedClassifierError" class="py-name" href="#" onclick="return doclink('link-77', 'UntrainedClassifierError', 'link-45');">UntrainedClassifierError</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">         </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-comment"># convert to an array</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-78" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-78', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">list</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-79" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-79', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">            <tt id="link-80" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-80', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-81" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-81', 'vector', 'link-7');">vector</a></tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">double</tt><tt class="py-op">)</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">         </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-comment"># preprocess the data</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt id="link-82" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-82', 'vector', 'link-7');">vector</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_preprocessor</tt><tt class="py-op">(</tt><tt id="link-83" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-83', 'vector', 'link-7');">vector</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">        <tt class="py-comment"># return the prediction</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">        <tt class="py-name">value</tt> <tt class="py-op">=</tt>  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_model</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="pyvision.face.SVMFaceRec.SVMFaceRec.predict
+pyvision.ml.opencv_ml.StatsModelWrapper.predict
+pyvision.ml.regression.LogisticRegression.predict
+pyvision.point.PointLocator.KRRLocator.predict
+pyvision.point.PointLocator.SVMLocator.predict
+pyvision.surveillance.kalman.KalmanFilter.predict
+pyvision.vector.VectorClassifier.VectorClassifier.predict" class="py-name" href="#" onclick="return doclink('link-84', 'predict', 'link-52');">predict</a></tt><tt class="py-op">(</tt><tt id="link-85" class="py-name"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-85', 'vector', 'link-7');">vector</a></tt><tt class="py-op">.</tt><tt class="py-name">tolist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_label_scale</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name" targets="Method pyvision.ml.libsvm._LabelScale.toOrig()=pyvision.ml.libsvm._LabelScale-class.html#toOrig"><a title="pyvision.ml.libsvm._LabelScale.toOrig" class="py-name" href="#" onclick="return doclink('link-86', 'toOrig', 'link-86');">toOrig</a></tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:03 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

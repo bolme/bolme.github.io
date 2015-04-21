@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.BackgroundSubtraction.AbstractBGModel-class.html">pyvision.surveillance.BackgroundSubtraction.AbstractBGModel</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.BackgroundSubtraction.FrameDifferencer-class.html">pyvision.surveillance.BackgroundSubtraction.FrameDifferencer</a></strong>:
+      <em class="summary">This class is useful for simple N-frame differencing method of 
+        background subtraction.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.BackgroundSubtraction.MedianFilter-class.html">pyvision.surveillance.BackgroundSubtraction.MedianFilter</a></strong>:
+      <em class="summary">Uses median pixel values of the images in a buffer to approximate a
+        background model.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.BackgroundSubtraction.ApproximateMedianFilter-class.html">pyvision.surveillance.BackgroundSubtraction.ApproximateMedianFilter</a></strong>:
+      <em class="summary">Approximates the median pixels via an efficient incremental 
+        algorithm that would converge to the true median in a perfect 
+        world.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.BackgroundSubtraction.MotionCompensatedFrameDifferencer-class.html">pyvision.surveillance.BackgroundSubtraction.MotionCompensatedFrameDifferencer</a></strong>:
+      <em class="summary">This class represents a more sophisticated frame differencing 
+        algorithm that takes into account potential camera motion, and 
+        applies a registration method to align subsequent images prior to 
+        frame subtraction.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.AbstractVSP-class.html">pyvision.surveillance.VideoStreamProcessor.AbstractVSP</a></strong>:
+      <em class="summary">AbstractVSP is the abstract class definition of a Video Stream 
+        Processor (VSP) object.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.FrameNumberVSP-class.html">pyvision.surveillance.VideoStreamProcessor.FrameNumberVSP</a></strong>:
+      <em class="summary">A simple VSP object simply displays the input video frame with some
+        simple annotation to show the frame number in upper left corner.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.FrameSkipperVSP-class.html">pyvision.surveillance.VideoStreamProcessor.FrameSkipperVSP</a></strong>:
+      <em class="summary">This is a video stream processor that is used to skip every k 
+        frames in a source video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.MotionDetectionVSP-class.html">pyvision.surveillance.VideoStreamProcessor.MotionDetectionVSP</a></strong>:
+      <em class="summary">This VSP uses an existing motion detection object to apply motion 
+        detection to each frame of video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.PeopleDetectionVSP-class.html">pyvision.surveillance.VideoStreamProcessor.PeopleDetectionVSP</a></strong>:
+      <em class="summary">This Video Stream Processor applies the OpenCV HOG people detector 
+        to each frame of video, annotating the detections with red 
+        rectangles.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.ResizerVSP-class.html">pyvision.surveillance.VideoStreamProcessor.ResizerVSP</a></strong>:
+      <em class="summary">This VSP resizes each frame of video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.VideoStreamProcessor.VideoWriterVSP-class.html">pyvision.surveillance.VideoStreamProcessor.VideoWriterVSP</a></strong>:
+      <em class="summary">A video stream processor that outputs to a new movie file.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Affine.AffineTransform-class.html">pyvision.types.Affine.AffineTransform</a></strong>:
+      <em class="summary">The AffineTransform class is used to transform images and points_b 
+        back and and forth between different coordinate systems.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.bee.BEEDistanceMatrix-class.html">pyvision.analysis.bee.BEEDistanceMatrix</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.face.CSU_Dist-class.html">pyvision.analysis.face.CSU_Dist</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.face.CSU_SRT-class.html">pyvision.analysis.face.CSU_SRT</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.gui_tools.CaptureClicks-class.html">pyvision.analysis.gui_tools.CaptureClicks</a></strong>:
+      <em class="summary">This object handles the data mangagement and display of the capture
+        clicks window.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.gui_tools.CaptureClicksVideo-class.html">pyvision.analysis.gui_tools.CaptureClicksVideo</a></strong>:
+      <em class="summary">This object handles the data mangagement and display of the capture
+        clicks window.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.CascadeDetector.CascadeDetector-class.html">pyvision.face.CascadeDetector.CascadeDetector</a></strong>:
+      <em class="summary">This class is a wrapper around the OpenCV cascade detectior.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm.Classifier-class.html">pyvision.ml.libsvm.Classifier</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.crossvalidate.CrossValidation-class.html">pyvision.ml.crossvalidate.CrossValidation</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorROI.DetectorROI-class.html">pyvision.point.DetectorROI.DetectorROI</a></strong>:
+      <em class="summary">This class defines an interface to a Region Of Interest (ROI) 
+        detector.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorCorner.DetectorCorner-class.html">pyvision.point.DetectorCorner.DetectorCorner</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorDOG.DetectorDOG-class.html">pyvision.point.DetectorDOG.DetectorDOG</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorHarris.DetectorHarris-class.html">pyvision.point.DetectorHarris.DetectorHarris</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorSURF.DetectorSURF-class.html">pyvision.point.DetectorSURF.DetectorSURF</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest-class.html">pyvision.analysis.FaceAnalysis.EyeDetectionTest.EyeDetectionTest</a></strong>:
+      <em class="summary">BUGFIX: 20080813 Bailey Draper found a bug that the field dl in the
+        full report was really dl^2.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.face.EyesFile-class.html">pyvision.analysis.face.EyesFile</a></strong>:
+      <em class="summary">Reads and manages the data in an eye coordinate file.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.EyesFile.EyesFile-class.html">pyvision.analysis.FaceAnalysis.EyesFile.EyesFile</a></strong>:
+      <em class="summary">Parses and interfaces with an eyes file.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.FFMPEGVideo-class.html">pyvision.types.Video.FFMPEGVideo</a></strong>:
+      <em class="summary">FFMPEGVideo is an alternate way to capture video from a file, not 
+        directly using OpenCV's highgui.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.knn.FLANNTree-class.html">pyvision.ml.knn.FLANNTree</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FRGC2004.FRGCMetadata-class.html">pyvision.analysis.FaceAnalysis.FRGC2004.FRGCMetadata</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.FERETDatabase-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.FERETDatabase</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp1-class.html">pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp1</a></strong>:
+      <em class="summary">FRGC Experiment 1 is a controlled to controlled scenario</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4-class.html">pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4</a></strong>:
+      <em class="summary">FRGC Experiment 4 is a controled to uncontrolled scenario</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced-class.html">pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced</a></strong>:
+      <em class="summary">FRGC Experiment 4 is a controled to uncontrolled scenario</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_V1-class.html">pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_V1</a></strong>:
+      <em class="summary">FRGC Experiment 4 is a controled to uncontrolled scenario</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database_c27-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.PIE_ILLUM_Database_c27</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.ScrapShotsDatabase-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.ScrapShotsDatabase</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest-class.html">pyvision.analysis.FaceAnalysis.FaceDetectionTest.FaceDetectionTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject-class.html">pyvision.analysis.FaceAnalysis.FaceDatabase.FaceDatabase.FaceObject</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FaceRecognitionTest.FaceRecognitionTest-class.html">pyvision.analysis.FaceAnalysis.FaceRecognitionTest.FaceRecognitionTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.FaceRecognizer.FaceRecognizer-class.html">pyvision.face.FaceRecognizer.FaceRecognizer</a></strong>:
+      <em class="summary">Base class for a face recognition algorithm.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.face.PCA.PCA-class.html">pyvision.face.PCA.PCA</a></strong>:
+      <em class="summary">This is a basic implementation of PCA</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm.FeaturePreprocessor-class.html">pyvision.ml.libsvm.FeaturePreprocessor</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets.FilterBank-class.html">pyvision.point.GaborJets.FilterBank</a></strong>:
+      <em class="summary">This class uses the FFT to quickly compute corelations and 
+        convolutions for an image.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.FilterEyeLocator.FilterEyeLocator-class.html">pyvision.face.FilterEyeLocator.FilterEyeLocator</a></strong>:
+      <em class="summary">This class provides a PyVision interface to the ASEF eye locator.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.testsuite.Fitness-class.html">pyvision.optimize.testsuite.Fitness</a></strong>:
+      <em class="summary">Min values is approx -0.63 @ [8,2]</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.testsuite.FitnessInt-class.html">pyvision.optimize.testsuite.FitnessInt</a></strong>:
+      <em class="summary">Min values is approx -0.63 @ [8,2]</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.testsuite.FitnessNapsack-class.html">pyvision.optimize.testsuite.FitnessNapsack</a></strong>:
+      <em class="summary">Greedy:     2122.02170961 GreedySoft: 2154.98878966 Best:       
+        2151.52428896</em>
+    </li>
+    <li> <strong class="uidlink">wx.Frame</strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GASequence-class.html">pyvision.optimize.genetic.GASequence</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GASet-class.html">pyvision.optimize.genetic.GASet</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAVariable-class.html">pyvision.optimize.genetic.GAVariable</a></strong>:
+      <em class="summary">This is a superclass for a variable that is optimized by the GA.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAAngle-class.html">pyvision.optimize.genetic.GAAngle</a></strong>:
+      <em class="summary">Maps to an angle in the range -pi to pi.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GABoolean-class.html">pyvision.optimize.genetic.GABoolean</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAChoice-class.html">pyvision.optimize.genetic.GAChoice</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAFloat-class.html">pyvision.optimize.genetic.GAFloat</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAInteger-class.html">pyvision.optimize.genetic.GAInteger</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GALogFloat-class.html">pyvision.optimize.genetic.GALogFloat</a></strong>:
+      <em class="summary">A float on a log scale.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GARanking-class.html">pyvision.optimize.genetic.GARanking</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAUnitRect-class.html">pyvision.optimize.genetic.GAUnitRect</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAUnitRect2-class.html">pyvision.optimize.genetic.GAUnitRect2</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAUnitVector-class.html">pyvision.optimize.genetic.GAUnitVector</a></strong>:
+      <em class="summary">A vector constrained to length 1.0.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GAWeighting-class.html">pyvision.optimize.genetic.GAWeighting</a></strong>:
+      <em class="summary">A positive vector that sums to 1.0.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets.GaborFilters-class.html">pyvision.point.GaborJets.GaborFilters</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets.GaborImage-class.html">pyvision.point.GaborJets.GaborImage</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets.GaborJet-class.html">pyvision.point.GaborJets.GaborJet</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets.GaborWavelet-class.html">pyvision.point.GaborJets.GaborWavelet</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.genetic.GeneticAlgorithm-class.html">pyvision.optimize.genetic.GeneticAlgorithm</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.other.color.Histogram-class.html">pyvision.other.color.Histogram</a></strong>:
+      <em class="summary">Basically a wrapper around an OpenCV histogram.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.id3.ID3-class.html">pyvision.vector.id3.ID3</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.img.Image-class.html">pyvision.types.img.Image</a></strong>:
+      <em class="summary">The primary purpose of the image class is to provide a structure 
+        that can transform an image back and fourth for different python 
+        libraries such as <a href="http://www.pythonware.com/products/pil" 
+        target="_top">PIL</a>, <a 
+        href="http://sourceforge.net/projects/opencvlibrary" 
+        target="_top">OpenCV</a>, and <a href="http://www.scipy.org&quot;" 
+        target="_top">Scipy</a> Images.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.ImageBuffer.ImageBuffer-class.html">pyvision.types.ImageBuffer.ImageBuffer</a></strong>:
+      <em class="summary">Stores a limited number of images from a video (or any other 
+        source) Makes it easy to do N-frame-differencing, for example, by 
+        easily being able to get the current (middle) frame, plus the first
+        and last frames of the buffer.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.ImageLog.ImageLog-class.html">pyvision.analysis.ImageLog.ImageLog</a></strong>:
+      <em class="summary">An image log is used to collect data about an experiment.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.face.CSU_SRT.ImageRecord-class.html">pyvision.analysis.face.CSU_SRT.ImageRecord</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.knn.KNearestNeighbors-class.html">pyvision.ml.knn.KNearestNeighbors</a></strong>:
+      <em class="summary">Basic k nearest neighbors algorithm.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.PointLocator.KRRLocator-class.html">pyvision.point.PointLocator.KRRLocator</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.kalman.KalmanFilter-class.html">pyvision.surveillance.kalman.KalmanFilter</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.RidgeRegression.LINEAR-class.html">pyvision.vector.RidgeRegression.LINEAR</a></strong>:
+      <em class="summary">Basic linear kernel.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.plot.Label-class.html">pyvision.analysis.plot.Label</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.linearreg.LinearReg-class.html">pyvision.vector.linearreg.LinearReg</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.util.fast_util.LocalMaximumDetector-class.html">pyvision.util.fast_util.LocalMaximumDetector</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.id3.Node-class.html">pyvision.vector.id3.Node</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.FilterEyeLocator.OpenCVFilterEyeLocator-class.html">pyvision.face.FilterEyeLocator.OpenCVFilterEyeLocator</a></strong>:
+      <em class="summary">This class is used for someone only interested in locating the eyes
+        in an image using correlation filters.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.optical_flow.OpticalFlow-class.html">pyvision.surveillance.optical_flow.OpticalFlow</a></strong>:
+      <em class="summary">This class tracks the motion of the camera.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.PCA.PCA-class.html">pyvision.vector.PCA.PCA</a></strong>:
+      <em class="summary">Performs principal components analysis on a set of images, 
+        features, or vectors.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.knn.PNorm-class.html">pyvision.ml.knn.PNorm</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Perspective.PerspectiveTransform-class.html">pyvision.types.Perspective.PerspectiveTransform</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.plot.Plot-class.html">pyvision.analysis.plot.Plot</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Point.Point-class.html">pyvision.types.Point.Point</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.plot.Points-class.html">pyvision.analysis.plot.Points</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.progress_bar.ProgressBar-class.html">pyvision.analysis.progress_bar.ProgressBar</a></strong>:
+      <em class="summary">Modified from: 
+        http://code.activestate.com/recipes/168639-progress-bar-class/</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.RidgeRegression.RBF-class.html">pyvision.vector.RidgeRegression.RBF</a></strong>:
+      <em class="summary">Basic Radial Basis Function kernel</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.roc.ROC-class.html">pyvision.analysis.roc.ROC</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.roc.ROCPoint-class.html">pyvision.analysis.roc.ROCPoint</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.RangeImage.RangeImage-class.html">pyvision.types.RangeImage.RangeImage</a></strong>:
+      <em class="summary">This class is used to handle range images.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Rect.Rect-class.html">pyvision.types.Rect.Rect</a></strong>:
+      <em class="summary">This is a simple structure that represents a rectangle.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm.Regression-class.html">pyvision.ml.libsvm.Regression</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.SVMEyeDetector.RegressionEyeLocator2-class.html">pyvision.face.SVMEyeDetector.RegressionEyeLocator2</a></strong>:
+      <em class="summary">This class detects faces and then returns the detection rectangles 
+        and the eye coordinates.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.knn.RobustPNorm-class.html">pyvision.ml.knn.RobustPNorm</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.SVMEyeDetector.SVMEyeDetector-class.html">pyvision.face.SVMEyeDetector.SVMEyeDetector</a></strong>:
+      <em class="summary">This class detects faces and then returns the detection rectangles 
+        and the eye coordinates.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.SVMFaceRec.SVMFaceRec-class.html">pyvision.face.SVMFaceRec.SVMFaceRec</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.PointLocator.SVMLocator-class.html">pyvision.point.PointLocator.SVMLocator</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.stats.SummaryStats-class.html">pyvision.analysis.stats.SummaryStats</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Table.Table-class.html">pyvision.analysis.Table.Table</a></strong>:
+      <em class="summary">Store and manipulate table data</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.classifier.ConfusionMatrix.ConfusionMatrix-class.html">pyvision.analysis.classifier.ConfusionMatrix.ConfusionMatrix</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">unittest.TestCase</strong>
+    </li>
+    <li> <strong class="uidlink">unittest.TestCase</strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Timer.Timer-class.html">pyvision.analysis.Timer.Timer</a></strong>:
+      <em class="summary">A simple timer class used to measure and record run times.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.features.v1like.V1Processing-class.html">pyvision.features.v1like.V1Processing</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html">pyvision.vector.VectorClassifier.VectorClassifier</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.vector.RidgeRegression.KernelRidgeRegression-class.html">pyvision.vector.RidgeRegression.KernelRidgeRegression</a></strong>:
+      <em class="summary">Ridge Regression algorithm based on Max Welling's Tutorial, 
+        Univerity of Toronto.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.Polynomial.Polynomial2D-class.html">pyvision.vector.Polynomial.Polynomial2D</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.RidgeRegression.RidgeRegression-class.html">pyvision.vector.RidgeRegression.RidgeRegression</a></strong>:
+      <em class="summary">Ridge Regression algorithm based on Max Welling's Tutorial, 
+        Univerity of Toronto.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm._LabelMap-class.html" onclick="show_private();">pyvision.ml.libsvm._LabelMap</a></strong>:
+      <em class="summary">Converts class labels back and forth to integer codes.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm._LabelScale-class.html" onclick="show_private();">pyvision.ml.libsvm._LabelScale</a></strong>:
+      <em class="summary">Converts class labels back and forth to integer codes.</em>
+    </li>
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.face.CascadeDetector.CascadeNotFound-class.html">pyvision.face.CascadeDetector.CascadeNotFound</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.CascadeDetector.HaarTrainingError-class.html">pyvision.face.CascadeDetector.HaarTrainingError</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.features.v1like.MinMaxError-class.html">pyvision.features.v1like.MinMaxError</a></strong>
+    </li>
+    <li> <strong class="uidlink">exceptions.StandardError</strong>:
+      <em class="summary">Base class for all standard Python exceptions that do not represent
+        interpreter exiting.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="exceptions.AssertionError-class.html">exceptions.AssertionError</a></strong>:
+      <em class="summary">Assertion failed.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.libsvm.UntrainedClassifierError-class.html">pyvision.ml.libsvm.UntrainedClassifierError</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.vtm.DefaultData-class.html">pyvision.beta.vtm.DefaultData</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.vtm.EmptyData-class.html">pyvision.beta.vtm.EmptyData</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.headdetector.HeadDetector-class.html">pyvision.face.headdetector.HeadDetector</a></strong>:
+      <em class="summary">A detector that uses multiple detectors and quality measures to 
+        accuratly detect faces.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.html_report.HtmlReport-class.html">pyvision.analysis.html_report.HtmlReport</a></strong>:
+      <em class="summary">classdocs</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Montage.ImageMontage-class.html">pyvision.analysis.Montage.ImageMontage</a></strong>:
+      <em class="summary">Displays thumbnails of a list of input images as a single 'montage'
+        image.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.kinect.Kinect-class.html">pyvision.types.kinect.Kinect</a></strong>:
+      <em class="summary">This class provides a simple interface to the kinect sensor.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.regression.LogisticRegression-class.html">pyvision.ml.regression.LogisticRegression</a></strong>:
+      <em class="summary">This object implements a logistic regression model.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.MotionDetector.MotionDetector-class.html">pyvision.surveillance.MotionDetector.MotionDetector</a></strong>:
+      <em class="summary">Uses background subtraction from an image buffer to detect areas of
+        motion in a video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.opencv_ml.StatsModelWrapper-class.html">pyvision.ml.opencv_ml.StatsModelWrapper</a></strong>:
+      <em class="summary">This class wraps an opencv stats model to support pickling and 
+        other pythonic features, etc.</em>
+    </li>
+    <li> <strong class="uidlink">unittest.case.TestCase</strong>:
+      <em class="summary">A class whose instances are single test cases.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.ml.knn.AKNNTest-class.html">pyvision.ml.knn.AKNNTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.other.color.ColorTest-class.html">pyvision.other.color.ColorTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.optimize.testsuite.GeneticAlgorithmTest-class.html">pyvision.optimize.testsuite.GeneticAlgorithmTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.testsuite.MotionDetectTest-class.html">pyvision.surveillance.testsuite.MotionDetectTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.surveillance.testsuite.OpticalFlowTest-class.html">pyvision.surveillance.testsuite.OpticalFlowTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.roc.ROCTest-class.html">pyvision.analysis.roc.ROCTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.testsuite.TestFilterEyeLocator-class.html">pyvision.face.testsuite.TestFilterEyeLocator</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.plot.TestPlot-class.html">pyvision.analysis.plot.TestPlot</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.features._testsuite.V1LikeTest-class.html">pyvision.features._testsuite.V1LikeTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Affine._AffineTest-class.html" onclick="show_private();">pyvision.types.Affine._AffineTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorCorner._CornerTest-class.html" onclick="show_private();">pyvision.point.DetectorCorner._CornerTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorDOG._DetectorDOGTestCase-class.html" onclick="show_private();">pyvision.point.DetectorDOG._DetectorDOGTestCase</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.GaborJets._FastFilterTest-class.html" onclick="show_private();">pyvision.point.GaborJets._FastFilterTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.FaceAnalysis.FERET._FeretTest-class.html" onclick="show_private();">pyvision.analysis.FaceAnalysis.FERET._FeretTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.DetectorHarris._HarrisTest-class.html" onclick="show_private();">pyvision.point.DetectorHarris._HarrisTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Perspective._PerspectiveTest-class.html" onclick="show_private();">pyvision.types.Perspective._PerspectiveTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.Polynomial._PolyTest-class.html" onclick="show_private();">pyvision.vector.Polynomial._PolyTest</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.edge.canny._TestCanny-class.html" onclick="show_private();">pyvision.edge.canny._TestCanny</a></strong>:
+      <em class="summary">Unit tests for the canny detector</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.CascadeDetector._TestCascadeDetector-class.html" onclick="show_private();">pyvision.face.CascadeDetector._TestCascadeDetector</a></strong>:
+      <em class="summary">Unit tests for the Cascade Detector</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.classifier.ConfusionMatrix._TestConfusionMatrix-class.html" onclick="show_private();">pyvision.analysis.classifier.ConfusionMatrix._TestConfusionMatrix</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.other.testsuite._TestDistance-class.html" onclick="show_private();">pyvision.other.testsuite._TestDistance</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.PCA._TestFacePCA-class.html" onclick="show_private();">pyvision.face.PCA._TestFacePCA</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.face.FilterEyeLocator._TestFilterEyeLocator-class.html" onclick="show_private();">pyvision.face.FilterEyeLocator._TestFilterEyeLocator</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.testsuite._TestImage-class.html" onclick="show_private();">pyvision.types.testsuite._TestImage</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.RidgeRegression._TestKRR-class.html" onclick="show_private();">pyvision.vector.RidgeRegression._TestKRR</a></strong>:
+      <em class="summary">Unit tests for SVM</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.other.testsuite._TestNormalize-class.html" onclick="show_private();">pyvision.other.testsuite._TestNormalize</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.point.PhaseCorrelation._TestPhaseCorrelation-class.html" onclick="show_private();">pyvision.point.PhaseCorrelation._TestPhaseCorrelation</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.other.testsuite._TestSURF-class.html" onclick="show_private();">pyvision.other.testsuite._TestSURF</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.stats._TestStats-class.html" onclick="show_private();">pyvision.analysis.stats._TestStats</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Table._TestTable-class.html" onclick="show_private();">pyvision.analysis.Table._TestTable</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.vector.VectorClassifier._TestVectorClassifier-class.html" onclick="show_private();">pyvision.vector.VectorClassifier._TestVectorClassifier</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.testsuite._TestVideo-class.html" onclick="show_private();">pyvision.types.testsuite._TestVideo</a></strong>:
+      <em class="summary">Tests for the video class.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision._VersionTest-class.html" onclick="show_private();">pyvision._VersionTest</a></strong>:
+      <em class="summary">Check the installed versions of the dependencies</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.VideoInterface-class.html">pyvision.types.Video.VideoInterface</a></strong>:
+      <em class="summary">VideoInterface is an abstract class meant only to define a common 
+        interface for all Video subtypes.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.Video-class.html">pyvision.types.Video.Video</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Montage.VideoMontage-class.html">pyvision.analysis.Montage.VideoMontage</a></strong>:
+      <em class="summary">Provides a visualization of several videos playing back in a single
+        window.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.VideoFromDirectory-class.html">pyvision.types.Video.VideoFromDirectory</a></strong>:
+      <em class="summary">This class allows the user to treat a directory of images as a 
+        video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.VideoFromFileList-class.html">pyvision.types.Video.VideoFromFileList</a></strong>:
+      <em class="summary">Given a sorted list of filenames (including full path), this will 
+        treat the list as a video sequence.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.VideoFromImageStack-class.html">pyvision.types.Video.VideoFromImageStack</a></strong>:
+      <em class="summary">This class allows the user to treat a stack of grayscale images in a 3D numpy array as a video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.VideoFromImages-class.html">pyvision.types.Video.VideoFromImages</a></strong>:
+      <em class="summary">This class allows the user to treat a directory of images as a 
+        video.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.types.Video.Webcam-class.html">pyvision.types.Video.Webcam</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.vtm.VideoTask-class.html">pyvision.beta.vtm.VideoTask</a></strong>:
+      <em class="summary">This provides an interface and support functions for a video 
+        processing task.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pyvision.beta.videotasks.ChangeDetectionAnnotationVT-class.html">pyvision.beta.videotasks.ChangeDetectionAnnotationVT</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.videotasks.ChangeDetectionVT-class.html">pyvision.beta.videotasks.ChangeDetectionVT</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.videotasks.FaceDetectorVT-class.html">pyvision.beta.videotasks.FaceDetectorVT</a></strong>:
+      <em class="summary">This tasks illustrates one way to initialize data in the first 
+        frame by changing the number of required arguments required by 
+        additional frames.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.vtm.VideoTaskManager-class.html">pyvision.beta.vtm.VideoTaskManager</a></strong>:
+      <em class="summary">The framework provide by this class will allow complex video 
+        processing systems to be constructed from simple tasks.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.beta.vtm._VideoDataItem-class.html">pyvision.beta.vtm._VideoDataItem</a></strong>:
+      <em class="summary">This class keeps track of data items and when they are used.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.analysis.Montage.clickHandler-class.html">pyvision.analysis.Montage.clickHandler</a></strong>:
+      <em class="summary">A class for objects designed to handle click events on ImageMontage
+        objects.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pyvision.ml.regression.pdf2nll-class.html">pyvision.ml.regression.pdf2nll</a></strong>:
+      <em class="summary">This is a wraper class that converts a pdf to a negitive log 
+        likelihood function.</em>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:58 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

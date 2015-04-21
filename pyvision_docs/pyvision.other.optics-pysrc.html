@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.other.optics</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.other-module.html">Package&nbsp;other</a> ::
+        Module&nbsp;optics
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.other.optics-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.other.optics-module.html">Module pyvision.other.optics</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Mar 22, 2013</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">@author: David S. Bolme</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">Oak Ridge National Laboratory</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="diffractionLimit"></a><div id="diffractionLimit-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="diffractionLimit-toggle" onclick="return toggle('diffractionLimit');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.other.optics-module.html#diffractionLimit">diffractionLimit</a><tt class="py-op">(</tt><tt class="py-param">distance</tt><tt class="py-op">,</tt><tt class="py-param">wavelength</tt><tt class="py-op">,</tt><tt class="py-param">aperture</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="diffractionLimit-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="diffractionLimit-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    This function computes the Diffraction limit of an optical system.  It</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    returns the smallest resolvable pattern at a given wavelength and </tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    aperture. </tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">    @param distance: distance to the target in meters.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    @param wavelength: the wavelength of the light in nanometers</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    @param aperture: the size of the aperture in meters.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    @returns: the resolution limit in meters</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt class="py-comment"># Convert the wavelength of the </tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-name">wavelength</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0e-9</tt><tt class="py-op">*</tt><tt class="py-name">wavelength</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">     </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-comment"># Compute the resolution</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-name">resolution</tt> <tt class="py-op">=</tt> <tt id="link-0" class="py-name" targets="Method pyvision.face.FaceRecognizer.FaceRecognizer.distance()=pyvision.face.FaceRecognizer.FaceRecognizer-class.html#distance,Module pyvision.other.distance=pyvision.other.distance-module.html"><a title="pyvision.face.FaceRecognizer.FaceRecognizer.distance
+pyvision.other.distance" class="py-name" href="#" onclick="return doclink('link-0', 'distance', 'link-0');">distance</a></tt> <tt class="py-op">*</tt> <tt class="py-number">1.220</tt><tt class="py-op">*</tt><tt class="py-op">(</tt><tt class="py-name">wavelength</tt><tt class="py-op">/</tt><tt class="py-name">aperture</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">resolution</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="apertureComputation"></a><div id="apertureComputation-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="apertureComputation-toggle" onclick="return toggle('apertureComputation');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.other.optics-module.html#apertureComputation">apertureComputation</a><tt class="py-op">(</tt><tt class="py-param">distance</tt><tt class="py-op">,</tt><tt class="py-param">wavelength</tt><tt class="py-op">,</tt><tt class="py-param">resolution</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="apertureComputation-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="apertureComputation-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    This function computes the Diffraction limit of an optical system.  It</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">    returns the smallest resolvable pattern at a given wavelength and </tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    aperture. </tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    @param distance: distance to the target in meters.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring">    @param wavelength: the wavelength of the light in nanometers</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">    @param resolution: the resolution on target in metes.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    @returns: the aperture size in meters.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-comment"># Convert the wavelength of the </tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt class="py-name">wavelength</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0e-9</tt><tt class="py-op">*</tt><tt class="py-name">wavelength</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">     </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-comment"># Compute the resolution</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-name">aperture</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-1" class="py-name"><a title="pyvision.face.FaceRecognizer.FaceRecognizer.distance
+pyvision.other.distance" class="py-name" href="#" onclick="return doclink('link-1', 'distance', 'link-0');">distance</a></tt> <tt class="py-op">*</tt> <tt class="py-number">1.220</tt><tt class="py-op">*</tt> <tt class="py-name">wavelength</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">resolution</tt>  </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">     </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">aperture</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="fNumber"></a><div id="fNumber-def"><a name="L45"></a><tt class="py-lineno">45</tt> <a class="py-toggle" href="#" id="fNumber-toggle" onclick="return toggle('fNumber');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.other.optics-module.html#fNumber">fNumber</a><tt class="py-op">(</tt><tt class="py-param">focal_length</tt><tt class="py-op">,</tt><tt class="py-param">aperture</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fNumber-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="fNumber-expanded"><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt class="py-name">N</tt><tt class="py-op">=</tt><tt class="py-name">focal_length</tt><tt class="py-op">/</tt><tt class="py-name">aperture</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">N</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">     </tt>
+<a name="depthOfField"></a><div id="depthOfField-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="depthOfField-toggle" onclick="return toggle('depthOfField');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.other.optics-module.html#depthOfField">depthOfField</a><tt class="py-op">(</tt><tt class="py-param">hyperfocal</tt><tt class="py-op">,</tt><tt class="py-param">distance</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="depthOfField-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="depthOfField-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt class="py-name">H</tt> <tt class="py-op">=</tt> <tt class="py-name">hyperfocal</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="pyvision.face.FaceRecognizer.FaceRecognizer.distance
+pyvision.other.distance" class="py-name" href="#" onclick="return doclink('link-2', 'distance', 'link-0');">distance</a></tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">Dn</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">H</tt><tt class="py-op">*</tt><tt class="py-name">s</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-name">H</tt><tt class="py-op">+</tt><tt class="py-name">s</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-name">Df</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">H</tt><tt class="py-op">*</tt><tt class="py-name">s</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-name">H</tt><tt class="py-op">-</tt><tt class="py-name">s</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">Dn</tt><tt class="py-op">,</tt><tt class="py-name">Df</tt><tt class="py-op">,</tt><tt class="py-name">Df</tt><tt class="py-op">-</tt><tt class="py-name">Dn</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">     </tt>
+<a name="hyperFocalDistance"></a><div id="hyperFocalDistance-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="hyperFocalDistance-toggle" onclick="return toggle('hyperFocalDistance');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.other.optics-module.html#hyperFocalDistance">hyperFocalDistance</a><tt class="py-op">(</tt><tt class="py-param">focal_length</tt><tt class="py-op">,</tt><tt class="py-param">fnumber</tt><tt class="py-op">,</tt><tt class="py-param">circle_of_confusion</tt><tt class="py-op">,</tt><tt class="py-param">definition</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="hyperFocalDistance-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="hyperFocalDistance-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"><tt class="py-docstring">    http://en.wikipedia.org/wiki/Hyperfocal_distance</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-docstring">    Definition 1: The hyperfocal distance is the closest distance at which a </tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-docstring">    lens can be focused while keeping objects at infinity acceptably sharp. </tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring">    When the lens is focused at this distance, all objects at distances from </tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-docstring">    half of the hyperfocal distance out to infinity will be acceptably sharp.</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring">    Definition 2: The hyperfocal distance is the distance beyond which all </tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-docstring">    objects are acceptably sharp, for a lens focused at infinity.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt>         </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">focal_length</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-name">fnumber</tt><tt class="py-op">*</tt><tt class="py-name">circle_of_confusion</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:01 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

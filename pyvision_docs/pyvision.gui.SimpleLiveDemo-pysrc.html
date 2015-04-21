@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.gui.SimpleLiveDemo</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.gui-module.html">Package&nbsp;gui</a> ::
+        Module&nbsp;SimpleLiveDemo
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.gui.SimpleLiveDemo-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.gui.SimpleLiveDemo-module.html">Module pyvision.gui.SimpleLiveDemo</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">This file provides a basic framework for a live demo.  In this case the </tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">demo is for face and eye detection.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">Copyright David S. Bolme</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">Created on Jul 9, 2011</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">@author: bolme</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package pyvision=pyvision-module.html"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-0', 'pyvision', 'link-0');">pyvision</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">pv</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">cv</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-1', 'pyvision', 'link-0');">pyvision</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module pyvision.analysis.face=pyvision.analysis.face-module.html,Package pyvision.face=pyvision.face-module.html"><a title="pyvision.analysis.face
+pyvision.face" class="py-name" href="#" onclick="return doclink('link-2', 'face', 'link-2');">face</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Module pyvision.face.CascadeDetector=pyvision.face.CascadeDetector-module.html,Class pyvision.face.CascadeDetector.CascadeDetector=pyvision.face.CascadeDetector.CascadeDetector-class.html"><a title="pyvision.face.CascadeDetector
+pyvision.face.CascadeDetector.CascadeDetector" class="py-name" href="#" onclick="return doclink('link-3', 'CascadeDetector', 'link-3');">CascadeDetector</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name"><a title="pyvision.face.CascadeDetector
+pyvision.face.CascadeDetector.CascadeDetector" class="py-name" href="#" onclick="return doclink('link-4', 'CascadeDetector', 'link-3');">CascadeDetector</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-5', 'pyvision', 'link-0');">pyvision</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="pyvision.analysis.face
+pyvision.face" class="py-name" href="#" onclick="return doclink('link-6', 'face', 'link-2');">face</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module pyvision.face.FilterEyeLocator=pyvision.face.FilterEyeLocator-module.html,Class pyvision.face.FilterEyeLocator.FilterEyeLocator=pyvision.face.FilterEyeLocator.FilterEyeLocator-class.html"><a title="pyvision.face.FilterEyeLocator
+pyvision.face.FilterEyeLocator.FilterEyeLocator" class="py-name" href="#" onclick="return doclink('link-7', 'FilterEyeLocator', 'link-7');">FilterEyeLocator</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name"><a title="pyvision.face.FilterEyeLocator
+pyvision.face.FilterEyeLocator.FilterEyeLocator" class="py-name" href="#" onclick="return doclink('link-8', 'FilterEyeLocator', 'link-7');">FilterEyeLocator</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="mouseCallback"></a><div id="mouseCallback-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="mouseCallback-toggle" onclick="return toggle('mouseCallback');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.gui.SimpleLiveDemo-module.html#mouseCallback">mouseCallback</a><tt class="py-op">(</tt><tt class="py-param">event</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">flags</tt><tt class="py-op">,</tt> <tt class="py-param">param</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mouseCallback-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="mouseCallback-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">event</tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-name">cv</tt><tt class="py-op">.</tt><tt class="py-name">CV_EVENT_LBUTTONDOWN</tt><tt class="py-op">,</tt><tt class="py-name">cv</tt><tt class="py-op">.</tt><tt class="py-name">CV_EVENT_LBUTTONUP</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Mouse Event:"</tt><tt class="py-op">,</tt><tt class="py-name">event</tt><tt class="py-op">,</tt><tt id="link-9" class="py-name" targets="Method pyvision.analysis.plot.Plot.x()=pyvision.analysis.plot.Plot-class.html#x"><a title="pyvision.analysis.plot.Plot.x" class="py-name" href="#" onclick="return doclink('link-9', 'x', 'link-9');">x</a></tt><tt class="py-op">,</tt><tt id="link-10" class="py-name" targets="Method pyvision.analysis.plot.Plot.y()=pyvision.analysis.plot.Plot-class.html#y"><a title="pyvision.analysis.plot.Plot.y" class="py-name" href="#" onclick="return doclink('link-10', 'y', 'link-10');">y</a></tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">     </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-comment"># Setup the webcam</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-name">webcam</tt>  <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Class pyvision.types.Video.Webcam=pyvision.types.Video.Webcam-class.html"><a title="pyvision.types.Video.Webcam" class="py-name" href="#" onclick="return doclink('link-11', 'Webcam', 'link-11');">Webcam</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">     </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-comment"># Setup the face and eye detectors</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-name">cd</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="pyvision.face.CascadeDetector
+pyvision.face.CascadeDetector.CascadeDetector" class="py-name" href="#" onclick="return doclink('link-12', 'CascadeDetector', 'link-3');">CascadeDetector</a></tt><tt class="py-op">(</tt><tt class="py-name">min_size</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">,</tt><tt class="py-number">100</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-name">el</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="pyvision.face.FilterEyeLocator
+pyvision.face.FilterEyeLocator.FilterEyeLocator" class="py-name" href="#" onclick="return doclink('link-13', 'FilterEyeLocator', 'link-7');">FilterEyeLocator</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">     </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt class="py-comment"># Setup the mouse callback to handle mause events (optional)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">cv</tt><tt class="py-op">.</tt><tt class="py-name">NamedWindow</tt><tt class="py-op">(</tt><tt class="py-string">"PyVision Live Demo"</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">cv</tt><tt class="py-op">.</tt><tt class="py-name">SetMouseCallback</tt><tt class="py-op">(</tt><tt class="py-string">"PyVision Live Demo"</tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name" targets="Method pyvision.analysis.gui_tools.CaptureClicks.mouseCallback()=pyvision.analysis.gui_tools.CaptureClicks-class.html#mouseCallback,Method pyvision.analysis.gui_tools.CaptureClicksVideo.mouseCallback()=pyvision.analysis.gui_tools.CaptureClicksVideo-class.html#mouseCallback,Function pyvision.gui.SimpleLiveDemo.mouseCallback()=pyvision.gui.SimpleLiveDemo-module.html#mouseCallback"><a title="pyvision.analysis.gui_tools.CaptureClicks.mouseCallback
+pyvision.analysis.gui_tools.CaptureClicksVideo.mouseCallback
+pyvision.gui.SimpleLiveDemo.mouseCallback" class="py-name" href="#" onclick="return doclink('link-14', 'mouseCallback', 'link-14');">mouseCallback</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">     </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt> <tt class="py-name">True</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-comment"># Grab a frame from the webcam</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt id="link-15" class="py-name" targets="Method pyvision.types.Video.FFMPEGVideo.frame()=pyvision.types.Video.FFMPEGVideo-class.html#frame"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-15', 'frame', 'link-15');">frame</a></tt> <tt class="py-op">=</tt> <tt class="py-name">webcam</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.query()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4-class.html#query,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.query()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced-class.html#query,Method pyvision.ml.knn.FLANNTree.query()=pyvision.ml.knn.FLANNTree-class.html#query,Method pyvision.ml.knn.KNearestNeighbors.query()=pyvision.ml.knn.KNearestNeighbors-class.html#query,Method pyvision.types.Video.Video.query()=pyvision.types.Video.Video-class.html#query,Method pyvision.types.Video.VideoFromDirectory.query()=pyvision.types.Video.VideoFromDirectory-class.html#query,Method pyvision.types.Video.VideoFromFileList.query()=pyvision.types.Video.VideoFromFileList-class.html#query,Method pyvision.types.Video.VideoFromImageStack.query()=pyvision.types.Video.VideoFromImageStack-class.html#query,Method pyvision.types.Video.VideoFromImages.query()=pyvision.types.Video.VideoFromImages-class.html#query,Method pyvision.types.Video.VideoInterface.query()=pyvision.types.Video.VideoInterface-class.html#query,Method pyvision.types.Video.Webcam.query()=pyvision.types.Video.Webcam-class.html#query"><a title="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.query
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.query
+pyvision.ml.knn.FLANNTree.query
+pyvision.ml.knn.KNearestNeighbors.query
+pyvision.types.Video.Video.query
+pyvision.types.Video.VideoFromDirectory.query
+pyvision.types.Video.VideoFromFileList.query
+pyvision.types.Video.VideoFromImageStack.query
+pyvision.types.Video.VideoFromImages.query
+pyvision.types.Video.VideoInterface.query
+pyvision.types.Video.Webcam.query" class="py-name" href="#" onclick="return doclink('link-16', 'query', 'link-16');">query</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">         </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-comment"># Run Face and Eye Detection</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">rects</tt> <tt class="py-op">=</tt> <tt class="py-name">cd</tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-17', 'frame', 'link-15');">frame</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-name">eyes</tt> <tt class="py-op">=</tt> <tt class="py-name">el</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-18', 'frame', 'link-15');">frame</a></tt><tt class="py-op">,</tt><tt class="py-name">rects</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-comment"># Annotate the result</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">rect</tt><tt class="py-op">,</tt><tt class="py-name">leye</tt><tt class="py-op">,</tt><tt class="py-name">reye</tt> <tt class="py-keyword">in</tt> <tt class="py-name">eyes</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt id="link-19" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-19', 'frame', 'link-15');">frame</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method pyvision.types.img.Image.annotateThickRect()=pyvision.types.img.Image-class.html#annotateThickRect"><a title="pyvision.types.img.Image.annotateThickRect" class="py-name" href="#" onclick="return doclink('link-20', 'annotateThickRect', 'link-20');">annotateThickRect</a></tt><tt class="py-op">(</tt><tt class="py-name">rect</tt><tt class="py-op">,</tt> <tt class="py-string">'green'</tt><tt class="py-op">,</tt> <tt class="py-name">width</tt><tt class="py-op">=</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt id="link-21" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-21', 'frame', 'link-15');">frame</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method pyvision.types.img.Image.annotatePoint()=pyvision.types.img.Image-class.html#annotatePoint"><a title="pyvision.types.img.Image.annotatePoint" class="py-name" href="#" onclick="return doclink('link-22', 'annotatePoint', 'link-22');">annotatePoint</a></tt><tt class="py-op">(</tt><tt class="py-name">leye</tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name" targets="Module pyvision.other.color=pyvision.other.color-module.html"><a title="pyvision.other.color" class="py-name" href="#" onclick="return doclink('link-23', 'color', 'link-23');">color</a></tt><tt class="py-op">=</tt><tt class="py-string">'green'</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt id="link-24" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-24', 'frame', 'link-15');">frame</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="pyvision.types.img.Image.annotatePoint" class="py-name" href="#" onclick="return doclink('link-25', 'annotatePoint', 'link-22');">annotatePoint</a></tt><tt class="py-op">(</tt><tt class="py-name">reye</tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name"><a title="pyvision.other.color" class="py-name" href="#" onclick="return doclink('link-26', 'color', 'link-23');">color</a></tt><tt class="py-op">=</tt><tt class="py-string">'green'</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">         </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-comment"># Annotate instructions</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-27', 'frame', 'link-15');">frame</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method pyvision.types.img.Image.annotateLabel()=pyvision.types.img.Image-class.html#annotateLabel"><a title="pyvision.types.img.Image.annotateLabel" class="py-name" href="#" onclick="return doclink('link-28', 'annotateLabel', 'link-28');">annotateLabel</a></tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Module pyvision.types.Point=pyvision.types.Point-module.html,Class pyvision.types.Point.Point=pyvision.types.Point.Point-class.html"><a title="pyvision.types.Point
+pyvision.types.Point.Point" class="py-name" href="#" onclick="return doclink('link-29', 'Point', 'link-29');">Point</a></tt><tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">,</tt><tt class="py-number">10</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">"Press 'q' to quit."</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">         </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-comment"># Show the frame (uses opencv highgui)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-name">key_press</tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="pyvision.types.Video.FFMPEGVideo.frame" class="py-name" href="#" onclick="return doclink('link-30', 'frame', 'link-15');">frame</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method pyvision.analysis.ImageLog.ImageLog.show()=pyvision.analysis.ImageLog.ImageLog-class.html#show,Method pyvision.analysis.Montage.ImageMontage.show()=pyvision.analysis.Montage.ImageMontage-class.html#show,Method pyvision.analysis.plot.Plot.show()=pyvision.analysis.plot.Plot-class.html#show,Method pyvision.analysis.progress_bar.ProgressBar.show()=pyvision.analysis.progress_bar.ProgressBar-class.html#show,Method pyvision.point.GaborJets.GaborImage.show()=pyvision.point.GaborJets.GaborImage-class.html#show,Method pyvision.types.ImageBuffer.ImageBuffer.show()=pyvision.types.ImageBuffer.ImageBuffer-class.html#show,Method pyvision.types.img.Image.show()=pyvision.types.img.Image-class.html#show"><a title="pyvision.analysis.ImageLog.ImageLog.show
+pyvision.analysis.Montage.ImageMontage.show
+pyvision.analysis.plot.Plot.show
+pyvision.analysis.progress_bar.ProgressBar.show
+pyvision.point.GaborJets.GaborImage.show
+pyvision.types.ImageBuffer.ImageBuffer.show
+pyvision.types.img.Image.show" class="py-name" href="#" onclick="return doclink('link-31', 'show', 'link-31');">show</a></tt><tt class="py-op">(</tt><tt class="py-string">"PyVision Live Demo"</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">         </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-comment"># Handle key press events.</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">key_press</tt> <tt class="py-op">==</tt> <tt class="py-name">ord</tt><tt class="py-op">(</tt><tt class="py-string">'q'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">            <tt class="py-keyword">break</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:00 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

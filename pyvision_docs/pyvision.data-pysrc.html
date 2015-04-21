@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.data</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        Package&nbsp;data
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.data-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pyvision.data-module.html" onclick="show_private();">Package pyvision.data</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">This package contains some standard tests that can be performed with</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">the test data distributed with pyvision.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package pyvision=pyvision-module.html"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-0', 'pyvision', 'link-0');">pyvision</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">pv</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-1', 'pyvision', 'link-0');">pyvision</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package pyvision.analysis=pyvision.analysis-module.html"><a title="pyvision.analysis" class="py-name" href="#" onclick="return doclink('link-2', 'analysis', 'link-2');">analysis</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package pyvision.analysis.FaceAnalysis=pyvision.analysis.FaceAnalysis-module.html"><a title="pyvision.analysis.FaceAnalysis" class="py-name" href="#" onclick="return doclink('link-3', 'FaceAnalysis', 'link-3');">FaceAnalysis</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module pyvision.analysis.FaceAnalysis.EyesFile=pyvision.analysis.FaceAnalysis.EyesFile-module.html,Class pyvision.analysis.FaceAnalysis.EyesFile.EyesFile=pyvision.analysis.FaceAnalysis.EyesFile.EyesFile-class.html,Class pyvision.analysis.face.EyesFile=pyvision.analysis.face.EyesFile-class.html"><a title="pyvision.analysis.FaceAnalysis.EyesFile
+pyvision.analysis.FaceAnalysis.EyesFile.EyesFile
+pyvision.analysis.face.EyesFile" class="py-name" href="#" onclick="return doclink('link-4', 'EyesFile', 'link-4');">EyesFile</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name"><a title="pyvision.analysis.FaceAnalysis.EyesFile
+pyvision.analysis.FaceAnalysis.EyesFile.EyesFile
+pyvision.analysis.face.EyesFile" class="py-name" href="#" onclick="return doclink('link-5', 'EyesFile', 'link-4');">EyesFile</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Method pyvision.analysis.ImageLog.ImageLog.csv()=pyvision.analysis.ImageLog.ImageLog-class.html#csv"><a title="pyvision.analysis.ImageLog.ImageLog.csv" class="py-name" href="#" onclick="return doclink('link-6', 'csv', 'link-6');">csv</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable pyvision.data.SCRAPS_EYES=pyvision.data-module.html#SCRAPS_EYES"><a title="pyvision.data.SCRAPS_EYES" class="py-name" href="#" onclick="return doclink('link-7', 'SCRAPS_EYES', 'link-7');">SCRAPS_EYES</a></tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="pyvision.analysis.FaceAnalysis.EyesFile
+pyvision.analysis.FaceAnalysis.EyesFile.EyesFile
+pyvision.analysis.face.EyesFile" class="py-name" href="#" onclick="return doclink('link-8', 'EyesFile', 'link-4');">EyesFile</a></tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'csuScrapShots'</tt><tt class="py-op">,</tt><tt class="py-string">'coords.txt'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-string">''' The path to a text file containing coordinates to the scrapshots dataset. '''</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"># Common test images</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt id="link-9" class="py-name" targets="Variable pyvision.data.AIRPLANE=pyvision.data-module.html#AIRPLANE"><a title="pyvision.data.AIRPLANE" class="py-name" href="#" onclick="return doclink('link-9', 'AIRPLANE', 'link-9');">AIRPLANE</a></tt>  <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'misc'</tt><tt class="py-op">,</tt><tt class="py-string">'airplane.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly use test image of a jet airplane.'''</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt id="link-10" class="py-name" targets="Variable pyvision.data.BABOON=pyvision.data-module.html#BABOON"><a title="pyvision.data.BABOON" class="py-name" href="#" onclick="return doclink('link-10', 'BABOON', 'link-10');">BABOON</a></tt>    <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'misc'</tt><tt class="py-op">,</tt><tt class="py-string">'baboon.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly use test image of a baboon face.'''</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable pyvision.data.FRUITS=pyvision.data-module.html#FRUITS"><a title="pyvision.data.FRUITS" class="py-name" href="#" onclick="return doclink('link-11', 'FRUITS', 'link-11');">FRUITS</a></tt>    <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'misc'</tt><tt class="py-op">,</tt><tt class="py-string">'fruits.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly use test image of fruit.'''</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable pyvision.data.LENA=pyvision.data-module.html#LENA"><a title="pyvision.data.LENA" class="py-name" href="#" onclick="return doclink('link-12', 'LENA', 'link-12');">LENA</a></tt>      <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'misc'</tt><tt class="py-op">,</tt><tt class="py-string">'lena.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly used "Lena" test image.'''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable pyvision.data.LOGO=pyvision.data-module.html#LOGO"><a title="pyvision.data.LOGO" class="py-name" href="#" onclick="return doclink('link-13', 'LOGO', 'link-13');">LOGO</a></tt>      <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'misc'</tt><tt class="py-op">,</tt><tt class="py-string">'logo.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly use test image of a butterfly used as the pyvision logo.'''</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable pyvision.data.TAZ_IMAGE=pyvision.data-module.html#TAZ_IMAGE"><a title="pyvision.data.TAZ_IMAGE" class="py-name" href="#" onclick="return doclink('link-14', 'TAZ_IMAGE', 'link-14');">TAZ_IMAGE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'test'</tt><tt class="py-op">,</tt><tt class="py-string">'TAZ_0010.jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string">''' The path to a commonly use test image of a butterfly used as the pyvision logo.'''</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable pyvision.data.TAZ_VIDEO=pyvision.data-module.html#TAZ_VIDEO,Variable pyvision.surveillance.testsuite.TAZ_VIDEO=pyvision.surveillance.testsuite-module.html#TAZ_VIDEO,Variable pyvision.types.testsuite.TAZ_VIDEO=pyvision.types.testsuite-module.html#TAZ_VIDEO"><a title="pyvision.data.TAZ_VIDEO
+pyvision.surveillance.testsuite.TAZ_VIDEO
+pyvision.types.testsuite.TAZ_VIDEO" class="py-name" href="#" onclick="return doclink('link-15', 'TAZ_VIDEO', 'link-15');">TAZ_VIDEO</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'test'</tt><tt class="py-op">,</tt><tt class="py-string">'TazSample.m4v'</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">''' The path to a test video of a Loony Tunes Taz stuffed animal.'''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt id="link-16" class="py-name" targets="Variable pyvision.data.CAR_VIDEO=pyvision.data-module.html#CAR_VIDEO"><a title="pyvision.data.CAR_VIDEO" class="py-name" href="#" onclick="return doclink('link-16', 'CAR_VIDEO', 'link-16');">CAR_VIDEO</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'test'</tt><tt class="py-op">,</tt><tt class="py-string">'toy_car.m4v'</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-string">''' The path to a test video of a small moving car.'''</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt id="link-17" class="py-name" targets="Variable pyvision.data.BUGS_VIDEO=pyvision.data-module.html#BUGS_VIDEO,Variable pyvision.surveillance.testsuite.BUGS_VIDEO=pyvision.surveillance.testsuite-module.html#BUGS_VIDEO,Variable pyvision.types.testsuite.BUGS_VIDEO=pyvision.types.testsuite-module.html#BUGS_VIDEO"><a title="pyvision.data.BUGS_VIDEO
+pyvision.surveillance.testsuite.BUGS_VIDEO
+pyvision.types.testsuite.BUGS_VIDEO" class="py-name" href="#" onclick="return doclink('link-17', 'BUGS_VIDEO', 'link-17');">BUGS_VIDEO</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'test'</tt><tt class="py-op">,</tt><tt class="py-string">'BugsSample.m4v'</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-string">''' The path to a test video sequence of bugs crawling through weeds.'''</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt id="link-18" class="py-name" targets="Variable pyvision.data.FONT_ARIAL=pyvision.data-module.html#FONT_ARIAL"><a title="pyvision.data.FONT_ARIAL" class="py-name" href="#" onclick="return doclink('link-18', 'FONT_ARIAL', 'link-18');">FONT_ARIAL</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'config'</tt><tt class="py-op">,</tt><tt class="py-string">'Arial.ttf'</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">''' The path to a file containing the Arial true type font. '''</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt id="link-19" class="py-name" targets="Variable pyvision.data.IRIS_PATH=pyvision.data-module.html#IRIS_PATH"><a title="pyvision.data.IRIS_PATH" class="py-name" href="#" onclick="return doclink('link-19', 'IRIS_PATH', 'link-19');">IRIS_PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'ml'</tt><tt class="py-op">,</tt><tt class="py-string">'iris.csv'</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt id="link-20" class="py-name" targets="Variable pyvision.data.IRIS_DATA=pyvision.data-module.html#IRIS_DATA"><a title="pyvision.data.IRIS_DATA" class="py-name" href="#" onclick="return doclink('link-20', 'IRIS_DATA', 'link-20');">IRIS_DATA</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.csv" class="py-name" href="#" onclick="return doclink('link-21', 'csv', 'link-6');">csv</a></tt><tt class="py-op">.</tt><tt class="py-name">reader</tt><tt class="py-op">(</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="pyvision.data.IRIS_PATH" class="py-name" href="#" onclick="return doclink('link-22', 'IRIS_PATH', 'link-19');">IRIS_PATH</a></tt><tt class="py-op">,</tt><tt class="py-string">'rb'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Variable pyvision.data.IRIS_LABELS=pyvision.data-module.html#IRIS_LABELS"><a title="pyvision.data.IRIS_LABELS" class="py-name" href="#" onclick="return doclink('link-23', 'IRIS_LABELS', 'link-23');">IRIS_LABELS</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="pyvision.data.IRIS_DATA" class="py-name" href="#" onclick="return doclink('link-24', 'IRIS_DATA', 'link-20');">IRIS_DATA</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">,</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt id="link-25" class="py-name"><a title="pyvision.data.IRIS_DATA" class="py-name" href="#" onclick="return doclink('link-25', 'IRIS_DATA', 'link-20');">IRIS_DATA</a></tt> <tt class="py-op">=</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="pyvision.data.IRIS_DATA" class="py-name" href="#" onclick="return doclink('link-26', 'IRIS_DATA', 'link-20');">IRIS_DATA</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-number">5</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">dtype</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">float32</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="genderClassifier"></a><div id="genderClassifier-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="genderClassifier-toggle" onclick="return toggle('genderClassifier');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pyvision.data-module.html#genderClassifier">genderClassifier</a><tt class="py-op">(</tt><tt class="py-param">clsfy</tt><tt class="py-op">,</tt> <tt class="py-param">ilog</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="genderClassifier-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="genderClassifier-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    genderClassifier takes a classifier as an argument and will use the </tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    csuScrapShot data to perform a gender classification test on that </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    classifier.</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    These three functions will be called::</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        for im in training_images:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">            clsfy.addTraining(label,im,ilog=ilog)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        clsfy.train(ilog=ilog)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">        for im in testing_images:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">            clsfy.predict(im,ilog=ilog)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    label = 0 or 1 (0=Female,1=Male)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    im is a 64x64 pyvision image that is normalized to crop the face</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    Output of predict should be a class label (0 or 1)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    @returns: the success rate for the testing set.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'csuScrapShots'</tt><tt class="py-op">,</tt><tt class="py-string">'gender.txt'</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">,</tt><tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-name">image_cache</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-name">examples</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt id="link-27" class="py-name" targets="Method pyvision.analysis.html_report.HtmlReport.line()=pyvision.analysis.html_report.HtmlReport-class.html#line"><a title="pyvision.analysis.html_report.HtmlReport.line" class="py-name" href="#" onclick="return doclink('link-27', 'line', 'link-27');">line</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">f</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">im_name</tt><tt class="py-op">,</tt> <tt class="py-name">class_name</tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="pyvision.analysis.html_report.HtmlReport.line" class="py-name" href="#" onclick="return doclink('link-28', 'line', 'link-27');">line</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">class_name</tt> <tt class="py-op">==</tt> <tt class="py-string">'F'</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">class_name</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-name">class_name</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">long_name</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt class="py-name">__path__</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'data'</tt><tt class="py-op">,</tt><tt class="py-string">'csuScrapShots'</tt><tt class="py-op">,</tt><tt class="py-name">im_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">leye</tt><tt class="py-op">,</tt><tt class="py-name">reye</tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="pyvision.data.SCRAPS_EYES" class="py-name" href="#" onclick="return doclink('link-29', 'SCRAPS_EYES', 'link-7');">SCRAPS_EYES</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method pyvision.analysis.FaceAnalysis.EyesFile.EyesFile.getEyes()=pyvision.analysis.FaceAnalysis.EyesFile.EyesFile-class.html#getEyes,Method pyvision.analysis.face.EyesFile.getEyes()=pyvision.analysis.face.EyesFile-class.html#getEyes"><a title="pyvision.analysis.FaceAnalysis.EyesFile.EyesFile.getEyes
+pyvision.analysis.face.EyesFile.getEyes" class="py-name" href="#" onclick="return doclink('link-30', 'getEyes', 'link-30');">getEyes</a></tt><tt class="py-op">(</tt><tt class="py-name">im_name</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">im</tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Class pyvision.types.img.Image=pyvision.types.img.Image-class.html"><a title="pyvision.types.img.Image" class="py-name" href="#" onclick="return doclink('link-31', 'Image', 'link-31');">Image</a></tt><tt class="py-op">(</tt><tt class="py-name">long_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">image_cache</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">im</tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Function pyvision.types.Affine.AffineFromPoints()=pyvision.types.Affine-module.html#AffineFromPoints"><a title="pyvision.types.Affine.AffineFromPoints" class="py-name" href="#" onclick="return doclink('link-32', 'AffineFromPoints', 'link-32');">AffineFromPoints</a></tt><tt class="py-op">(</tt><tt class="py-name">leye</tt><tt class="py-op">,</tt><tt class="py-name">reye</tt><tt class="py-op">,</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Module pyvision.types.Point=pyvision.types.Point-module.html,Class pyvision.types.Point.Point=pyvision.types.Point.Point-class.html"><a title="pyvision.types.Point
+pyvision.types.Point.Point" class="py-name" href="#" onclick="return doclink('link-33', 'Point', 'link-33');">Point</a></tt><tt class="py-op">(</tt><tt class="py-number">22</tt><tt class="py-op">,</tt><tt class="py-number">27</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="pyvision.types.Point
+pyvision.types.Point.Point" class="py-name" href="#" onclick="return doclink('link-34', 'Point', 'link-33');">Point</a></tt><tt class="py-op">(</tt><tt class="py-number">42</tt><tt class="py-op">,</tt><tt class="py-number">27</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">,</tt><tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method pyvision.types.Affine.AffineTransform.transformImage()=pyvision.types.Affine.AffineTransform-class.html#transformImage,Method pyvision.types.Perspective.PerspectiveTransform.transformImage()=pyvision.types.Perspective.PerspectiveTransform-class.html#transformImage"><a title="pyvision.types.Affine.AffineTransform.transformImage
+pyvision.types.Perspective.PerspectiveTransform.transformImage" class="py-name" href="#" onclick="return doclink('link-35', 'transformImage', 'link-35');">transformImage</a></tt><tt class="py-op">(</tt><tt class="py-name">im</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-comment">#im = pv.Image(im.asPIL().resize((64,64)))</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">examples</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">class_name</tt><tt class="py-op">,</tt><tt class="py-name">im</tt><tt class="py-op">,</tt><tt class="py-name">im_name</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">     </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt id="link-36" class="py-name" targets="Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.training()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4-class.html#training,Method pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.training()=pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced-class.html#training"><a title="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.training
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.training" class="py-name" href="#" onclick="return doclink('link-36', 'training', 'link-36');">training</a></tt> <tt class="py-op">=</tt> <tt class="py-name">examples</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">103</tt><tt class="py-op">]</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-name">testing</tt> <tt class="py-op">=</tt> <tt class="py-name">examples</tt><tt class="py-op">[</tt><tt class="py-number">103</tt><tt class="py-op">:</tt><tt class="py-op">]</tt>      </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">               </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt id="link-37" class="py-name" targets="Variable pyvision.types.exif.each=pyvision.types.exif-module.html#each"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-37', 'each', 'link-37');">each</a></tt> <tt class="py-keyword">in</tt> <tt id="link-38" class="py-name"><a title="pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4.training
+pyvision.analysis.FaceAnalysis.FRGC2004.FRGC_Exp4_Reduced.training" class="py-name" href="#" onclick="return doclink('link-38', 'training', 'link-36');">training</a></tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">103</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">clsfy</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method pyvision.face.FaceRecognizer.FaceRecognizer.addTraining()=pyvision.face.FaceRecognizer.FaceRecognizer-class.html#addTraining,Method pyvision.face.SVMEyeDetector.RegressionEyeLocator2.addTraining()=pyvision.face.SVMEyeDetector.RegressionEyeLocator2-class.html#addTraining,Method pyvision.face.SVMEyeDetector.SVMEyeDetector.addTraining()=pyvision.face.SVMEyeDetector.SVMEyeDetector-class.html#addTraining,Method pyvision.face.SVMFaceRec.SVMFaceRec.addTraining()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#addTraining,Method pyvision.point.PointLocator.KRRLocator.addTraining()=pyvision.point.PointLocator.KRRLocator-class.html#addTraining,Method pyvision.point.PointLocator.SVMLocator.addTraining()=pyvision.point.PointLocator.SVMLocator-class.html#addTraining,Method pyvision.vector.VectorClassifier.VectorClassifier.addTraining()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#addTraining,Method pyvision.vector.id3.ID3.addTraining()=pyvision.vector.id3.ID3-class.html#addTraining"><a title="pyvision.face.FaceRecognizer.FaceRecognizer.addTraining
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.addTraining
+pyvision.face.SVMEyeDetector.SVMEyeDetector.addTraining
+pyvision.face.SVMFaceRec.SVMFaceRec.addTraining
+pyvision.point.PointLocator.KRRLocator.addTraining
+pyvision.point.PointLocator.SVMLocator.addTraining
+pyvision.vector.VectorClassifier.VectorClassifier.addTraining
+pyvision.vector.id3.ID3.addTraining" class="py-name" href="#" onclick="return doclink('link-39', 'addTraining', 'link-39');">addTraining</a></tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-40', 'each', 'link-37');">each</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-41" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-41', 'each', 'link-37');">each</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">ilog</tt><tt class="py-op">=</tt><tt class="py-name">ilog</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">         </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-name">clsfy</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method pyvision.face.PCA.PCA.train()=pyvision.face.PCA.PCA-class.html#train,Method pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train()=pyvision.face.SVMEyeDetector.RegressionEyeLocator2-class.html#train,Method pyvision.face.SVMEyeDetector.SVMEyeDetector.train()=pyvision.face.SVMEyeDetector.SVMEyeDetector-class.html#train,Method pyvision.face.SVMFaceRec.SVMFaceRec.train()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#train,Method pyvision.face.headdetector.HeadDetector.train()=pyvision.face.headdetector.HeadDetector-class.html#train,Method pyvision.ml.libsvm.FeaturePreprocessor.train()=pyvision.ml.libsvm.FeaturePreprocessor-class.html#train,Method pyvision.ml.libsvm.NoNorm.train()=pyvision.ml.libsvm.NoNorm-class.html#train,Method pyvision.ml.libsvm.SVC.train()=pyvision.ml.libsvm.SVC-class.html#train,Method pyvision.ml.libsvm.SVR.train()=pyvision.ml.libsvm.SVR-class.html#train,Method pyvision.ml.libsvm.ZNormValues.train()=pyvision.ml.libsvm.ZNormValues-class.html#train,Method pyvision.ml.libsvm._LabelScale.train()=pyvision.ml.libsvm._LabelScale-class.html#train,Method pyvision.ml.regression.LogisticRegression.train()=pyvision.ml.regression.LogisticRegression-class.html#train,Method pyvision.point.PointLocator.KRRLocator.train()=pyvision.point.PointLocator.KRRLocator-class.html#train,Method pyvision.point.PointLocator.SVMLocator.train()=pyvision.point.PointLocator.SVMLocator-class.html#train,Method pyvision.vector.PCA.PCA.train()=pyvision.vector.PCA.PCA-class.html#train,Method pyvision.vector.VectorClassifier.VectorClassifier.train()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#train,Method pyvision.vector.id3.ID3.train()=pyvision.vector.id3.ID3-class.html#train,Method pyvision.vector.id3.Node.train()=pyvision.vector.id3.Node-class.html#train"><a title="pyvision.face.PCA.PCA.train
+pyvision.face.SVMEyeDetector.RegressionEyeLocator2.train
+pyvision.face.SVMEyeDetector.SVMEyeDetector.train
+pyvision.face.SVMFaceRec.SVMFaceRec.train
+pyvision.face.headdetector.HeadDetector.train
+pyvision.ml.libsvm.FeaturePreprocessor.train
+pyvision.ml.libsvm.NoNorm.train
+pyvision.ml.libsvm.SVC.train
+pyvision.ml.libsvm.SVR.train
+pyvision.ml.libsvm.ZNormValues.train
+pyvision.ml.libsvm._LabelScale.train
+pyvision.ml.regression.LogisticRegression.train
+pyvision.point.PointLocator.KRRLocator.train
+pyvision.point.PointLocator.SVMLocator.train
+pyvision.vector.PCA.PCA.train
+pyvision.vector.VectorClassifier.VectorClassifier.train
+pyvision.vector.id3.ID3.train
+pyvision.vector.id3.Node.train" class="py-name" href="#" onclick="return doclink('link-42', 'train', 'link-42');">train</a></tt><tt class="py-op">(</tt><tt class="py-name">ilog</tt><tt class="py-op">=</tt><tt class="py-name">ilog</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">     </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt id="link-43" class="py-name" targets="Method pyvision.analysis.ImageLog.ImageLog.table()=pyvision.analysis.ImageLog.ImageLog-class.html#table,Method pyvision.analysis.html_report.HtmlReport.table()=pyvision.analysis.html_report.HtmlReport-class.html#table"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-43', 'table', 'link-43');">table</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Module pyvision.analysis.Table=pyvision.analysis.Table-module.html,Class pyvision.analysis.Table.Table=pyvision.analysis.Table.Table-class.html"><a title="pyvision.analysis.Table
+pyvision.analysis.Table.Table" class="py-name" href="#" onclick="return doclink('link-44', 'Table', 'link-44');">Table</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-comment">#values = {0:[],1:[]}</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-name">correct</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt id="link-45" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-45', 'each', 'link-37');">each</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">testing</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt id="link-46" class="py-name" targets="Method pyvision.analysis.plot.Plot.label()=pyvision.analysis.plot.Plot-class.html#label"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-46', 'label', 'link-46');">label</a></tt> <tt class="py-op">=</tt> <tt class="py-name">clsfy</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method pyvision.face.SVMFaceRec.SVMFaceRec.predict()=pyvision.face.SVMFaceRec.SVMFaceRec-class.html#predict,Method pyvision.ml.opencv_ml.StatsModelWrapper.predict()=pyvision.ml.opencv_ml.StatsModelWrapper-class.html#predict,Method pyvision.ml.regression.LogisticRegression.predict()=pyvision.ml.regression.LogisticRegression-class.html#predict,Method pyvision.point.PointLocator.KRRLocator.predict()=pyvision.point.PointLocator.KRRLocator-class.html#predict,Method pyvision.point.PointLocator.SVMLocator.predict()=pyvision.point.PointLocator.SVMLocator-class.html#predict,Method pyvision.surveillance.kalman.KalmanFilter.predict()=pyvision.surveillance.kalman.KalmanFilter-class.html#predict,Method pyvision.vector.VectorClassifier.VectorClassifier.predict()=pyvision.vector.VectorClassifier.VectorClassifier-class.html#predict"><a title="pyvision.face.SVMFaceRec.SVMFaceRec.predict
+pyvision.ml.opencv_ml.StatsModelWrapper.predict
+pyvision.ml.regression.LogisticRegression.predict
+pyvision.point.PointLocator.KRRLocator.predict
+pyvision.point.PointLocator.SVMLocator.predict
+pyvision.surveillance.kalman.KalmanFilter.predict
+pyvision.vector.VectorClassifier.VectorClassifier.predict" class="py-name" href="#" onclick="return doclink('link-47', 'predict', 'link-47');">predict</a></tt><tt class="py-op">(</tt><tt id="link-48" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-48', 'each', 'link-37');">each</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">ilog</tt><tt class="py-op">=</tt><tt class="py-name">ilog</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">total</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-49" class="py-name"><a title="pyvision.analysis.plot.Plot.label" class="py-name" href="#" onclick="return doclink('link-49', 'label', 'link-46');">label</a></tt> <tt class="py-op">==</tt> <tt id="link-50" class="py-name"><a title="pyvision.types.exif.each" class="py-name" href="#" onclick="return doclink('link-50', 'each', 'link-37');">each</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-name">correct</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">         </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-name">rate</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">correct</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">total</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">ilog</tt><tt class="py-op">:</tt> <tt class="py-name">ilog</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-51', 'table', 'link-43');">table</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="pyvision.analysis.ImageLog.ImageLog.table
+pyvision.analysis.html_report.HtmlReport.table" class="py-name" href="#" onclick="return doclink('link-52', 'table', 'link-43');">table</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">rate</tt> </tt>
+</div><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt id="link-53" class="py-name"><a title="pyvision" class="py-name" href="#" onclick="return doclink('link-53', 'pyvision', 'link-0');">pyvision</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Package pyvision.vector=pyvision.vector-module.html"><a title="pyvision.vector" class="py-name" href="#" onclick="return doclink('link-54', 'vector', 'link-54');">vector</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Module pyvision.vector.SVM=pyvision.vector.SVM-module.html,Class pyvision.vector.SVM.SVM=pyvision.vector.SVM.SVM-class.html"><a title="pyvision.vector.SVM
+pyvision.vector.SVM.SVM" class="py-name" href="#" onclick="return doclink('link-55', 'SVM', 'link-55');">SVM</a></tt> <tt class="py-keyword">import</tt> <tt id="link-56" class="py-name"><a title="pyvision.vector.SVM
+pyvision.vector.SVM.SVM" class="py-name" href="#" onclick="return doclink('link-56', 'SVM', 'link-55');">SVM</a></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">     </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-name">svm</tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name"><a title="pyvision.vector.SVM
+pyvision.vector.SVM.SVM" class="py-name" href="#" onclick="return doclink('link-57', 'SVM', 'link-55');">SVM</a></tt><tt class="py-op">(</tt><tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-string">'LINEAR'</tt><tt class="py-op">,</tt><tt class="py-name">random_seed</tt><tt class="py-op">=</tt><tt class="py-number">30</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-name">ilog</tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Module pyvision.analysis.ImageLog=pyvision.analysis.ImageLog-module.html,Class pyvision.analysis.ImageLog.ImageLog=pyvision.analysis.ImageLog.ImageLog-class.html"><a title="pyvision.analysis.ImageLog
+pyvision.analysis.ImageLog.ImageLog" class="py-name" href="#" onclick="return doclink('link-58', 'ImageLog', 'link-58');">ImageLog</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"SVM rate:"</tt><tt class="py-op">,</tt><tt id="link-59" class="py-name" targets="Function pyvision.data.genderClassifier()=pyvision.data-module.html#genderClassifier"><a title="pyvision.data.genderClassifier" class="py-name" href="#" onclick="return doclink('link-59', 'genderClassifier', 'link-59');">genderClassifier</a></tt><tt class="py-op">(</tt><tt class="py-name">svm</tt><tt class="py-op">,</tt><tt class="py-name">ilog</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">     </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-name">svm</tt> <tt class="py-op">=</tt> <tt id="link-60" class="py-name"><a title="pyvision.vector.SVM
+pyvision.vector.SVM.SVM" class="py-name" href="#" onclick="return doclink('link-60', 'SVM', 'link-55');">SVM</a></tt><tt class="py-op">(</tt><tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-string">'RBF'</tt><tt class="py-op">,</tt><tt class="py-name">random_seed</tt><tt class="py-op">=</tt><tt class="py-number">30</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt class="py-name">ilog</tt> <tt class="py-op">=</tt> <tt class="py-name">pv</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="pyvision.analysis.ImageLog
+pyvision.analysis.ImageLog.ImageLog" class="py-name" href="#" onclick="return doclink('link-61', 'ImageLog', 'link-58');">ImageLog</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"SVM rate:"</tt><tt class="py-op">,</tt><tt id="link-62" class="py-name"><a title="pyvision.data.genderClassifier" class="py-name" href="#" onclick="return doclink('link-62', 'genderClassifier', 'link-59');">genderClassifier</a></tt><tt class="py-op">(</tt><tt class="py-name">svm</tt><tt class="py-op">,</tt><tt class="py-name">ilog</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">     </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-name">ilog</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method pyvision.analysis.ImageLog.ImageLog.show()=pyvision.analysis.ImageLog.ImageLog-class.html#show,Method pyvision.analysis.Montage.ImageMontage.show()=pyvision.analysis.Montage.ImageMontage-class.html#show,Method pyvision.analysis.plot.Plot.show()=pyvision.analysis.plot.Plot-class.html#show,Method pyvision.analysis.progress_bar.ProgressBar.show()=pyvision.analysis.progress_bar.ProgressBar-class.html#show,Method pyvision.point.GaborJets.GaborImage.show()=pyvision.point.GaborJets.GaborImage-class.html#show,Method pyvision.types.ImageBuffer.ImageBuffer.show()=pyvision.types.ImageBuffer.ImageBuffer-class.html#show,Method pyvision.types.img.Image.show()=pyvision.types.img.Image-class.html#show"><a title="pyvision.analysis.ImageLog.ImageLog.show
+pyvision.analysis.Montage.ImageMontage.show
+pyvision.analysis.plot.Plot.show
+pyvision.analysis.progress_bar.ProgressBar.show
+pyvision.point.GaborJets.GaborImage.show
+pyvision.types.ImageBuffer.ImageBuffer.show
+pyvision.types.img.Image.show" class="py-name" href="#" onclick="return doclink('link-63', 'show', 'link-63');">show</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:32:00 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

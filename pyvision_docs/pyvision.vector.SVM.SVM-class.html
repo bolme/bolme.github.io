@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.vector.SVM.SVM</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.vector-module.html">Package&nbsp;vector</a> ::
+        <a href="pyvision.vector.SVM-module.html">Module&nbsp;SVM</a> ::
+        Class&nbsp;SVM
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.vector.SVM.SVM-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SVM</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+<a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html">VectorClassifier.VectorClassifier</a> --+
+                                    |
+                                   <strong class="uidshort">SVM</strong>
+</pre>
+
+<hr />
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.vector.SVM.SVM-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">svm_type</span>=<span class="summary-sig-default">TYPE_SVC</span>,
+        <span class="summary-sig-arg">kernel</span>=<span class="summary-sig-default">KERNEL_RBF</span>,
+        <span class="summary-sig-arg">svr_epsilon</span>=<span class="summary-sig-default">0.1</span>,
+        <span class="summary-sig-arg">nu</span>=<span class="summary-sig-default">0.5</span>,
+        <span class="summary-sig-arg">random_seed</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">validation_size</span>=<span class="summary-sig-default">0.33</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create an svm.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__getstate__"></a><span class="summary-sig-name">__getstate__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      This function is neccessary for pickling</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.__getstate__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__setstate__"></a><span class="summary-sig-name">__setstate__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">state</span>)</span><br />
+      This function is neccessary for pickling</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.__setstate__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.vector.SVM.SVM-class.html#trainClassifer" class="summary-sig-name">trainClassifer</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">labels</span>,
+        <span class="summary-sig-arg">vectors</span>,
+        <span class="summary-sig-arg">ilog</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">verbose</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">callback</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">C_range</span>=<span class="summary-sig-default">2.0**np.arange(-5,16,1)</span>,
+        <span class="summary-sig-arg">G_range</span>=<span class="summary-sig-default">2.0**np.arange(-15,4,1)</span>)</span><br />
+      Do not call this function instead call train.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.trainClassifer">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="train_SVC_RBF"></a><span class="summary-sig-name">train_SVC_RBF</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">labels</span>,
+        <span class="summary-sig-arg">vectors</span>,
+        <span class="summary-sig-arg">verbose</span>,
+        <span class="summary-sig-arg">C_range</span>,
+        <span class="summary-sig-arg">G_range</span>,
+        <span class="summary-sig-arg">callback</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Private use only</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.train_SVC_RBF">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="train_SVR_RBF"></a><span class="summary-sig-name">train_SVR_RBF</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">labels</span>,
+        <span class="summary-sig-arg">vectors</span>,
+        <span class="summary-sig-arg">verbose</span>,
+        <span class="summary-sig-arg">C_range</span>,
+        <span class="summary-sig-arg">G_range</span>,
+        <span class="summary-sig-arg">callback</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Private use only</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.train_SVR_RBF">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="train_SVC_Linear"></a><span class="summary-sig-name">train_SVC_Linear</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">labels</span>,
+        <span class="summary-sig-arg">vectors</span>,
+        <span class="summary-sig-arg">verbose</span>,
+        <span class="summary-sig-arg">C_range</span>,
+        <span class="summary-sig-arg">callback</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Private use only.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.train_SVC_Linear">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="train_SVR_Linear"></a><span class="summary-sig-name">train_SVR_Linear</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">labels</span>,
+        <span class="summary-sig-arg">vectors</span>,
+        <span class="summary-sig-arg">verbose</span>,
+        <span class="summary-sig-arg">C_range</span>,
+        <span class="summary-sig-arg">callback</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Private use only</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.train_SVR_Linear">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.vector.SVM.SVM-class.html#predictValue" class="summary-sig-name">predictValue</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">ilog</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Please call predict instead.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.predictValue">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="predictSVMProbability"></a><span class="summary-sig-name">predictSVMProbability</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.predictSVMProbability">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="predictSVMValues"></a><span class="summary-sig-name">predictSVMValues</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.predictSVMValues">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html">VectorClassifier.VectorClassifier</a></code></b>:
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#addTraining">addTraining</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#invertClass">invertClass</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#invertReg">invertReg</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#normalizeVector">normalizeVector</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#predict">predict</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#train">train</a></code>,
+      <code><a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#trainNormalization">trainNormalization</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">svm_type</span>=<span class="sig-default">TYPE_SVC</span>,
+        <span class="sig-arg">kernel</span>=<span class="sig-default">KERNEL_RBF</span>,
+        <span class="sig-arg">svr_epsilon</span>=<span class="sig-default">0.1</span>,
+        <span class="sig-arg">nu</span>=<span class="sig-default">0.5</span>,
+        <span class="sig-arg">random_seed</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">validation_size</span>=<span class="sig-default">0.33</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create an svm.</p>
+  <p>Make sure you choose &quot;classifacition&quot; or 
+  &quot;regression&quot;.  Other parameters control features of the 
+  SVM.</p>
+  <p>also passes keyword args to VectorClassifier</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#__init__">VectorClassifier.VectorClassifier.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="trainClassifer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trainClassifer</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">labels</span>,
+        <span class="sig-arg">vectors</span>,
+        <span class="sig-arg">ilog</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">verbose</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">callback</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">C_range</span>=<span class="sig-default">2.0**np.arange(-5,16,1)</span>,
+        <span class="sig-arg">G_range</span>=<span class="sig-default">2.0**np.arange(-15,4,1)</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.trainClassifer">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Do not call this function instead call train.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#trainClassifer">VectorClassifier.VectorClassifier.trainClassifer</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="predictValue"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">predictValue</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>,
+        <span class="sig-arg">ilog</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.vector.SVM-pysrc.html#SVM.predictValue">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Please call predict instead.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="pyvision.vector.VectorClassifier.VectorClassifier-class.html#predictValue">VectorClassifier.VectorClassifier.predictValue</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

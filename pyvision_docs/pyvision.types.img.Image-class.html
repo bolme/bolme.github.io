@@ -1,0 +1,2111 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.types.img.Image</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.types-module.html">Package&nbsp;types</a> ::
+        <a href="pyvision.types.img-module.html">Module&nbsp;img</a> ::
+        Class&nbsp;Image
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.types.img.Image-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Image</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image">source&nbsp;code</a></span></p>
+<p>The primary purpose of the image class is to provide a structure that 
+  can transform an image back and fourth for different python libraries 
+  such as <a href="http://www.pythonware.com/products/pil" 
+  target="_top">PIL</a>, <a 
+  href="http://sourceforge.net/projects/opencvlibrary" 
+  target="_top">OpenCV</a>, and <a href="http://www.scipy.org&quot;" 
+  target="_top">Scipy</a> Images. This class also allows some simple 
+  operations on the image such as annotation.</p>
+  <p><b>Note:</b> When working with images in matrix format, they are 
+  transposed such that x = col and y = row.  You can therefore still work 
+  with coords such that im[x,y] = mat[x,y]. #</p>
+  <p>Images have the following attributes:</p>
+  <ul>
+    <li>
+      width = width of the image
+    </li>
+    <li>
+      height = height of the image
+    </li>
+    <li>
+      size = (width,height)
+    </li>
+    <li>
+      channels = number of channels: 1(gray), 3(RGB)
+    </li>
+    <li>
+      depth = bitdepth: 8(uchar), 32(float), 64(double)
+    </li>
+  </ul>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">bw_annotate</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Create an image from a file or a PIL Image, OpenCV Image, or numpy 
+      array.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asBW" class="summary-sig-name">asBW</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      a gray-scale version of this pyvision image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asBW">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asMatrix2D" class="summary-sig-name">asMatrix2D</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the gray-scale image data as a two dimensional numpy array</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asMatrix2D">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asMatrix3D" class="summary-sig-name">asMatrix3D</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      color image data as a 3D array with shape (3(rgb),w,h)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asMatrix3D">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asPIL" class="summary-sig-name">asPIL</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      image data as a pil image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asPIL">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asOpenCV" class="summary-sig-name">asOpenCV</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the image data in an OpenCV format</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asOpenCV2" class="summary-sig-name">asOpenCV2</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the image data in an OpenCV format that is a numpy array of shape 
+      (h,w,3) of uint8</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asOpenCV2BW" class="summary-sig-name">asOpenCV2BW</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the image data in an OpenCV format that is a numpy array of shape 
+      (h,w,1) of uint8</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV2BW">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asOpenCVBW" class="summary-sig-name">asOpenCVBW</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      the image data in an OpenCV one channel format</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCVBW">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asThermal" class="summary-sig-name">asThermal</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">clip_negative</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Returns:
+      a thermal colored representation of this image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asThermal">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asAnnotated" class="summary-sig-name">asAnnotated</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">as_type</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">PIL</code><code class="variable-quote">'</code></span>)</span><br />
+      Returns:
+      the PIL image used for annotation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asAnnotated">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asHSV" class="summary-sig-name">asHSV</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      an OpenCV HSV encoded image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asHSV">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#asLAB" class="summary-sig-name">asLAB</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns:
+      an OpenCV LAB encoded image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asLAB">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#getExif" class="summary-sig-name">getExif</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">output</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">simple</code><code class="variable-quote">'</code></span>)</span><br />
+      This function returns the exif headers for an image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.getExif">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateRect" class="summary-sig-name">annotateRect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rect</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">fill_color</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">alpha</span>=<span class="summary-sig-default">1.0</span>)</span><br />
+      Draws a rectangle on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateRect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateImage" class="summary-sig-name">annotateImage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">im</span>,
+        <span class="summary-sig-arg">rect</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">fill_color</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Draws an image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateThickRect" class="summary-sig-name">annotateThickRect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rect</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">5</span>)</span><br />
+      Draws a rectangle on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateThickRect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateEllipse" class="summary-sig-name">annotateEllipse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rect</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Draws an ellipse on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateEllipse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateLine" class="summary-sig-name">annotateLine</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point1</span>,
+        <span class="summary-sig-arg">point2</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Draws a line from point1 to point2 on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLine">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateLines" class="summary-sig-name">annotateLines</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Draws a line from point1 to point2 on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateMask" class="summary-sig-name">annotateMask</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mask</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Shades the contents of a mask.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateMask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotatePolygon" class="summary-sig-name">annotatePolygon</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">width</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">fill</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Draws a line from point1 to point2 on the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePolygon">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotatePoint" class="summary-sig-name">annotatePoint</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Marks a point in the annotation image using a small circle</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotatePoints" class="summary-sig-name">annotatePoints</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Marks a point in the annotation image using a small circle</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePoints">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateCircle" class="summary-sig-name">annotateCircle</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">3</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">fill</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Marks a circle in the annotation image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateCircle">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateArc" class="summary-sig-name">annotateArc</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">3</span>,
+        <span class="summary-sig-arg">startangle</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">endangle</span>=<span class="summary-sig-default">360</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Draws a circular arc on the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateArc">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateLabel" class="summary-sig-name">annotateLabel</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">label</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">mark</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">font</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">background</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Marks a point in the image with text</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLabel">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#annotateDot" class="summary-sig-name">annotateDot</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">color</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span><br />
+      Like <a href="pyvision.types.img.Image-class.html#annotatePoint" 
+      class="link">annotatePoint</a> but only draws a point on the given 
+      pixel.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateDot">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="valueNormalize"></a><span class="summary-sig-name">valueNormalize</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      TODO: Deprecated remove this sometime.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.valueNormalize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getType"></a><span class="summary-sig-name">getType</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return the type of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.getType">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="normalize"></a><span class="summary-sig-name">normalize</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Equalize and normalize the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.normalize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="equalize"></a><span class="summary-sig-name">equalize</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">bw</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Equalize the image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.equalize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_generateMatrix2D"></a><span class="summary-sig-name">_generateMatrix2D</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a matrix version of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateMatrix2D">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_generateMatrix3D"></a><span class="summary-sig-name">_generateMatrix3D</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a matrix version of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateMatrix3D">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_generatePIL"></a><span class="summary-sig-name">_generatePIL</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a PIL version of the image</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generatePIL">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#_generateOpenCV" class="summary-sig-name" onclick="show_private();">_generateOpenCV</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a color opencv representation of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateOpenCV">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_generateOpenCV2"></a><span class="summary-sig-name">_generateOpenCV2</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a matrix version of the image compatible with OpenCV 2 (cv2) 
+      in BGR format.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateOpenCV2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_generateOpenCV2BW"></a><span class="summary-sig-name">_generateOpenCV2BW</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Create a matrix version of the image compatible with OpenCV 2 (cv2) 
+      in BGR format.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateOpenCV2BW">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#toBufferGray" class="summary-sig-name">toBufferGray</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">depth</span>)</span><br />
+      Returns:
+      the image data as a binary python string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.toBufferGray">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="toBufferRGB"></a><span class="summary-sig-name">toBufferRGB</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">depth</span>)</span><br />
+      returns the image data as a binary python string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.toBufferRGB">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#toBufferRGBA" class="summary-sig-name">toBufferRGBA</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">depth</span>)</span><br />
+      returns the image data as a binary python string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.toBufferRGBA">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#thumbnail" class="summary-sig-name">thumbnail</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">newSize</span>)</span><br />
+      Returns a resized version of the image that fits in new_size but 
+      preserves the aspect ratio.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.thumbnail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#resize" class="summary-sig-name">resize</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">newSize</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Returns a resized version of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.resize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#scale" class="summary-sig-name">scale</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scale</span>)</span><br />
+      Returns a scaled version of the image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.scale">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#copy" class="summary-sig-name">copy</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a new pv.Image which is a copy of (only) the current image.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.copy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">pv.Image</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#crop" class="summary-sig-name">crop</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">rect</span>,
+        <span class="summary-sig-arg">size</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">interpolation</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">return_affine</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Crops an image to the given rectangle.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.crop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#save" class="summary-sig-name">save</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">annotations</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Save the image to a file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.save">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.types.img.Image-class.html#show" class="summary-sig-name">show</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">window</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">pos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">delay</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">size</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Displays the annotated version of the image using OpenCV highgui</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.show">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__repr__"></a><span class="summary-sig-name">__repr__</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.__repr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>,
+        <span class="sig-arg">bw_annotate</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create an image from a file or a PIL Image, OpenCV Image, or numpy 
+  array.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> - this can be a numpy array, PIL image, or opencv image.</li>
+        <li><strong class="pname"><code>bw_annotate</code></strong> - generate a black and white image to make color annotations show 
+          up better</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>an Image object instance</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asBW"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asBW</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asBW">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a gray-scale version of this pyvision image</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asMatrix2D"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asMatrix2D</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asMatrix2D">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the gray-scale image data as a two dimensional numpy array</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asMatrix3D"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asMatrix3D</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asMatrix3D">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>color image data as a 3D array with shape (3(rgb),w,h)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asPIL"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asPIL</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asPIL">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>image data as a pil image</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asOpenCV"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asOpenCV</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the image data in an OpenCV format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asOpenCV2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asOpenCV2</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the image data in an OpenCV format that is a numpy array of shape
+          (h,w,3) of uint8</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asOpenCV2BW"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asOpenCV2BW</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCV2BW">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the image data in an OpenCV format that is a numpy array of shape
+          (h,w,1) of uint8</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asOpenCVBW"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asOpenCVBW</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asOpenCVBW">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the image data in an OpenCV one channel format</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asThermal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asThermal</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">clip_negative</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asThermal">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a thermal colored representation of this image.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asAnnotated"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asAnnotated</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">as_type</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">PIL</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asAnnotated">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>as_type</code></strong> - Specify either &quot;PIL&quot; or &quot;PV&quot;. If 
+          &quot;PIL&quot; (default) then the return type is a PIL image. If
+          &quot;PV&quot;, then the return type is a pyvision image, where 
+          the annotations have been 'flattened' onto the original source 
+          image.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the PIL image used for annotation.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asHSV"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asHSV</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asHSV">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>an OpenCV HSV encoded image</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="asLAB"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">asLAB</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.asLAB">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>an OpenCV LAB encoded image</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getExif"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getExif</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">output</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">simple</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.getExif">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function returns the exif headers for an image.  This only works 
+  for images that have been read from disk.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>output</code></strong> - select 'simple' or 'full'. 'full' output contains additional 
+          metadata.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a dictionary of EXIF data.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateRect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateRect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rect</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">fill_color</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">alpha</span>=<span class="sig-default">1.0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateRect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a rectangle on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rect</code></strong> - a rectangle of type Rect</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+        <li><strong class="pname"><code>fill_color</code></strong> - defined as per color, but indicates the color used to fill the 
+          rectangle. Specify None for no fill.</li>
+        <li><strong class="pname"><code>alpha</code></strong> - Ignored if no fill. Otherwise, this value controls how opaque the
+          fill is. Specify 1.0 (default) for a fully opaque fill, or 0.0 
+          for fully transparent. A value of 0.3, for example, would show a 
+          partially transparent filled rectangle over the background image.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateImage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateImage</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">im</span>,
+        <span class="sig-arg">rect</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">fill_color</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateImage">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws an image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>im</code></strong> - the image to render</li>
+        <li><strong class="pname"><code>rect</code></strong> - a rectangle of type Rect</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+        <li><strong class="pname"><code>fill_color</code></strong> - defined as per color, but indicates the color used to fill the 
+          rectangle. Specify None for no fill.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateThickRect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateThickRect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rect</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">5</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateThickRect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a rectangle on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rect</code></strong> - a rectangle of type Rect</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateEllipse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateEllipse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rect</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateEllipse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws an ellipse on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rect</code></strong> - the bounding box of the elipse of type Rect</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateLine"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateLine</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point1</span>,
+        <span class="sig-arg">point2</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLine">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a line from point1 to point2 on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point1</code></strong> - the starting point as type Point</li>
+        <li><strong class="pname"><code>point2</code></strong> - the ending point as type Point</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateLines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateLines</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">points</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLines">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a line from point1 to point2 on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point1</code></strong> - the starting point as type Point</li>
+        <li><strong class="pname"><code>point2</code></strong> - the ending point as type Point</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateMask"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateMask</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mask</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateMask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Shades the contents of a mask.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mask</code></strong> - a numpy array showing the mask.</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotatePolygon"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotatePolygon</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">points</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">width</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">fill</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePolygon">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a line from point1 to point2 on the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - a list of pv points to be plotted</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+        <li><strong class="pname"><code>width</code></strong> - the line width</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotatePoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotatePoint</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Marks a point in the annotation image using a small circle</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the point to mark as type Point</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotatePoints"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotatePoints</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">points</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotatePoints">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Marks a point in the annotation image using a small circle</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the point to mark as type Point</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateCircle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateCircle</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">3</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">fill</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateCircle">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Marks a circle in the annotation image</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the center of the circle as type Point</li>
+        <li><strong class="pname"><code>radius</code></strong> - the radius of the circle</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateArc"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateArc</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">3</span>,
+        <span class="sig-arg">startangle</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">endangle</span>=<span class="sig-default">360</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateArc">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Draws a circular arc on the image.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the center of the circle as type Point</li>
+        <li><strong class="pname"><code>radius</code></strong> - the radius of the circle</li>
+        <li><strong class="pname"><code>startangle</code></strong> - the starting angle of the arc segment to be drawn, in degrees</li>
+        <li><strong class="pname"><code>endangle</code></strong> - the ending angle in degrees. Arc will be drawn clockwise from 
+          starting angle to ending angle.</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateLabel"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateLabel</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">label</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">mark</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">font</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">background</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateLabel">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Marks a point in the image with text</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the point to mark as type Point</li>
+        <li><strong class="pname"><code>label</code></strong> - the text to use as a string</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+        <li><strong class="pname"><code>mark</code></strong> - of True or ['right', 'left', 'below', or 'above','centered'] then
+          also mark the point with a small circle</li>
+        <li><strong class="pname"><code>font</code></strong> - An optional PIL.ImageFont font object to use. Alternatively, 
+          specify an integer and the label will use Arial font of that 
+          size. If None, then the default is used.</li>
+        <li><strong class="pname"><code>background</code></strong> - An optional color that will be used to draw a rectangular 
+          background underneath the text.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="annotateDot"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">annotateDot</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">point</span>,
+        <span class="sig-arg">color</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">red</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.annotateDot">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Like <a href="pyvision.types.img.Image-class.html#annotatePoint" 
+  class="link">annotatePoint</a> but only draws a point on the given pixel.
+  This is useful to avoid clutter if many points are being annotated.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - the point to mark as type Point</li>
+        <li><strong class="pname"><code>color</code></strong> - defined as ('#rrggbb' or 'name')</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_generateOpenCV"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_generateOpenCV</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image._generateOpenCV">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create a color opencv representation of the image. TODO: The OpenCV 
+  databuffer seems to be automatically swapped from RGB to BGR.  This is 
+  counter intuitive.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="toBufferGray"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toBufferGray</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">depth</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.toBufferGray">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>depth</code></strong> - Use 8, 32, or 64, to specify the bit depth of the pixels.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the image data as a binary python string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="toBufferRGBA"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toBufferRGBA</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">depth</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.toBufferRGBA">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>returns the image data as a binary python string. TODO: Not yet 
+  implemented</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="thumbnail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">thumbnail</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">newSize</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.thumbnail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a resized version of the image that fits in new_size but 
+  preserves the aspect ratio.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>newSize</code></strong> - tuple (new_width, new_height)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a new pyvision image that is the resized version of this image.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="resize"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resize</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">newSize</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.resize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a resized version of the image. This is a convenience 
+  function. For more control, look at the Affine class for arbitrary 
+  transformations.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>newSize</code></strong> - tuple (new_width, new_height)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a new pyvision image that is the resized version of this image.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="scale"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">scale</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scale</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.scale">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a scaled version of the image. This is a convenience function.
+  For more control, look at the Affine class for arbitrary 
+  transformations.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>scale</code></strong> - a float indicating the scale factor</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a new pyvision image that is the scaled version of this image.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="copy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">copy</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.copy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a new pv.Image which is a copy of (only) the current image. 
+  Other internal data stored by the current pv.Image will NOT be copied. 
+  This method uses cv.CloneImage so that the underlying image data will be 
+  disconnected from the original data. (Deep copy)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="crop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">crop</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">rect</span>,
+        <span class="sig-arg">size</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">interpolation</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">return_affine</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.crop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Crops an image to the given rectangle. Rectangle parameters are 
+  rounded to nearest integer values.  High quality resampling.  The default
+  behavior is to use cv.GetSubRect to crop the image.  This returns a slice
+  the OpenCV image so modifying the resulting image data will also modify 
+  the data in this image.  If a size is provide a new OpenCV image is 
+  created for that size and cv.Resize is used to copy the image data. If 
+  the bounds of the rectangle are outside the image, an affine transform 
+  (pv.AffineFromRect) is used to produce the croped image to properly 
+  handle regions outside the image. In this case the downsampling quality 
+  may not be as good. #</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>rect</code></strong> - a Rectangle defining the region to be cropped.</li>
+        <li><strong class="pname"><code>size</code></strong> - a new size for the returned image.  If None the result is not 
+          resized.</li>
+        <li><strong class="pname"><code>interpolation</code></strong> - None = Autoselect or one of CV_INTER_AREA, CV_INTER_NN, 
+          CV_INTER_LINEAR, CV_INTER_BICUBIC</li>
+        <li><strong class="pname"><code>return_affine</code></strong> - If True, also return an affine transform that can be used to 
+          transform points.</li>
+    </ul></dd>
+    <dt>Returns: pv.Image</dt>
+        <dd>a cropped version of the image or if return affine a tuple of 
+          (image,affine)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="save"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">save</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">filename</span>,
+        <span class="sig-arg">annotations</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.save">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Save the image to a file.  This is performed by converting to PIL and 
+  then saving to a file based on on the extension.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="show"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">show</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">window</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">pos</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">delay</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">size</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.types.img-pysrc.html#Image.show">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Displays the annotated version of the image using OpenCV highgui</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>window</code></strong> - the name of the highgui window to use, if one already exists by 
+          this name, or it will create a new highgui window with this name.</li>
+        <li><strong class="pname"><code>pos</code></strong> - if a new window is being created, the (x,y) coordinate for the 
+          new window</li>
+        <li><strong class="pname"><code>delay</code></strong> - A delay in milliseconds to wait for keyboard input (passed to 
+          cv.WaitKey). 0 delays indefinitely, 30 is good for presenting a 
+          series of images like a video. For performance reasons, namely 
+          when using the same window to display successive frames of video,
+          we don't want to tear-down and re-create the window each time. 
+          Thus the window frame will persist beyond the scope of the call 
+          to img.show(). The window will disappear after the program exits,
+          or it can be destroyed with a call to cv.DestroyWindow.</li>
+        <li><strong class="pname"><code>size</code></strong> - Optional output size for image, None=native size.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the return value of the cv.WaitKey call.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

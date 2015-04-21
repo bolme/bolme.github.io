@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.beta.vtm.VideoTaskManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.beta-module.html" onclick="show_private();">Package&nbsp;beta</a> ::
+        <a href="pyvision.beta.vtm-module.html">Module&nbsp;vtm</a> ::
+        Class&nbsp;VideoTaskManager
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.beta.vtm.VideoTaskManager-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class VideoTaskManager</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">VideoTaskManager</strong>
+</pre>
+
+<hr />
+<p>The framework provide by this class will allow complex video 
+  processing systems to be constructed from simple tasks.  Often video 
+  processing loops can be complicated because data needs to persist across 
+  many frame and many operations or tasks need to be completed to solve a 
+  video analysis problem.  This class allows for many small and simple 
+  tasks to be managed in a way that can produce a complex and powerful 
+  system. #</p>
+  <p>Tasks request only the data they need, which keeps the complexity of 
+  tasks as simple as possible.  This also reduces the coupling between 
+  tasks and eliminates complex video processing loops. The video task 
+  manager handles much of the complexity of the video processing system 
+  like data buffering, and insures that each task gets its required data. 
+  #</p>
+  <p>This class manages tasks that are run on video frames.  The video task
+  manager maintains a list of data objects and task objects.  Each task is 
+  a listener for data objects.  When the data objects are avalible required
+  to execute a task the tasks execute method will be called and the 
+  required data items will be passed as arguments. #</p>
+  <p>New frames are added using the addFrame method.  When a frame is added
+  it creates a data item that includes a frame_id, a data type of 
+  &quot;FRAME&quot;, and a pv.Image that contains the frame data.  Tasks 
+  can register to receive that frame data or any data products of other 
+  tasks and when that data becomes available the task will be executed.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">debug_level</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">buffer_size</span>=<span class="summary-sig-default">10</span>,
+        <span class="summary-sig-arg">show</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Create a task manager.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#addTaskFactory" class="summary-sig-name">addTaskFactory</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">task_factory</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      This function add a task factory function to the video task manager.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addTaskFactory">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#addFrame" class="summary-sig-name">addFrame</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">frame</span>,
+        <span class="summary-sig-arg">ilog</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Adds a new frame to the task manager and then start processing.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addFrame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#addData" class="summary-sig-name">addData</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data_list</span>)</span><br />
+      Add additional data for this frame.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addDataItem"></a><span class="summary-sig-name">addDataItem</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data_item</span>)</span><br />
+      Process any new data items and associate them with tasks.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addDataItem">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_createTasksForFrame"></a><span class="summary-sig-name">_createTasksForFrame</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">frame_id</span>)</span><br />
+      This calls the task factories to create tasks for the current frame.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._createTasksForFrame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_runTasks"></a><span class="summary-sig-name">_runTasks</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">flush</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Run any tasks that have all data available.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._runTasks">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#flush" class="summary-sig-name">flush</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Run all tasks that can be run and then finish up.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.flush">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#_evaluateTask" class="summary-sig-name" onclick="show_private();">_evaluateTask</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">task</span>,
+        <span class="summary-sig-arg">flush</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Attempts to run a task.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._evaluateTask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.beta.vtm.VideoTaskManager-class.html#_remainingTasksForFrame" class="summary-sig-name" onclick="show_private();">_remainingTasksForFrame</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">frame_id</span>)</span><br />
+      Returns:
+      the number of tasks that need to be run for this frame.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._remainingTasksForFrame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="showFrames"></a><span class="summary-sig-name">showFrames</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ilog</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Show any frames with no remaining tasks.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.showFrames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="recordingFile"></a><span class="summary-sig-name">recordingFile</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filename</span>)</span><br />
+      Set up an output file for recording.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.recordingFile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="playbackFile"></a><span class="summary-sig-name">playbackFile</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">cache</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Set up an input file for playback.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.playbackFile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="recordingFilter"></a><span class="summary-sig-name">recordingFilter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data_types</span>)</span><br />
+      Only recorded data_types in the list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.recordingFilter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="taskFilter"></a><span class="summary-sig-name">taskFilter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">task_types</span>)</span><br />
+      Only generate tasks in the list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.taskFilter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="playbackFilter"></a><span class="summary-sig-name">playbackFilter</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data_types</span>)</span><br />
+      Only playback data_types in the list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.playbackFilter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="asGraph"></a><span class="summary-sig-name">asGraph</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">as_image</span>=<span class="summary-sig-default">False</span>)</span><br />
+      This uses runtime analysis to create a dataflow graph for this VTM.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.asGraph">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">debug_level</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">buffer_size</span>=<span class="sig-default">10</span>,
+        <span class="sig-arg">show</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create a task manager.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>debug_level</code></strong> (int) - 0=quiet, 1=errors, 2=warnings, 3=info, 4=verbose</li>
+        <li><strong class="pname"><code>buffer_size</code></strong> (int) - the size of the frame and data buffer.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addTaskFactory"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addTaskFactory</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">task_factory</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addTaskFactory">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function add a task factory function to the video task manager. 
+  The function is called once for every frame processed by the 
+  VideoTaskManager.  This function should take one argument which is the 
+  frame_id of that frame.  The task factory should return an instance of 
+  the VideoTask class that will perform processing on this frame.  There 
+  are three options for implementing a task factory. #</p>
+  <ul>
+    <li>
+      A class object for a VideoTask which has a constructor that takes a 
+      frame_id as an argument.  When called the constructor for that class 
+      and will create a task.
+    </li>
+    <li>
+      A function that takes a frame id argument.  The function can create 
+      and return a task.
+    </li>
+    <li>
+      Any other object that implements the __call__ method which returns a 
+      task instance.
+    </li>
+  </ul>
+  <p>Any additional arguments or keyword arguments passed to this to this 
+  function will be pased after the frame_id argument to the task factory. 
+  #</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>task_factory</code></strong> (callable) - a function or callible object that returns a task.</li>
+        <li><strong class="pname"><code>profile</code></strong> (True | False) - Keyword argument.  If true, profile data will be generated for 
+          each call to this task.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addFrame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addFrame</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">frame</span>,
+        <span class="sig-arg">ilog</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addFrame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds a new frame to the task manager and then start processing.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>frame</code></strong> (pv.Image) - the next frame of video.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addData</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data_list</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.addData">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add additional data for this frame. The data list should contain a 
+  list tuples where each tuple of (label, data)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="flush"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flush</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager.flush">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Run all tasks that can be run and then finish up.  The LAST_FRAME data
+  item will be set to true for the last frame inserted.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_evaluateTask"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_evaluateTask</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">task</span>,
+        <span class="sig-arg">flush</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._evaluateTask">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Attempts to run a task.  This is intended to be run within a filter 
+  operation.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>false if task should be deleted and true otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_remainingTasksForFrame"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_remainingTasksForFrame</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">frame_id</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.beta.vtm-pysrc.html#VideoTaskManager._remainingTasksForFrame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the number of tasks that need to be run for this frame.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

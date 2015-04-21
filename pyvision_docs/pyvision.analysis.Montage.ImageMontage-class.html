@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyvision.analysis.Montage.ImageMontage</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pyvision-module.html">Package&nbsp;pyvision</a> ::
+        <a href="pyvision.analysis-module.html">Package&nbsp;analysis</a> ::
+        <a href="pyvision.analysis.Montage-module.html">Module&nbsp;Montage</a> ::
+        Class&nbsp;ImageMontage
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyvision.analysis.Montage.ImageMontage-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ImageMontage</h1><p class="nomargin-top"><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">ImageMontage</strong>
+</pre>
+
+<hr />
+<p>Displays thumbnails of a list of input images as a single 'montage' 
+  image. Supports scrolling if there are more images than 
+  &quot;viewports&quot; in the layout.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">image_list</span>,
+        <span class="summary-sig-arg">layout</span>=<span class="summary-sig-default"><code class="variable-group">(</code>2<code class="variable-op">, </code>4<code class="variable-group">)</code></span>,
+        <span class="summary-sig-arg">tile_size</span>=<span class="summary-sig-default"><code class="variable-group">(</code>64<code class="variable-op">, </code>48<code class="variable-group">)</code></span>,
+        <span class="summary-sig-arg">gutter</span>=<span class="summary-sig-default">2</span>,
+        <span class="summary-sig-arg">by_row</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">labels</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">index</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">keep_aspect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">highlight_selected</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Constructor</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#draw" class="summary-sig-name">draw</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mousePos</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Computes the image montage from the source images based on the 
+      current image pointer (position in list of images), etc.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.draw">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="asImage"></a><span class="summary-sig-name">asImage</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      If you don't want to use the montage's built-in mouse-click handling 
+      by calling the ImageMontage.show() method, then this method will 
+      return the montage image computed from the last call to draw().</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.asImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#show" class="summary-sig-name">show</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">window</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Image Montage</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">pos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">delay</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Will display the montage image, as well as register the mouse 
+      handling callback function so that the user can scroll the montage by
+      clicking the increment/decrement arrows.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.show">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#setSelectHandler" class="summary-sig-name">setSelectHandler</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">handler</span>)</span><br />
+      Add a function that will be called when an image is selected.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.setSelectHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#setHighlighted" class="summary-sig-name">setHighlighted</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">idxs</span>)</span><br />
+      If the montage was created with highlight_selected option enabled, 
+      then this function will cause a set of tiles in the montage to be 
+      highlighted.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.setHighlighted">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getHighlighted"></a><span class="summary-sig-name">getHighlighted</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the index list of the tiles which were selected/highlighted 
+      by the users</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.getHighlighted">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#_checkClickRegion" class="summary-sig-name" onclick="show_private();">_checkClickRegion</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      internal method to determine the clicked region of the montage.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._checkClickRegion">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_initDecrementArrow"></a><span class="summary-sig-name">_initDecrementArrow</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      internal method to compute the list of points that represents the 
+      appropriate decrement arrow (leftwards or upwards) depending on the 
+      image montage layout.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._initDecrementArrow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_initIncrementArrow"></a><span class="summary-sig-name">_initIncrementArrow</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      internal method to compute the list of points that represents the 
+      appropriate increment arrow (rightwards or downwards) depending on 
+      the image montage layout.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._initIncrementArrow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_decr"></a><span class="summary-sig-name">_decr</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      internal method used by _onClick to compute the new imgPtr location 
+      after a decrement</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._decr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_incr"></a><span class="summary-sig-name">_incr</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      internal method used by _onClick to compute the new imgPtr location 
+      after an increment</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._incr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyvision.analysis.Montage.ImageMontage-class.html#_composite" class="summary-sig-name" onclick="show_private();">_composite</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">img</span>,
+        <span class="summary-sig-arg">pos</span>,
+        <span class="summary-sig-arg">imgNum</span>)</span><br />
+      Internal method to composite the thumbnail of a given image into the 
+      correct position, given by (row,col).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._composite">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">image_list</span>,
+        <span class="sig-arg">layout</span>=<span class="sig-default"><code class="variable-group">(</code>2<code class="variable-op">, </code>4<code class="variable-group">)</code></span>,
+        <span class="sig-arg">tile_size</span>=<span class="sig-default"><code class="variable-group">(</code>64<code class="variable-op">, </code>48<code class="variable-group">)</code></span>,
+        <span class="sig-arg">gutter</span>=<span class="sig-default">2</span>,
+        <span class="sig-arg">by_row</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">labels</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">index</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">keep_aspect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">highlight_selected</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>image_list</code></strong> - A list of pyvision images that you wish to display as a montage.</li>
+        <li><strong class="pname"><code>layout</code></strong> - A tuple (rows,cols) that indicates the number of tiles to show in
+          a single montage page, oriented in a grid.</li>
+        <li><strong class="pname"><code>tile_size</code></strong> - The size of each thumbnail image to display in the montage.</li>
+        <li><strong class="pname"><code>gutter</code></strong> - The width in pixels of the gutter between thumbnails.</li>
+        <li><strong class="pname"><code>by_row</code></strong> - If true, the image tiles are placed in row-major order, that is, 
+          one row of the montage is filled before moving to the next. If 
+          false, then column order is used instead.</li>
+        <li><strong class="pname"><code>labels</code></strong> - Used to show a label at the lower left corner of each image in 
+          the montage. If this parameter is a list, then it should be the 
+          same length as len(image_list) and contain the label to be used 
+          for the corresponding image. If labels == 'index', then the image
+          montage will simply display the index of the image in image_list.
+          Set labels to None to suppress labels.</li>
+        <li><strong class="pname"><code>keep_aspect</code></strong> - If true the original image aspect ratio will be preserved.</li>
+        <li><strong class="pname"><code>highlight_selected</code></strong> - If true, any image tile in the montage which has been clicked 
+          will be drawn with a rectangular highlight. This will toggle, 
+          such that if an image is clicked a second time, the highlighting 
+          will be removed.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="draw"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">draw</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mousePos</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.draw">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Computes the image montage from the source images based on the current
+  image pointer (position in list of images), etc. This internally 
+  constructs the montage, but show() is required for display and 
+  mouse-click handling.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="show"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">show</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">window</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Image Montage</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">pos</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">delay</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.show">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Will display the montage image, as well as register the mouse handling
+  callback function so that the user can scroll the montage by clicking the
+  increment/decrement arrows.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>The key code of the key pressed, if any, that dismissed the 
+          window.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setSelectHandler"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setSelectHandler</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">handler</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.setSelectHandler">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add a function that will be called when an image is selected. The 
+  handler function should take an image, the image index, a list of labels,
+  and a dictionary of other info.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="setHighlighted"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setHighlighted</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">idxs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage.setHighlighted">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>If the montage was created with highlight_selected option enabled, 
+  then this function will cause a set of tiles in the montage to be 
+  highlighted.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Calling this method will erase any previous selections made by the 
+        user.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="_checkClickRegion"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkClickRegion</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._checkClickRegion">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>internal method to determine the clicked region of the montage.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>-1 for decrement region, 1 for increment region, and 0 otherwise.
+          If a select handler function was defined (via setSelectHandler), 
+          then this function will be called when the user clicks within the
+          region of one of the tiles of the montage. Signature of 
+          selectHandler function is f(img, imgNum, dict). As of now, the 
+          only key/value pair passed into the dict is 
+          &quot;imgLabel&quot;:&lt;label&gt;.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_composite"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_composite</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">img</span>,
+        <span class="sig-arg">pos</span>,
+        <span class="sig-arg">imgNum</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyvision.analysis.Montage-pysrc.html#ImageMontage._composite">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Internal method to composite the thumbnail of a given image into the 
+  correct position, given by (row,col).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>img</code></strong> - The image from which a thumbnail will be composited onto the 
+          montage</li>
+        <li><strong class="pname"><code>pos</code></strong> - A tuple (row,col) for the position in the montage layout</li>
+        <li><strong class="pname"><code>imgNum</code></strong> - The image index of the tile being drawn, this helps us display 
+          the appropriate label in the lower left corner if self._labels is
+          not None.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pyvision-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 21 14:31:59 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
